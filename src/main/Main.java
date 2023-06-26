@@ -11,12 +11,12 @@ public class Main extends JavaPlugin
 	private Templates Templates = new Templates();
 	
 	// Pruebas de consola.
-	//public static void main(String[] args)
-	//{
-		//String version = "1.0.1";
-		//String nombre = "BasicUtilities";
-		//System.out.println();  
-	//}
+	public static void main(String[] args)
+	{
+		String version = "1.0.1";
+		String nombre = "BasicUtilities";
+		System.out.println();  
+	}
 	
 	// Method that is executed when the server read the plugin.
 	public void onEnable()
