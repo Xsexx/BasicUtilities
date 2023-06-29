@@ -37,7 +37,24 @@ public class CommandUtils implements CommandExecutor
             // Console command
             else
             {
-                basicUtilities.Utils.SendConsoleMessage(basicUtilities.Templates.GetStartEndTemplate(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion(),false));
+                // For the aditional commands
+                if(args.length != 0)
+                {
+                    // Reload the plugin's config.
+                    if(args[0].equalsIgnoreCase("reload"))
+                    {
+                        this.basicUtilities.reloadConfig();
+                        basicUtilities.Utils.SendConsoleMessage(basicUtilities.Templates.GetConsoleCommandTemplate(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
+                    }
+                    else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
+                    {
+                        // Not today.
+                    }
+                }
+                else
+                {
+                    basicUtilities.Utils.SendConsoleMessage(basicUtilities.Templates.GetConsoleCommandTemplate(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
+                }
             }
         }
         catch (Exception exc)

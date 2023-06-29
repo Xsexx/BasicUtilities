@@ -7,6 +7,8 @@ public class Templates
 	
 	private String CommandFromConsole = "%s[%s%s%s]%sThis command cannot be executed from console.";
 
+	private String PluginTemplate = "";
+
 	/**
 	 * Method that build the format for the start message.
 	 */
@@ -23,5 +25,13 @@ public class Templates
 	{
 		Color objColor = new Color();
 		return String.format(CommandFromConsole, objColor.Red, objColor.White, name, objColor.Red, objColor.White);
+	}
+
+	/**
+	 * Method that build the format for the start message.
+	 */
+	public String GetPluginReloadTemplate(String name, String version)
+	{
+		return String.format(PluginTemplate);
 	}
 }

@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import BusinessLogic.Utils;
 import Commands.CommandAddLocation;
 import Commands.CommandUtils;
+import Configuration.PlayerConfig;
 import Entities.Templates;
 import Listeners.Login;
 
@@ -34,6 +35,7 @@ public class BasicUtilities extends JavaPlugin
 		
 		CommandRegister();
 		EventRegister();
+		ConfigRegister();
 	}
 
 	/**
@@ -60,5 +62,13 @@ public class BasicUtilities extends JavaPlugin
 	{
 		PluginManager objPluginManager = getServer().getPluginManager();
 		objPluginManager.registerEvents(new Login(), this);
+	}
+
+	/**
+	 * Method to create the config files.
+	 */
+	public void ConfigRegister()
+	{
+		new PlayerConfig(this);
 	}
 }

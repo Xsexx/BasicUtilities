@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import Main.BasicUtilities;
 
-public class CommandAddLocation implements CommandExecutor
+public class CommandAddLocation implements CommandExecutor, inte
 {
 
     private BasicUtilities basicUtilities;
