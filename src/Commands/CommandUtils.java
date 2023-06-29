@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import Main.BasicUtilities;
 
-public class CommandBasicUtilities implements CommandExecutor
+public class CommandUtils implements CommandExecutor
 {
 
     private BasicUtilities basicUtilities;
@@ -15,7 +15,7 @@ public class CommandBasicUtilities implements CommandExecutor
     /**
      * Constructor
      */
-    public CommandBasicUtilities(BasicUtilities basicUtilities)
+    public CommandUtils(BasicUtilities basicUtilities)
     {
         // Ver video 3 para completar desarrollo.
         this.basicUtilities = basicUtilities;

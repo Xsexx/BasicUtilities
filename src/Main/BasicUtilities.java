@@ -4,7 +4,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import BusinessLogic.Utils;
-import Commands.CommandBasicUtilities;
+import Commands.CommandAddLocation;
+import Commands.CommandUtils;
 import Entities.Templates;
 
 public class BasicUtilities extends JavaPlugin
@@ -45,6 +46,7 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void CommandRegister()
 	{
-		this.getCommand("addlocation").setExecutor(new CommandBasicUtilities(this));
+		this.getCommand("utils").setExecutor(new CommandUtils(this));
+		this.getCommand("addlocation").setExecutor(new CommandAddLocation(this));
 	}
 }
