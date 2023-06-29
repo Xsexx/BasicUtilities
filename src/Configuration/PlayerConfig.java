@@ -12,7 +12,7 @@ public class PlayerConfig
     {
         this.basicUtilities = objBasicUtilities;
 		File config = new File(this.basicUtilities.getDataFolder(),"Player.yml");
-		String rutaConfig = config.getPath();
+		// String rutaConfig = config.getPath();
 		
         if(!config.exists())
         {
