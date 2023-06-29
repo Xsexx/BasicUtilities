@@ -1,12 +1,14 @@
 package Main;
 
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import BusinessLogic.Utils;
 import Commands.CommandAddLocation;
 import Commands.CommandUtils;
 import Entities.Templates;
+import Listeners.Login;
 
 public class BasicUtilities extends JavaPlugin
 {
@@ -31,6 +33,7 @@ public class BasicUtilities extends JavaPlugin
 		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(),true));
 		
 		CommandRegister();
+		EventRegister();
 	}
 
 	/**
@@ -48,5 +51,14 @@ public class BasicUtilities extends JavaPlugin
 	{
 		this.getCommand("utils").setExecutor(new CommandUtils(this));
 		this.getCommand("addlocation").setExecutor(new CommandAddLocation(this));
+	}
+
+	/**
+	 * Method to register the events.
+	 */
+	public void EventRegister()
+	{
+		PluginManager objPluginManager = getServer().getPluginManager();
+		objPluginManager.registerEvents(new Login(), this);
 	}
 }
