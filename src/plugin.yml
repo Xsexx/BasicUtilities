@@ -1,8 +1,9 @@
-main: Main.Main
-version: 1.0.0
+main: Main.BasicUtilities
+version: 1.0.1
 name: BasicUtilities
 
 commands:
+  utils:
+    description: Principal command of the plugin.
   addlocation:
     description: Command to add locations to a list.
-  

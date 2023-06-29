@@ -4,7 +4,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import BusinessLogic.Utils;
-import Commands.Commands;
+import Commands.CommandAddLocation;
+import Commands.CommandUtils;
 import Entities.Templates;
 
 public class BasicUtilities extends JavaPlugin
@@ -12,9 +13,9 @@ public class BasicUtilities extends JavaPlugin
 	public Utils Utils = new Utils();
 	public Templates Templates = new Templates();
 	public PluginDescriptionFile pdfFile = getDescription();
-
+	
 	/**
-	 * Pruebas de consola.
+	 * Console test.
 	 */
 	public static void main(String[] args)
 	{
@@ -45,6 +46,7 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void CommandRegister()
 	{
-		this.getCommand("addlocation").setExecutor(new Commands(this));
+		this.getCommand("utils").setExecutor(new CommandUtils(this));
+		this.getCommand("addlocation").setExecutor(new CommandAddLocation(this));
 	}
 }
