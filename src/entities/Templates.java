@@ -1,14 +1,27 @@
-package entities;
+package Entities;
 
 // Here are located all the strings.
 public class Templates
 {
 	private String StartEndText = "%s[%s%s%s]%s Has been %s (version: %s%s%s)";
 	
-	// Method that build the format for the start message.
+	private String CommandFromConsole = "%s[%s%s%s]%sThis command cannot be executed from console.";
+
+	/**
+	 * Method that build the format for the start message.
+	 */
 	public String GetStartEndTemplate(String name, String version, Boolean flag)
 	{
-		Colors Colors = new Colors();
-		return String.format(StartEndText, Colors.Red, Colors.White, name, Colors.White, Colors.Red, flag ? "activated" : "disabled", Colors.Blue, version, Colors.White);
+		Color objColor = new Color();
+		return String.format(StartEndText, objColor.Red, objColor.White, name, objColor.Red, objColor.White, flag ? "activated" : "disabled", objColor.Blue, version, objColor.White);
+	}
+
+	/**
+	 * Method that build the format for the start message.
+	 */
+	public String GetConsoleCommandTemplate(String name, String version)
+	{
+		Color objColor = new Color();
+		return String.format(CommandFromConsole, objColor.Red, objColor.White, name, objColor.Red, objColor.White);
 	}
 }

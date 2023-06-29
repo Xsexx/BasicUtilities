@@ -1,0 +1,8 @@
+main: Main.Main
+version: 1.0.0
+name: BasicUtilities
+
+commands:
+  addlocation:
+    description: Command to add locations to a list.
+  
