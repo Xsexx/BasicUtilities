@@ -5,10 +5,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import Entities.PlayerEntitie;
 import Main.BasicUtilities;
 
-public class Commands implements CommandExecutor
+public class CommandAddLocation implements CommandExecutor
 {
 
     private BasicUtilities basicUtilities;
@@ -16,7 +15,7 @@ public class Commands implements CommandExecutor
     /**
      * Constructor
      */
-    public Commands(BasicUtilities basicUtilities)
+    public CommandAddLocation(BasicUtilities basicUtilities)
     {
         this.basicUtilities = basicUtilities;
     }
@@ -32,10 +31,7 @@ public class Commands implements CommandExecutor
             // Player command
             if(sender instanceof Player)
             {
-                PlayerEntitie player = new PlayerEntitie();
-                player.player = (Player) sender;
-
-                basicUtilities.Utils.SendPlayerMessage(player.player, label);
+                basicUtilities.Utils.SendPlayerMessage((Player) sender, label);
             }
             // Console command
             else
