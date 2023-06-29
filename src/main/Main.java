@@ -8,28 +8,32 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin
 {
 	private Utils Utils = new Utils();
-	private Templates Templates = new Templates();
+	private static Templates Templates = new Templates();
 	
-	// Pruebas de consola.
+	/***
+	 * Pruebas de consola.
+	 */
 	public static void main(String[] args)
 	{
-		String version = "1.0.1";
-		String nombre = "BasicUtilities";
-		System.out.println();  
+		// System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",true));
 	}
 	
-	// Method that is executed when the server read the plugin.
+	/***
+	 * 	Method that is executed when the server read the plugin.
+	 */
 	public void onEnable()
 	{
 		PluginDescriptionFile pdfFile = getDescription();
-
-		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(), true));
+		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(),true));
 	}
-	
-	// Method that is executed when the server read the plugin.
+
+	/***
+	 * 	Method that is executed when the server read the plugin.
+	 */
 	public void onDisable()
 	{
 		PluginDescriptionFile pdfFile = getDescription();
-		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(), false));
+		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(),false));
 	}
+
 }
