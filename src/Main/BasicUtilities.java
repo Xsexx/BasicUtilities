@@ -4,46 +4,52 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import BusinessLogic.Utils;
+import BusinessLogic.TextBL;
+import BusinessLogic.UtilsBL;
 import Commands.CommandAddLocation;
 import Commands.CommandUtils;
-import Configuration.PlayerConfig;
-import Entities.Templates;
-import Listeners.Login;
+import DataAccess.ConfigDA;
+import Listeners.PlayerLogin;
 
 public class BasicUtilities extends JavaPlugin
 {
-	public Utils Utils = new Utils();
-	public Templates Templates = new Templates();
-	public PluginDescriptionFile pdfFile = getDescription();
+	public UtilsBL utils;
+	public PluginDescriptionFile pdfFile;
+	public String rutaConfig;
 	
 	/**
 	 * Console test.
-	 */
+	 *  
 	public static void main(String[] args)
 	{
-		// System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",true));
-		// System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",false));
+		System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",true));
+		System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",false));
 	}
-	
+     */
+
 	/**
-	 * 	Method to execute when the server read the plugin on the start.
+	 * Method to execute when the server read the plugin on the start.
 	 */
 	public void onEnable()
 	{
-		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(),true));
-		
+		// Message to console, with the plugin info.
+		utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), true));
+
+		// Method for starts the plugin functionalities.
 		CommandRegister();
 		EventRegister();
 		ConfigRegister();
+
+		this.utils = new UtilsBL();
+		this.pdfFile = getDescription();
 	}
 
 	/**
-	 * 	Method to execute when the server read the plugin on the end.
+	 * Method to execute when the server read the plugin on the end.
 	 */
 	public void onDisable()
 	{
-		Utils.SendConsoleMessage(Templates.GetStartEndTemplate(pdfFile.getName(), pdfFile.getVersion(),false));
+		utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), false));
 	}
 
 	/**
@@ -52,7 +58,7 @@ public class BasicUtilities extends JavaPlugin
 	public void CommandRegister()
 	{
 		this.getCommand("utils").setExecutor(new CommandUtils(this));
-		this.getCommand("addlocation").setExecutor(new CommandAddLocation(this));
+		this.getCommand("location").setExecutor(new CommandAddLocation(this));
 	}
 
 	/**
@@ -61,7 +67,7 @@ public class BasicUtilities extends JavaPlugin
 	public void EventRegister()
 	{
 		PluginManager objPluginManager = getServer().getPluginManager();
-		objPluginManager.registerEvents(new Login(), this);
+		objPluginManager.registerEvents(new PlayerLogin(this), this);
 	}
 
 	/**
@@ -69,6 +75,6 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		new PlayerConfig(this);
+		new ConfigDA(this);
 	}
 }

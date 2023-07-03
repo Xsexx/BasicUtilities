@@ -3,7 +3,7 @@ package BusinessLogic;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class Utils
+public class UtilsBL
 {
 	/**
 	 * Method to send messages to the console.

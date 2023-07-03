@@ -1,18 +1,18 @@
-package Configuration;
+package DataAccess;
 
 import java.io.File;
 
 import Main.BasicUtilities;
 
-public class PlayerConfig
+public class ConfigDA
 {
     private BasicUtilities basicUtilities;
     
-    public PlayerConfig(BasicUtilities objBasicUtilities)
+    public ConfigDA(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
-		File config = new File(this.basicUtilities.getDataFolder(),"Player.yml");
-		// String rutaConfig = config.getPath();
+		File config = new File(this.basicUtilities.getDataFolder(),"config.yml");
+        this.basicUtilities.rutaConfig = config.getPath();
 		
         if(!config.exists())
         {
@@ -20,5 +20,4 @@ public class PlayerConfig
 			this.basicUtilities.saveConfig();
 		}
 	}
-
 }
