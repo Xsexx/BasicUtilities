@@ -20,10 +20,11 @@ public class BasicUtilities extends JavaPlugin
 	/**
 	 * Console test.
 	 *  
+	 * 
 	public static void main(String[] args)
 	{
-		System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",true));
-		System.out.println(Templates.GetStartEndTemplate("BasicUtilities", "1.0.1",false));
+		System.out.println();
+		System.out.println();
 	}
      */
 
