@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
 public class CommandAddLocation implements CommandExecutor
@@ -28,15 +29,17 @@ public class CommandAddLocation implements CommandExecutor
     {
         try
         {
+            TextBL templates = new TextBL(basicUtilities);
+
             // Player command
             if(sender instanceof Player)
             {
-                basicUtilities.Utils.SendPlayerMessage((Player) sender, label);
+                basicUtilities.utils.SendPlayerMessage((Player) sender, label);
             }
             // Console command
             else
             {
-                basicUtilities.Utils.SendConsoleMessage(basicUtilities.Templates.GetStartEndTemplate(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion(),false));
+                basicUtilities.utils.SendConsoleMessage(templates.GetStartEndText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion(),false));
             }
         }
         catch (Exception exc)

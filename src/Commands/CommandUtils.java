@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
 public class CommandUtils implements CommandExecutor
@@ -29,10 +30,12 @@ public class CommandUtils implements CommandExecutor
     {
         try
         {
+            TextBL templates = new TextBL(basicUtilities);
+
             // Player command
             if(sender instanceof Player)
             {
-                basicUtilities.Utils.SendPlayerMessage((Player) sender, label);
+                basicUtilities.utils.SendPlayerMessage((Player) sender, label);
             }
             // Console command
             else
@@ -44,7 +47,7 @@ public class CommandUtils implements CommandExecutor
                     if(args[0].equalsIgnoreCase("reload"))
                     {
                         this.basicUtilities.reloadConfig();
-                        basicUtilities.Utils.SendConsoleMessage(basicUtilities.Templates.GetConsoleCommandTemplate(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
+                        basicUtilities.utils.SendConsoleMessage(templates.GetConsoleCommandText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
                     {
@@ -53,7 +56,7 @@ public class CommandUtils implements CommandExecutor
                 }
                 else
                 {
-                    basicUtilities.Utils.SendConsoleMessage(basicUtilities.Templates.GetConsoleCommandTemplate(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
+                    basicUtilities.utils.SendConsoleMessage(templates.GetConsoleCommandText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
                 }
             }
         }

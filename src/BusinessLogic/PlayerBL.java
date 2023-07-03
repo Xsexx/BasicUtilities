@@ -1,5 +1,5 @@
 package BusinessLogic;
 
-public class PlayerBL {
-    
+public class PlayerBL
+{
 }
