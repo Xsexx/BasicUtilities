@@ -1,4 +1,4 @@
-package BusinessLogic;
+package businessLogic;
 
 public class PlayerBL
 {

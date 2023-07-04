@@ -1,9 +1,10 @@
-package BusinessLogic;
+package businessLogic;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import Entities.ColorDTO;
-import Main.BasicUtilities;
+import configuration.ConfigManager;
+import entities.ColorDTO;
+import main.BasicUtilities;
 
 // Here are located all the strings.
 public class TextBL
@@ -16,7 +17,8 @@ public class TextBL
 	 */
     public TextBL(BasicUtilities objBasicUtilities)
     {
-        this.config = objBasicUtilities.getConfig();
+		ConfigManager configManager = new ConfigManager(objBasicUtilities);
+        this.config = configManager.GetFile("text");
 	}
 
 	/**

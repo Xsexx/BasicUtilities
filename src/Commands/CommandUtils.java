@@ -1,12 +1,13 @@
-package Commands;
+package commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import BusinessLogic.TextBL;
-import Main.BasicUtilities;
+import businessLogic.TextBL;
+import configuration.ConfigManager;
+import main.BasicUtilities;
 
 public class CommandUtils implements CommandExecutor
 {
@@ -46,7 +47,10 @@ public class CommandUtils implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.basicUtilities.reloadConfig();
+                        ConfigManager configManager = new ConfigManager(basicUtilities);
+                        configManager.ReloadFile("config");
+                        configManager.ReloadFile("player");
+                        configManager.ReloadFile("text");
                         basicUtilities.utils.SendConsoleMessage(templates.GetConsoleCommandText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
@@ -62,7 +66,7 @@ public class CommandUtils implements CommandExecutor
         }
         catch (Exception exc)
         {
-
+            basicUtilities.utils.SendConsoleMessage(exc.getMessage());
         }
 
         return true;

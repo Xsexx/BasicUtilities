@@ -1,15 +1,15 @@
-package Main;
+package main;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import BusinessLogic.TextBL;
-import BusinessLogic.UtilsBL;
-import Commands.CommandAddLocation;
-import Commands.CommandUtils;
-import DataAccess.ConfigDA;
-import Listeners.PlayerLogin;
+import businessLogic.TextBL;
+import businessLogic.UtilsBL;
+import commands.CommandLocation;
+import commands.CommandUtils;
+import configuration.ConfigManager;
+import listeners.PlayerLogin;
 
 public class BasicUtilities extends JavaPlugin
 {
@@ -17,17 +17,6 @@ public class BasicUtilities extends JavaPlugin
 	public PluginDescriptionFile pdfFile;
 	public String rutaConfig;
 	
-	/**
-	 * Console test.
-	 *  
-	 * 
-	public static void main(String[] args)
-	{
-		System.out.println();
-		System.out.println();
-	}
-     */
-
 	/**
 	 * Method to execute when the server read the plugin on the start.
 	 */
@@ -59,7 +48,7 @@ public class BasicUtilities extends JavaPlugin
 	public void CommandRegister()
 	{
 		this.getCommand("utils").setExecutor(new CommandUtils(this));
-		this.getCommand("location").setExecutor(new CommandAddLocation(this));
+		this.getCommand("location").setExecutor(new CommandLocation(this));
 	}
 
 	/**
@@ -76,6 +65,9 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		new ConfigDA(this);
+		ConfigManager configManager = new ConfigManager(this);
+		configManager.RegisterFile("config");
+		configManager.RegisterFile("player");
+		configManager.RegisterFile("text");
 	}
 }

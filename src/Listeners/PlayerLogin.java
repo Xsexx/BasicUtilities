@@ -1,4 +1,4 @@
-package Listeners;
+package listeners;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -6,8 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import BusinessLogic.TextBL;
-import Main.BasicUtilities;
+import businessLogic.TextBL;
+import main.BasicUtilities;
 
 public class PlayerLogin implements Listener
 {    
