@@ -1,6 +1,5 @@
 package commands;
 
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,12 +34,13 @@ public class CommandLocation implements CommandExecutor
             // Player command
             if(sender instanceof Player)
             {
-                Player player = (Player) sender;
+                // Player player = (Player) sender;
 
                 if(args.length != 0)
                 {
                     if(args[0].equalsIgnoreCase("add"))
                     {
+                        /*
                         Location location = player.getLocation();
                         double x = location.getX();
                         double y = location.getY();
@@ -48,8 +48,7 @@ public class CommandLocation implements CommandExecutor
                         String world = location.getWorld().getName();
                         float yaw = location.getYaw();
                         float pitch = location.getPitch();
-
-                        
+                        */
                     }
                 }
                 // basicUtilities.utils.SendPlayerMessage((Player) sender, label);

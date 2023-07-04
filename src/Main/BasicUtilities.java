@@ -13,25 +13,23 @@ import listeners.PlayerLogin;
 
 public class BasicUtilities extends JavaPlugin
 {
+	public PluginDescriptionFile pdfFile = getDescription();
 	public UtilsBL utils;
-	public PluginDescriptionFile pdfFile;
-	public String rutaConfig;
 	
 	/**
 	 * Method to execute when the server read the plugin on the start.
 	 */
 	public void onEnable()
 	{
-		// Message to console, with the plugin info.
-		utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), true));
+		this.utils = new UtilsBL();
 
 		// Method for starts the plugin functionalities.
+		ConfigRegister();
 		CommandRegister();
 		EventRegister();
-		ConfigRegister();
 
-		this.utils = new UtilsBL();
-		this.pdfFile = getDescription();
+		// Message to console, with the plugin info.
+		utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), true));
 	}
 
 	/**

@@ -1,8 +1,8 @@
 Templates:
-    start-end-text: "%s[%s%s%s]%s Has been %s (version: %s%s%s)"
-    start-end-text-activated: "activated"
-    start-end-text-disabled: "disabled"
-    command-from-text: "%s[%s%s%s]%sThis command cannot be executed from console"
-    plugin-reload-text: ""
-    welcome-message-text: "%sWelcome to the server %sEXTREMECRAFT %s%s"
-    welcome-message-text-new-this-week: ""
+    start-end-text: '%s[%s%s%s]%s Has been %s (version: %s%s%s)'
+    start-end-text-activated: 'activated'
+    start-end-text-disabled: 'disabled'
+    command-from-text: '%s[%s%s%s]%sThis command cannot be executed from console'
+    plugin-reload-text: ''
+    welcome-message-text: '%sWelcome to the server %sEXTREMECRAFT %s%s'
+    welcome-message-text-new-this-week: ''

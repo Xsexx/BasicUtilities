@@ -26,7 +26,7 @@ public class TextBL
 	 */
 	public String GetStartEndText(String name, String version, Boolean flag)
 	{
-		return String.format(config.getString("Templates.start-end-text"), colors.Red, colors.White, name, colors.Red, colors.White, flag ? config.getString("start-end-text-activated") : config.getString("start-end-text-disabled"), colors.Blue, version, colors.White);
+		return String.format(config.getString("Templates.start-end-text"), colors.Red, colors.White, name, colors.Red, colors.White, flag ? config.getString("Templates.start-end-text-activated") : config.getString("Templates.start-end-text-disabled"), colors.Blue, version, colors.White);
 	}
 
 	/**

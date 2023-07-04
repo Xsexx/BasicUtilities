@@ -14,14 +14,8 @@ public class ConfigManager
     private BasicUtilities basicUtilities;
     
     // Config files
-    private FileConfiguration ConfigCfg;
-    private File ConfigFile;
-
-    private FileConfiguration PlayerCfg;
-    private File PlayerFile;
-
-    private FileConfiguration TextCfg;
-    private File TextFile;
+    private FileConfiguration config;
+    private File file;
 
     /**
      * Constructor
@@ -33,43 +27,13 @@ public class ConfigManager
     }
 
     /**
-     * Method that centralize the config files per type.
+     * Method to format the name of file.
      * @param fileName
      * @return
      */
-    private FileConfiguration GetConfigFileByType(String fileName)
+    private String FormatName(String fileName)
     {
-        switch(fileName)
-        {
-            case "config":
-                return ConfigCfg;
-            case "player":
-                return PlayerCfg;
-            case "text":
-                return TextCfg;
-            default:
-                return null;
-        }
-    }
-
-    /**
-     * Method that centralize the files per type.
-     * @param fileName
-     * @return
-     */
-    private File GetFileByType(String fileName)
-    {
-        switch(fileName)
-        {
-            case "config":
-                return ConfigFile;
-            case "player":
-                return PlayerFile;
-            case "text":
-                return TextFile;
-            default:
-                return null;
-        }
+        return String.format("%s.%s", fileName, "yml");
     }
 
     /**
@@ -78,17 +42,10 @@ public class ConfigManager
      */
     public void RegisterFile(String fileName)
     {
-        // Files by name.
-        FileConfiguration config = GetConfigFileByType(fileName);
-        File file = GetFileByType(fileName);
-        fileName = String.format("%s.%s", fileName, "yml");
-
-        file = new File(basicUtilities.getDataFolder(), fileName);
-        
-        if(!file.exists())
+        if(!new File(basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
-            GetFile(config, file, fileName).options().copyDefaults(true);
-            SaveFile(config, file, fileName);
+            GetFile(fileName).options().copyDefaults(true);
+            SaveFile(fileName);
         }
     }
 
@@ -99,22 +56,9 @@ public class ConfigManager
      */
     public FileConfiguration GetFile(String fileName)
     {
-        return GetFile(GetConfigFileByType(fileName), GetFileByType(fileName), String.format("%s.%s", fileName, "yml"));
-    }
-
-    /**
-     * Method to get the files (Overload).
-     * @param config
-     * @param file
-     * @param fileName
-     * @return File by type.
-     */
-    public FileConfiguration GetFile(FileConfiguration config, File file, String fileName)
-    {
-        if(config == null)
-        {
-            ReloadFile(config, file, fileName);
-        }
+        config = null;
+        file = null;
+        ReloadFile(fileName);
 
         return config;
     }
@@ -125,7 +69,7 @@ public class ConfigManager
      * @param file
      * @param fileName
     */
-    public void SaveFile(FileConfiguration config, File file, String fileName)
+    public void SaveFile(String fileName)
     {
         try
         {
@@ -143,28 +87,12 @@ public class ConfigManager
      */
     public void ReloadFile(String fileName)
     {
-        // Files by name.
-        ReloadFile(GetConfigFileByType(fileName), GetFileByType(fileName), String.format("%s.%s", fileName, "yml"));
-    }
-
-    /**
-     * Method that reload the files config (Overload).
-     * @param config
-     * @param file
-     * @param fileName
-     */
-    public void ReloadFile(FileConfiguration config, File file, String fileName)
-    {
         try
         {
             // In case that file was null, create a new file.
-            if(config == null)
-            {
-                file = new File(basicUtilities.getDataFolder(), fileName);
-            }
-
+            file = new File(basicUtilities.getDataFolder(), FormatName(fileName));
             config = YamlConfiguration.loadConfiguration(file);
-            Reader defConfigString = new InputStreamReader(basicUtilities.getResource(fileName), "UTF8");
+            Reader defConfigString = new InputStreamReader(basicUtilities.getResource(FormatName(fileName)), "UTF8");
 
             if(defConfigString != null)
             {
