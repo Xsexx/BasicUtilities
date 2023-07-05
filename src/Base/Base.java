@@ -9,7 +9,7 @@ import Entities.ColorDTO;
 import Main.BasicUtilities;
 
 /**
- * Super class that handles the class attributes.
+ * Super class that handles the general attributes.
  */
 public class Base
 {

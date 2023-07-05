@@ -9,7 +9,7 @@ import BusinessLogic.UtilsBL;
 import Commands.CommandLocation;
 import Commands.CommandUtils;
 import Configuration.ConfigManager;
-import Listeners.PlayerLogin;
+import Listeners.PlayerJoin;
 
 public class BasicUtilities extends JavaPlugin
 {
@@ -53,7 +53,7 @@ public class BasicUtilities extends JavaPlugin
 	public void ListenerRegister()
 	{
 		PluginManager objPluginManager = getServer().getPluginManager();
-		objPluginManager.registerEvents(new PlayerLogin(this), this);
+		objPluginManager.registerEvents(new PlayerJoin(this), this);
 	}
 
 	/**

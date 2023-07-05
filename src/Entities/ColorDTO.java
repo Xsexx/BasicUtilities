@@ -2,7 +2,7 @@ package Entities;
 
 import org.bukkit.ChatColor;
 
-// Class to implements the org.bukkit colors without dependencies on the entire solution.
+// Class that implements the org.bukkit.ChatColor without dependencies on the entire solution.
 public class ColorDTO
 {
 	// Light

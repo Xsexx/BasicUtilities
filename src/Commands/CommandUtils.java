@@ -21,22 +21,22 @@ public class CommandUtils extends Base implements CommandExecutor
     }
 
     /**
-     * Listerner to execute the command action.
+     * Method that handles the command action.
      */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
         try
         {
-            // If is player command
+            // In case that player send the command.
             if(sender instanceof Player)
             {
                 this.basicUtilities.utils.SendPlayerMessage((Player) sender, label);
             }
-            // If is console command
+            // In case that console send the command.
             else
             {
-                // For the aditional commands
+                // For the aditional parameters.
                 if(args.length != 0)
                 {
                     // Reload the plugin's config.

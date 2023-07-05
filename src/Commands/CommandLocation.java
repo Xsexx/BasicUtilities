@@ -21,18 +21,17 @@ public class CommandLocation extends Base implements CommandExecutor
     }
 
     /**
-     * Listerner that handles the command action.
+     * Method that handles the command action.
      */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
         try
         {
-            // Player command
+            // In case that player send the command.
             if(sender instanceof Player)
             {
-                // Player player = (Player) sender;
-
+                // For the aditional parameters.
                 if(args.length != 0)
                 {
                     if(args[0].equalsIgnoreCase("add"))
@@ -48,9 +47,8 @@ public class CommandLocation extends Base implements CommandExecutor
                         */
                     }
                 }
-                // basicUtilities.utils.SendPlayerMessage((Player) sender, label);
             }
-            // Console command
+            // In case that console send the command.
             else
             {
                 this.basicUtilities.utils.SendConsoleMessage(this.templates.GetConsoleCommandText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));

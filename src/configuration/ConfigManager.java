@@ -22,7 +22,7 @@ public class ConfigManager extends Base
     }
 
     /**
-     * Method to format the name of file.
+     * Method that handles the format name by file.
      * @param fileName
      * @return
      */
@@ -32,7 +32,7 @@ public class ConfigManager extends Base
     }
 
     /**
-     * Method that register the file like config files.
+     * Method that handles the register for config files.
      * @param fileName
      */
     public void RegisterFile(String fileName)
@@ -45,21 +45,18 @@ public class ConfigManager extends Base
     }
 
     /**
-     * Method to get the files.
+     * Method that handles get the config files.
      * @param fileName
      * @return File by type.
      */
     public FileConfiguration GetFile(String fileName)
     {
-        this.config = null;
-        this.file = null;
         ReloadFile(fileName);
-
         return this.config;
     }
 
     /**
-     * Method that save the data file.
+     * Method that handles save the data on config files.
      * @param fileName
     */
     public void SaveFile(String fileName)
@@ -75,7 +72,7 @@ public class ConfigManager extends Base
     }
 
     /**
-     * Method that reload the files config.
+     * Method that handles reload the config files.
      * @param fileName
      */
     public void ReloadFile(String fileName)
