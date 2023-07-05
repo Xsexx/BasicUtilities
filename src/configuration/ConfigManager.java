@@ -8,7 +8,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import Base.Base;
-import Base.Enums.FileConfigurationName;
 import Main.BasicUtilities;
 
 public class ConfigManager extends Base

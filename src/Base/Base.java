@@ -18,4 +18,9 @@ public class Base
     protected FileConfiguration config;
 	protected ColorDTO colors;
     protected File file;
+
+    public enum FileConfigurationName
+    {
+        config, player, text
+    }
 }

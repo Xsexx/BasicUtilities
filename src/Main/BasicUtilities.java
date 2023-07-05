@@ -4,7 +4,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Base.Enums.FileConfigurationName;
+import Base.Base.FileConfigurationName;
 import BusinessLogic.TextBL;
 import BusinessLogic.UtilsBL;
 import Commands.CommandLocation;
