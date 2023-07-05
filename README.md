@@ -2,59 +2,58 @@
 ## Rangos
 | Rango        | Color       | Comandos                                                                                                                    | Requisitos para obtenerlo                |
 |--------------|-------------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                                                | Unirse al servidor                       |
-| Beginner     | Light green | `stp {update} {rock}`                                                                                                       | Llegar a la cord x:0, y:0                |
-| Intermediate | Green       | `stp {update} {gold}`                                                                                                       | Matar el Dragón                          |
-| Advanced     | Blue        | `stp {update} {iron}`                                                                                                       | Matar el Warden                          |
-| Expert       | Cyan        | `stp {update} {drop} {0}` `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}` | Matar todos los mobs del juego           |
-| Master       | Orange      | `stp {update} {drop} {1}` `location {tp} {name}`                                                                            | Completar todos los logros               |
-| Legend       | Red         | `stp {update} {drop} {2}`                                                                                                   | Matar todos los monstruos especiales     |
-| Mythical     | Purple      | `stp {update} {drop} {3}`                                                                                                   | Completar todas las misiones             |
-| God          | Gold        | `stp {update} {drop} {4}`                                                                                                   | Completar armadura especial a nivel VII  |
-| Admin        | Black       | `All`                                                                                                                       | Crear el server                          |
+| Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                                                | Join the server.                         |
+| Beginner     | Light green | `stp {update} {rock}`                                                                                                       | Reach location x:0, y:0.                 |
+| Intermediate | Green       | `stp {update} {gold}`                                                                                                       | Kill the Dragon                          |
+| Advanced     | Blue        | `stp {update} {iron}`                                                                                                       | Kill the Warden                          |
+| Expert       | Cyan        | `stp {update} {drop} {0}` `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}` | Kill all mobs in the game.               |
+| Master       | Orange      | `stp {update} {drop} {1}` `location {tp} {name}`                                                                            | Complete all achievements.               |
+| Legend       | Red         | `stp {update} {drop} {2}`                                                                                                   | Kill all special monsters.               |
+| Mythical     | Purple      | `stp {update} {drop} {3}`                                                                                                   | Complete all missions.                   |
+| God          | Gold        | `stp {update} {drop} {4}`                                                                                                   | Complete special armor to level VII.     |
+| Admin        | Black       | `all`                                                                                                                       | Create server.                           |
 ## Comandos
 ### utils {commands}
-* [x] utils reload (Recarga la config)
-* [ ] utils join armor {piece} (junta ciertas armaduras)
-* [ ] utils join tool {tool} (junta ciertas armaduras)
-* [ ] utils trade list (lista de intercambios disponibles)
-  * obsidian	{obs}
+* [x] utils reload                        (Recarga la config)
+* [ ] utils join   armor      {piece}     (junta ciertas armaduras)
+* [ ] utils join   tool       {tool}      (junta ciertas armaduras)
+* [ ] utils trade  list                   (lista de intercambios disponibles)
+  * obsidian	  {obs}
   * elderchest	{elc}
   * shulkerbox	{skb}
   * .
-* [ ] utilis trade {material} (intercambia materiales)
+* [ ] utils trade  {material}             (intercambia materiales)
   * {obs} = 1	iron block
-  * {elc} = 8 obsidian, 16 elder perls
+  * {elc} = 8 obsidian + 16 elder perls
   * {skb} = 1	ender chest
   * .
-* [ ] utils achievement {player}{achievement} (Da logros de revisión)
 ### location {commands}
-* [ ] location add {name}
+* [ ] location add        {name}
 * [ ] location view
-* [ ] location delete {name}
-* [ ] location sethome (Una)
+* [ ] location delete     {name}
+* [ ] location sethome            (Una)
 * [ ] location deletehome
-* [ ] location tp {name} (Se desbloquea con rango Expert)(3 por día, 30seg de delay)
-* [ ] location rtp (uno por día)
+* [ ] location tp         {name}  (Se desbloquea con rango Expert, 3 por día, 30seg de delay)
+* [ ] location rtp                (uno por día)
 * [ ] .
 ### starterpack ó stp {commands}
-* [ ] stp get (1 por día, ver recompensas)
-* [ ] stp update {category} (Cuando alcanza cierto rango)
+* [ ] stp get                         (1 por día, ver recompensas)
+* [ ] stp update {category}           (Cuando alcanza cierto rango)
   * {rock}
   * {gold}
   * {iron}
   * {diamond}
   * {netherite}
-* [ ] stp update {drop} {amount} (Sube el nivel del drop {IV -> V})
-  * {0} (Protección IV) (Se activan los drops)
+* [ ] stp update {drop}     {amount}  (Sube el nivel del drop {IV -> V})
+  * {0} (Protección IV)               (Se activan los drops)
   * {1} (Protección V)
   * {2} (Protección VI)
   * {3} (Protección VII)
   * {4} (Protección VIII)
 ### quest {commands}
-* [ ] quest view (Ver las misiones)
-* [ ] quest view {id} (Ver detalle de una misión)
-* [ ] quest claim {id} (Cobrar misión)
+* [ ] quest view        (Ver las misiones)
+* [ ] quest view  {id}  (Ver detalle de una misión)
+* [ ] quest claim {id}  (Cobrar misión)
 ## Recompensas
 ### Iniciales
 * [ ] Armadura de cuero (protección V, de color {por spawn}) y herramientas de madera (eficiencia VI) (Irrompible, maldición de desaparición)
