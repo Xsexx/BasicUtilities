@@ -1,5 +1,7 @@
 package BusinessLogic;
 
+import java.util.List;
+
 import Base.Base;
 import Entities.ColorDTO;
 import Main.BasicUtilities;
@@ -58,6 +60,24 @@ public class TextBL extends Base
 	 */
 	public String GetWelcomeMessageNewThisWeekText()
 	{
-		return String.format(this.config.getString("Templates.welcome-message-text-new-this-week"));
+		return String.format(GetMessageFromList(this.config.getStringList("Templates.welcome-message-text-new-this-week")));
+	}
+
+	/**
+	 * Method that handles the list from text files.
+	 * @param list
+	 * @return
+	 */
+	private String GetMessageFromList(List<String> list)
+	{
+		StringBuilder result = new StringBuilder();
+
+		for (String string : list)
+		{
+			result.append(String.format(string, this.colors.White));
+			result.append(System.lineSeparator());
+		}
+
+		return result.toString();
 	}
 }
