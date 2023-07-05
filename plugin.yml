@@ -1,4 +1,4 @@
-main: main.BasicUtilities
+main: Main.BasicUtilities
 version: 1.0.1
 name: BasicUtilities
 

@@ -1,8 +1,8 @@
-package businessLogic;
+package BusinessLogic;
 
 import Base.Base;
-import entities.ColorDTO;
-import main.BasicUtilities;
+import Entities.ColorDTO;
+import Main.BasicUtilities;
 
 // Class that handles all the text templates from "text.yml".
 public class TextBL extends Base

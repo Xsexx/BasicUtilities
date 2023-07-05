@@ -4,9 +4,9 @@ import java.io.File;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import businessLogic.TextBL;
-import entities.ColorDTO;
-import main.BasicUtilities;
+import BusinessLogic.TextBL;
+import Entities.ColorDTO;
+import Main.BasicUtilities;
 
 /**
  * Super class that handles the class attributes.

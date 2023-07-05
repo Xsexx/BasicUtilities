@@ -1,4 +1,4 @@
-package entities;
+package Entities;
 
 import org.bukkit.ChatColor;
 

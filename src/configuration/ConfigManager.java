@@ -1,4 +1,4 @@
-package configuration;
+package Configuration;
 
 import java.io.File;
 import java.io.InputStreamReader;
@@ -8,7 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import Base.Base;
-import main.BasicUtilities;
+import Main.BasicUtilities;
 
 public class ConfigManager extends Base
 {

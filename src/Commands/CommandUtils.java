@@ -1,4 +1,4 @@
-package commands;
+package Commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -6,8 +6,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Base.Base;
-import businessLogic.TextBL;
-import main.BasicUtilities;
+import BusinessLogic.TextBL;
+import Main.BasicUtilities;
 
 public class CommandUtils extends Base implements CommandExecutor
 {

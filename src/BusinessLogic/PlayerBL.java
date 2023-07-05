@@ -1,4 +1,4 @@
-package businessLogic;
+package BusinessLogic;
 
 import Base.Base;
 

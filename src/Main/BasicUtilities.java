@@ -1,15 +1,15 @@
-package main;
+package Main;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import businessLogic.TextBL;
-import businessLogic.UtilsBL;
-import commands.CommandLocation;
-import commands.CommandUtils;
-import configuration.ConfigManager;
-import listeners.PlayerLogin;
+import BusinessLogic.TextBL;
+import BusinessLogic.UtilsBL;
+import Commands.CommandLocation;
+import Commands.CommandUtils;
+import Configuration.ConfigManager;
+import Listeners.PlayerLogin;
 
 public class BasicUtilities extends JavaPlugin
 {
