@@ -1,34 +1,47 @@
 # Basic utilities
 ## Ranking
-| Rank         | Color       | Commmand                                                                                                                    | Requirements                             |
-|--------------|-------------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                                                | Join the server.                         |
-| Beginner     | Light green | `stp {update} {rock}`                                                                                                       | Reach location x:0, y:0.                 |
-| Intermediate | Green       | `stp {update} {gold}`                                                                                                       | Kill the Dragon.                         |
-| Advanced     | Blue        | `stp {update} {iron}`                                                                                                       | Kill the Warden.                         |
-| Expert       | Cyan        | `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}`                           | Kill all mobs in the game.               |
-| Master       | Orange      | `stp {update} {drop} {0}` `location {tp} {name}`                                                                            | Complete all achievements.               |
-| Legend       | Red         | `stp {update} {drop} {1}`                                                                                                   | Kill all special monsters.               |
-| Mythical     | Purple      | `stp {update} {drop} {2}`                                                                                                   | Complete all missions.                   |
-| God          | Gold        | `stp {update} {drop} {3}`                                                                                                   | Complete special armor to level VI.     |
-| Admin        | Black       | `all`                                                                                                                       | Create server.                           |
+| Rank         | Color       | Commmand                                                                                             | Requirements                             | Resources |
+|--------------|-------------|------------------------------------------------------------------------------------------------------|------------------------------------------|-----------|
+| Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                         | Join the server.                         | 6         |
+| Beginner     | Light green | `stp {update} {rock}`                                                                                | Reach location x:0, y:0.                 | 9         |
+| Intermediate | Green       | `stp {update} {gold}`                                                                                | Kill the Dragon.                         | 12        |
+| Advanced     | Blue        | `stp {update} {iron}`                                                                                | Kill the Warden.                         | 15        |
+| Expert       | Cyan        | `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}`    | Kill all mobs in the game.               | 18        |
+| Master       | Orange      | `stp {update} {drop} {0}` `location {tp} {name}`                                                     | Complete all achievements.               | 21        |
+| Legend       | Red         | `stp {update} {drop} {1}`                                                                            | Kill all special monsters.               | 24        |
+| Mythical     | Purple      | `stp {update} {drop} {2}`                                                                            | Complete all missions.                   | 27        |
+| God          | Gold        | `stp {update} {drop} {3}`                                                                            | Complete special armor to level VI.      |           |
+| Admin        | Black       | `all`                                                                                                | Create server.                           |           |
 ## Missions by rank
-### Farming
-#### Novice
+### Novice
+#### Farming
 Final result: Wood pickaxe Efficiency VI
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.01} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.02} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.03} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.04} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.05} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.06} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.07} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-| {F.08} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
-#### Beginner
+| Mission Code | Mission Name            | Objective                                 | Reward                            |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {F.01}      | Carrot Crusader         | Collect 3x64 `minecraft:carrot`            | Wood pickaxe Efficiency II        |
+| {F.02}      | Wheat Whisperer         | Collect 3x64 `minecraft:wheat`             | Wood pickaxe Efficiency II        |
+| {F.03}      | Potato Plunderer        | Collect 3x64 `minecraft:potato`            | Wood pickaxe Efficiency II        |
+| {F.04}      | Beetroot Bandit         | Collect 3x64 `minecraft:beetroot`          | Wood pickaxe Efficiency II        |
+| {F.05}      | Pumpkin Pilferer        | Collect 3x64 `minecraft:pumpkin`           | Wood pickaxe Efficiency II        |
+| {F.06}      | Melon Marauder          | Collect 3x64 `minecraft:melon`             | Wood pickaxe Efficiency II        |
+| {F.07}      | Berry Buccaneer          | Collect 3x64 `minecraft:sweet_berries`     | Wood pickaxe Efficiency II        |
+| {F.08}      | Cactus Conqueror         | Collect 3x64 `minecraft:cactus`            | Wood pickaxe Efficiency II        |
+#### Resources
+Final result: Wood axe Efficiency VI
+| Mission Code | Mission Name            | Objective                                 | Reward                            |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {R.01}      | Oak Overlord            | Collect 3x64 `minecraft:oak_planks`        | Wood axe Efficiency II            |
+| {R.02}      | Birch Baron              | Collect 3x64 `minecraft:birch_planks`      | Wood axe Efficiency II            |
+| {R.03}      | Spruce Sultan            | Collect 3x64 `minecraft:spruce_planks`     | Wood axe Efficiency II            |
+| {R.04}      | Jungle Jedi              | Collect 3x64 `minecraft:jungle_planks`     | Wood axe Efficiency II            |
+| {R.05}      | Acacia Ace               | Collect 3x64 `minecraft:acacia_planks`     | Wood axe Efficiency II            |
+| {R.06}      | Warped Wizard            | Collect 3x64 `minecraft:warped_planks`     | Wood axe Efficiency II            |
+| {R.07}      | Crimson Commander        | Collect 3x64 `minecraft:crimson_planks`    | Wood axe Efficiency II            |
+| {R.08}      | Dark Oak Dominator       | Collect 3x64 `minecraft:dark_oak_planks`   | Wood axe Efficiency II            |
+### Beginner
+#### Farming
 Final result: Rock pickaxe Efficiency VI
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
+| Id     | Name                       | Task                            | Reward                                |
 |--------|----------------------------|---------------------------------|---------------------------------------|
 | {F.11} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
 | {F.12} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
@@ -36,44 +49,50 @@ Final result: Rock pickaxe Efficiency VI
 | {F.14} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
 | {F.15} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
 | {F.16} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
-#### Intermediate
+### Intermediate
+#### Farming
 Final result: Gold pickaxe Efficiency IV
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
+| Id     | Name                       | Task                            | Reward                                |
 |--------|----------------------------|---------------------------------|---------------------------------------|
 | {F.21} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
 | {F.22} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
 | {F.23} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
 | {F.24} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
-#### Advanced
+### Advanced
+#### Farming
 Final result: Iron pickaxe Efficiency V
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
+| Id     | Name                       | Task                            | Reward                                |
 |--------|----------------------------|---------------------------------|---------------------------------------|
 | {F.31} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency II            |
 | {F.32} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency III           |
 | {F.33} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency IV            |
 
-#### Expert
+### Expert
+#### Farming
 Final result: Diamond pickaxe Efficiency V
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
+| Id     | Name                       | Task                            | Reward                                |
 |--------|----------------------------|---------------------------------|---------------------------------------|
 | {F.41} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Diamond pickaxe Efficiency IV         |
-#### Master
+### Master
+#### Farming
 Final result: Netherite pickaxe Efficiency V
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
+| Id     | Name                       | Task                            | Reward                                |
 |--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.41} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency V        |
+| {F.51} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency V        |
+### Legend
+#### Farming
+Final result: Netherite pickaxe Efficiency V
+| Id     | Name                       | Task                            | Reward                                |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.61} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency V        |
+### Mythical
+#### Farming
+Final result: Netherite pickaxe Efficiency VI
+| Id     | Name                       | Task                            | Reward                                |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.71} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency VI       |
 ### Recolección
-| Id     | Nombre                     | Tarea                           | Recompensa                            |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {#.##} |  | Novice       | | |
-| {#.##} |  | Beginner     | | |
-| {#.##} |  | Intermediate | | |
-| {#.##} |  | Advanced     | | |
-| {#.##} |  | Expert       | | |
-| {#.##} |  | Master       | | |
-| {#.##} |  | Legend       | | |
-| {#.##} |  | Mythical     | | |
-| {#.##} |  | God          | | |
+
 ### Matanza
 
 ### Exploración
