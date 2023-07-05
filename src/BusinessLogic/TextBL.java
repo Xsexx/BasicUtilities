@@ -1,64 +1,63 @@
 package businessLogic;
 
-import org.bukkit.configuration.file.FileConfiguration;
-
-import configuration.ConfigManager;
+import Base.Base;
 import entities.ColorDTO;
 import main.BasicUtilities;
 
-// Here are located all the strings.
-public class TextBL
+// Class that handles all the text templates from "text.yml".
+public class TextBL extends Base
 {
-    private FileConfiguration config;
-	private ColorDTO colors = new ColorDTO();
 	/**
 	 * Constructor
 	 * @param objBasicUtilities
 	 */
     public TextBL(BasicUtilities objBasicUtilities)
     {
-		ConfigManager configManager = new ConfigManager(objBasicUtilities);
-        this.config = configManager.GetFile("text");
+		this.basicUtilities = objBasicUtilities;
+        this.config = this.basicUtilities.configManager.GetFile("text");
+		this.colors = new ColorDTO();
 	}
 
 	/**
-	 * Method that build the format for the start message.
+	 * Method that handles build the format for the start message.
 	 */
 	public String GetStartEndText(String name, String version, Boolean flag)
 	{
-		return String.format(config.getString("Templates.start-end-text"), colors.Red, colors.White, name, colors.Red, colors.White, flag ? config.getString("Templates.start-end-text-activated") : config.getString("Templates.start-end-text-disabled"), colors.Blue, version, colors.White);
+		return String.format(this.config.getString("Templates.start-end-text"),
+		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White, flag ? this.config.getString("Templates.start-end-text-activated") : this.config.getString("Templates.start-end-text-disabled"), this.colors.Blue, version, this.colors.White);
 	}
 
 	/**
-	 * Method that build the format for the start message.
+	 * Method that handles build the format for the start message.
 	 */
 	public String GetConsoleCommandText(String name, String version)
 	{
-		return String.format(config.getString("Templates.command-console-text"), colors.Red, colors.White, name, colors.Red, colors.White);
+		return String.format(this.config.getString("Templates.command-console-text"),
+		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White);
 	}
 
 	/**
-	 * Method that build the format for the start message.
+	 * Method that hanldes build the format for the start message.
 	 */
 	public String GetPluginReloadText(String name, String version)
 	{
-		return String.format(config.getString("Templates.plugin-reload-text"));
+		return String.format(this.config.getString("Templates.plugin-reload-text"));
 	}
 
 	/**
-	 * Method that build the format for the welcome message.
+	 * Method that handles build the format for the welcome message.
 	 */
 	public String GetWelcomeMessageText(String playerName)
 	{
-		return String.format(config.getString("Templates.welcome-message-text"),
-		colors.White, colors.Red, colors.Blue, playerName);
+		return String.format(this.config.getString("Templates.welcome-message-text"),
+		this.colors.White, this.colors.Red, this.colors.Blue, playerName);
 	}
 
 	/**
-	 * Method that build the format for the welcome message new this week.
+	 * Method that handles build the format for the welcome message new this week.
 	 */
 	public String GetWelcomeMessageNewThisWeekText()
 	{
-		return String.format(config.getString("Templates.welcome-message-text-new-this-week"));
+		return String.format(this.config.getString("Templates.welcome-message-text-new-this-week"));
 	}
 }

@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 public class UtilsBL
 {
 	/**
-	 * Method to send messages to the console.
+	 * Method that handles send messages to the console.
 	 * @param message
 	 */
 	public void SendConsoleMessage(String message)
@@ -15,7 +15,7 @@ public class UtilsBL
 	}
 
 	/**
-	 * Method to send messages to the player.
+	 * Method that handles send messages to the player.
 	 * @param player
 	 * @param message
 	 */

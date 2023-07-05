@@ -5,26 +5,23 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import Base.Base;
 import businessLogic.TextBL;
 import main.BasicUtilities;
 
-public class CommandLocation implements CommandExecutor
+public class CommandLocation extends Base implements CommandExecutor
 {
-
-    private BasicUtilities basicUtilities;
-    private TextBL templates;
-
     /**
      * Constructor
      */
-    public CommandLocation(BasicUtilities basicUtilities)
+    public CommandLocation(BasicUtilities objBasicUtilities)
     {
-        this.basicUtilities = basicUtilities;
-        this.templates = new TextBL(basicUtilities);
+        this.basicUtilities = objBasicUtilities;
+        this.templates = new TextBL(objBasicUtilities);
     }
 
     /**
-     * Listerner to execute the command action.
+     * Listerner that handles the command action.
      */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
@@ -56,12 +53,12 @@ public class CommandLocation implements CommandExecutor
             // Console command
             else
             {
-                basicUtilities.utils.SendConsoleMessage(templates.GetStartEndText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion(),false));
+                this.basicUtilities.utils.SendConsoleMessage(this.templates.GetConsoleCommandText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
             }
         }
         catch (Exception exc)
         {
-
+            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
         }
 
         return true;

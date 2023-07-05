@@ -1,35 +1,41 @@
 package listeners;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import Base.Base;
 import businessLogic.TextBL;
 import main.BasicUtilities;
 
-public class PlayerLogin implements Listener
-{    
-    private BasicUtilities basicUtilities;
-    
+public class PlayerLogin extends Base implements Listener
+{
+    /**
+	 * Constructor
+	 * @param objBasicUtilities
+	 */
     public PlayerLogin(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
     }
 
+    /**
+     * Method that handle 
+     * @param event
+     */
     @EventHandler
     public void PlayerJoinEvent(PlayerJoinEvent event)
     {
         Player player = event.getPlayer();
-        FileConfiguration config = basicUtilities.getConfig();
+        this.config = basicUtilities.configManager.GetFile("config");
         
-        if(config.getBoolean("Config.welcome-message"))
+        if(this.config.getBoolean("Config.welcome-message"))
         {
-            TextBL templates = new TextBL(basicUtilities);
+            this.templates = new TextBL(basicUtilities);
             
-            basicUtilities.utils.SendPlayerMessage(player, templates.GetWelcomeMessageText(player.getName()));
-            basicUtilities.utils.SendPlayerMessage(player, templates.GetWelcomeMessageNewThisWeekText());
+            this.basicUtilities.utils.SendPlayerMessage(player, this.templates.GetWelcomeMessageText(player.getName()));
+            this.basicUtilities.utils.SendPlayerMessage(player, this.templates.GetWelcomeMessageNewThisWeekText());
         }
     }
 }

@@ -7,16 +7,11 @@ import java.io.Reader;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import Base.Base;
 import main.BasicUtilities;
 
-public class ConfigManager
+public class ConfigManager extends Base
 {
-    private BasicUtilities basicUtilities;
-    
-    // Config files
-    private FileConfiguration config;
-    private File file;
-
     /**
      * Constructor
      * @param objBasicUtilities
@@ -42,7 +37,7 @@ public class ConfigManager
      */
     public void RegisterFile(String fileName)
     {
-        if(!new File(basicUtilities.getDataFolder(), FormatName(fileName)).exists())
+        if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
             GetFile(fileName).options().copyDefaults(true);
             SaveFile(fileName);
@@ -56,28 +51,26 @@ public class ConfigManager
      */
     public FileConfiguration GetFile(String fileName)
     {
-        config = null;
-        file = null;
+        this.config = null;
+        this.file = null;
         ReloadFile(fileName);
 
-        return config;
+        return this.config;
     }
 
     /**
      * Method that save the data file.
-     * @param config
-     * @param file
      * @param fileName
     */
     public void SaveFile(String fileName)
     {
         try
         {
-            config.save(file);
+            this.config.save(this.file);
         }
         catch (Exception exc)
         {
-            basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
         }
     }
 
@@ -90,19 +83,19 @@ public class ConfigManager
         try
         {
             // In case that file was null, create a new file.
-            file = new File(basicUtilities.getDataFolder(), FormatName(fileName));
-            config = YamlConfiguration.loadConfiguration(file);
-            Reader defConfigString = new InputStreamReader(basicUtilities.getResource(FormatName(fileName)), "UTF8");
+            this.file = new File(this.basicUtilities.getDataFolder(), FormatName(fileName));
+            this.config = YamlConfiguration.loadConfiguration(this.file);
+            Reader defConfigString = new InputStreamReader(this.basicUtilities.getResource(FormatName(fileName)), "UTF8");
 
             if(defConfigString != null)
             {
                 YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigString);
-                config.setDefaults(defConfig);
+                this.config.setDefaults(defConfig);
             }
         }
         catch (Exception exc)
         {
-            basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
         }
     }
 }

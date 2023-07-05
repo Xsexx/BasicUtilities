@@ -14,34 +14,32 @@ import listeners.PlayerLogin;
 public class BasicUtilities extends JavaPlugin
 {
 	public PluginDescriptionFile pdfFile = getDescription();
-	public UtilsBL utils;
+	public UtilsBL utils = new UtilsBL();
+	public ConfigManager configManager = new ConfigManager(this);
 	
 	/**
-	 * Method to execute when the server read the plugin on the start.
+	 * Method that handles when the server starts the plugin.
 	 */
 	public void onEnable()
 	{
-		this.utils = new UtilsBL();
-
 		// Method for starts the plugin functionalities.
 		ConfigRegister();
 		CommandRegister();
-		EventRegister();
+		ListenerRegister();
 
-		// Message to console, with the plugin info.
-		utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), true));
+		this.utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), true));
 	}
 
 	/**
-	 * Method to execute when the server read the plugin on the end.
+	 * Method that handles when the server ends the plugin.
 	 */
 	public void onDisable()
 	{
-		utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), false));
+		this.utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), false));
 	}
 
 	/**
-	 * Method to register the commands.
+	 * Method that handles register the commands.
 	 */
 	public void CommandRegister()
 	{
@@ -50,22 +48,21 @@ public class BasicUtilities extends JavaPlugin
 	}
 
 	/**
-	 * Method to register the events.
+	 * Method that handles register the events.
 	 */
-	public void EventRegister()
+	public void ListenerRegister()
 	{
 		PluginManager objPluginManager = getServer().getPluginManager();
 		objPluginManager.registerEvents(new PlayerLogin(this), this);
 	}
 
 	/**
-	 * Method to create the config files.
+	 * Method that handles create the config files.
 	 */
 	public void ConfigRegister()
 	{
-		ConfigManager configManager = new ConfigManager(this);
-		configManager.RegisterFile("config");
-		configManager.RegisterFile("player");
-		configManager.RegisterFile("text");
+		this.configManager.RegisterFile("config");
+		this.configManager.RegisterFile("player");
+		this.configManager.RegisterFile("text");
 	}
 }

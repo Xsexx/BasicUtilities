@@ -1,5 +1,7 @@
 package businessLogic;
 
-public class PlayerBL
+import Base.Base;
+
+public class PlayerBL extends Base
 {
 }

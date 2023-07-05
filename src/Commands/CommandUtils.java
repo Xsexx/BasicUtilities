@@ -5,22 +5,19 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import Base.Base;
 import businessLogic.TextBL;
-import configuration.ConfigManager;
 import main.BasicUtilities;
 
-public class CommandUtils implements CommandExecutor
+public class CommandUtils extends Base implements CommandExecutor
 {
-
-    private BasicUtilities basicUtilities;
-
     /**
      * Constructor
      */
-    public CommandUtils(BasicUtilities basicUtilities)
+    public CommandUtils(BasicUtilities objBasicUtilities)
     {
-        // Ver video 3 para completar desarrollo.
-        this.basicUtilities = basicUtilities;
+        this.basicUtilities = objBasicUtilities;
+        this.templates = new TextBL(this.basicUtilities);
     }
 
     /**
@@ -31,14 +28,12 @@ public class CommandUtils implements CommandExecutor
     {
         try
         {
-            TextBL templates = new TextBL(basicUtilities);
-
-            // Player command
+            // If is player command
             if(sender instanceof Player)
             {
-                basicUtilities.utils.SendPlayerMessage((Player) sender, label);
+                this.basicUtilities.utils.SendPlayerMessage((Player) sender, label);
             }
-            // Console command
+            // If is console command
             else
             {
                 // For the aditional commands
@@ -47,11 +42,10 @@ public class CommandUtils implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        ConfigManager configManager = new ConfigManager(basicUtilities);
-                        configManager.ReloadFile("config");
-                        configManager.ReloadFile("player");
-                        configManager.ReloadFile("text");
-                        basicUtilities.utils.SendConsoleMessage(templates.GetConsoleCommandText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
+                        this.basicUtilities.configManager.ReloadFile("config");
+                        this.basicUtilities.configManager.ReloadFile("player");
+                        this.basicUtilities.configManager.ReloadFile("text");
+                        this.basicUtilities.utils.SendConsoleMessage(this.templates.GetPluginReloadText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
                     {
@@ -60,13 +54,13 @@ public class CommandUtils implements CommandExecutor
                 }
                 else
                 {
-                    basicUtilities.utils.SendConsoleMessage(templates.GetConsoleCommandText(basicUtilities.pdfFile.getName(), basicUtilities.pdfFile.getVersion()));
+                    this.basicUtilities.utils.SendConsoleMessage(this.templates.GetConsoleCommandText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
                 }
             }
         }
         catch (Exception exc)
         {
-            basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
         }
 
         return true;
