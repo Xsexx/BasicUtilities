@@ -11,7 +11,7 @@
 | Legend       | Red         | `stp {update} {drop} {2}`                                                                                                   | Matar todos los monstruos especiales     |
 | Mythical     | Purple      | `stp {update} {drop} {3}`                                                                                                   | Completar todas las misiones             |
 | God          | Gold        | `stp {update} {drop} {4}`                                                                                                   | Completar armadura especial a nivel VII  |
-| Admin        | Black       | `Todos`                                                                                                                     | Crear el server                          |
+| Admin        | Black       | `All`                                                                                                                       | Crear el server                          |
 ## Comandos
 ### utils {commands}
 * [x] utils reload (Recarga la config)
@@ -31,6 +31,9 @@
 ### location {commands}
 * [ ] location add {name}
 * [ ] location view
+* [ ] location delete {name}
+* [ ] location sethome (Una)
+* [ ] location deletehome
 * [ ] location tp {name} (Se desbloquea con rango Expert)(3 por día, 30seg de delay)
 * [ ] location rtp (uno por día)
 * [ ] .
@@ -78,8 +81,7 @@
 #### Completar todos los logros del overworld
 * [ ] .
 ### Por matar monstruos
-Primero las de protección IV (Fuego, explosiones, normal [Aleatoria por nivel]), luego las 3 de protección V y así.
-Todos deben llevar lore y un nombre personalizado, color y mamadas para que sean ítems únicos en inventario.
+Se desbloquean por rango y el drop es aleatorio.
 #### Warden
 * [ ] Peto
 #### Ender dragon
