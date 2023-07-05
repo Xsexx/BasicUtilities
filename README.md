@@ -1,67 +1,96 @@
 # Basic utilities
-## Rangos
-| Rango        | Color       | Comandos                                                                                                                    | Requisitos para obtenerlo                |
+## Ranking
+| Rank         | Color       | Commmand                                                                                                                    | Requirements                             |
 |--------------|-------------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
 | Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                                                | Join the server.                         |
 | Beginner     | Light green | `stp {update} {rock}`                                                                                                       | Reach location x:0, y:0.                 |
-| Intermediate | Green       | `stp {update} {gold}`                                                                                                       | Kill the Dragon                          |
-| Advanced     | Blue        | `stp {update} {iron}`                                                                                                       | Kill the Warden                          |
-| Expert       | Cyan        | `stp {update} {drop} {0}` `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}` | Kill all mobs in the game.               |
-| Master       | Orange      | `stp {update} {drop} {1}` `location {tp} {name}`                                                                            | Complete all achievements.               |
-| Legend       | Red         | `stp {update} {drop} {2}`                                                                                                   | Kill all special monsters.               |
-| Mythical     | Purple      | `stp {update} {drop} {3}`                                                                                                   | Complete all missions.                   |
-| God          | Gold        | `stp {update} {drop} {4}`                                                                                                   | Complete special armor to level VII.     |
+| Intermediate | Green       | `stp {update} {gold}`                                                                                                       | Kill the Dragon.                         |
+| Advanced     | Blue        | `stp {update} {iron}`                                                                                                       | Kill the Warden.                         |
+| Expert       | Cyan        | `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}`                           | Kill all mobs in the game.               |
+| Master       | Orange      | `stp {update} {drop} {0}` `location {tp} {name}`                                                                            | Complete all achievements.               |
+| Legend       | Red         | `stp {update} {drop} {1}`                                                                                                   | Kill all special monsters.               |
+| Mythical     | Purple      | `stp {update} {drop} {2}`                                                                                                   | Complete all missions.                   |
+| God          | Gold        | `stp {update} {drop} {3}`                                                                                                   | Complete special armor to level VI.     |
 | Admin        | Black       | `all`                                                                                                                       | Create server.                           |
-## Comandos
-### utils {commands}
-* [x] utils reload                        (Recarga la config)
-* [ ] utils join   armor      {piece}     (junta ciertas armaduras)
-* [ ] utils join   tool       {tool}      (junta ciertas armaduras)
-* [ ] utils trade  list                   (lista de intercambios disponibles)
-  * obsidian	  {obs}
-  * elderchest	{elc}
-  * shulkerbox	{skb}
-  * .
-* [ ] utils trade  {material}             (intercambia materiales)
-  * {obs} = 1	iron block
-  * {elc} = 8 obsidian + 16 elder perls
-  * {skb} = 1	ender chest
-  * .
-### location {commands}
-* [ ] location add        {name}
-* [ ] location view
-* [ ] location delete     {name}
-* [ ] location sethome            (Una)
-* [ ] location deletehome
-* [ ] location tp         {name}  (Se desbloquea con rango Expert, 3 por día, 30seg de delay)
-* [ ] location rtp                (uno por día)
-* [ ] .
-### starterpack ó stp {commands}
-* [ ] stp get                         (1 por día, ver recompensas)
-* [ ] stp update {category}           (Cuando alcanza cierto rango)
-  * {rock}
-  * {gold}
-  * {iron}
-  * {diamond}
-  * {netherite}
-* [ ] stp update {drop}     {amount}  (Sube el nivel del drop {IV -> V})
-  * {0} (Protección IV)               (Se activan los drops)
-  * {1} (Protección V)
-  * {2} (Protección VI)
-  * {3} (Protección VII)
-  * {4} (Protección VIII)
-### quest {commands}
-* [ ] quest view        (Ver las misiones)
-* [ ] quest view  {id}  (Ver detalle de una misión)
-* [ ] quest claim {id}  (Cobrar misión)
+## Missions by rank
+### Farming
+#### Novice
+Final result: Wood pickaxe Efficiency VI
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.01} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.02} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.03} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.04} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.05} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.06} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.07} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+| {F.08} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Wood pickaxe Efficiency II            |
+#### Beginner
+Final result: Rock pickaxe Efficiency VI
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.11} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+| {F.12} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+| {F.13} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+| {F.14} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+| {F.15} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+| {F.16} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+#### Intermediate
+Final result: Gold pickaxe Efficiency IV
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.21} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
+| {F.22} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
+| {F.23} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
+| {F.24} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
+#### Advanced
+Final result: Iron pickaxe Efficiency V
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.31} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency II            |
+| {F.32} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency III           |
+| {F.33} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency IV            |
+
+#### Expert
+Final result: Diamond pickaxe Efficiency V
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.41} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Diamond pickaxe Efficiency IV         |
+#### Master
+Final result: Netherite pickaxe Efficiency V
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {F.41} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency V        |
+### Recolección
+| Id     | Nombre                     | Tarea                           | Recompensa                            |
+|--------|----------------------------|---------------------------------|---------------------------------------|
+| {#.##} |  | Novice       | | |
+| {#.##} |  | Beginner     | | |
+| {#.##} |  | Intermediate | | |
+| {#.##} |  | Advanced     | | |
+| {#.##} |  | Expert       | | |
+| {#.##} |  | Master       | | |
+| {#.##} |  | Legend       | | |
+| {#.##} |  | Mythical     | | |
+| {#.##} |  | God          | | |
+### Matanza
+
+### Exploración
+
+### Minería
+
+### Colección
+
 ## Recompensas
 ### Iniciales
-* [ ] Armadura de cuero (protección V, de color {por spawn}) y herramientas de madera (eficiencia VI) (Irrompible, maldición de desaparición)
-* [ ] Armadura de cuero (protección IV, de color {por spawn}) y herramientas de roca (eficiencia V) (Irrompible, maldición de desaparición)
-* [ ] Armadura y herramientas de oro (protección III, eficiencia IV) (Irrompible, maldición de desaparición)
-* [ ] Armadura y herramientas de hierro (protección II, eficiencia II) (Irrompible, maldición de desaparición)
-* [ ] Armadura y herramientas de diamante (protección I, eficiencia I) (Irrompible, maldición de desaparición)
-* [ ] Armadura y herramientas de netherite (maldición de desaparición)
+Pala y pico con toque de seda, todo será irrompible, maldición de desaparición
+* [ ] Armadura de cuero (protección V, de color {por spawn}) y herramientas de madera (eficiencia V)
+* [ ] Armadura de cuero (protección IV, de color {por spawn}) y herramientas de roca (eficiencia IV)
+* [ ] Armadura y herramientas de oro (protección III, eficiencia III)
+* [ ] Armadura y herramientas de hierro (protección II, eficiencia II)
+* [ ] Armadura y herramientas de diamante (protección IV, eficiencia IV)
+* [ ] Armadura y herramientas de netherite
 ### Logros
 #### Todos los efectos
 * [ ] Visión nocturna infinita
@@ -79,7 +108,7 @@
 * [ ] .
 #### Completar todos los logros del overworld
 * [ ] .
-### Por matar monstruos
+### Matanza
 Se desbloquean por rango y el drop es aleatorio.
 #### Warden
 * [ ] Peto
@@ -92,14 +121,15 @@ Se desbloquean por rango y el drop es aleatorio.
 #### Giant
 * [ ] .
 ### Todos los mobs pacíficos
-* [ ] Espada golpeó VI
+* [ ] Espada artrópodos
 ### Todos los mobs agresivos
-* [ ] Espada artrópodos VI
+* [ ] Espada golpeó
 ### Todos los mobs
-* [ ] Espada filo VI
+* [ ] Espada filo
+## Misiones
+### Recolección
+* [ ] Hacha
 ### .
-* [ ] Hacha filo VI, eficiencia VI
-##3 .
 * [ ] Pico eficiencia VI, toque de seda
 ### .
 * [ ] Pico eficiencia VI, fortuna IV
@@ -122,6 +152,8 @@ Se desbloquean por rango y el drop es aleatorio.
 * [ ] Herramientas
 * [ ] Armaduras
 * [ ] .
+### Encantamientos
+* [ ] Solo el pack de netherite se permite encantar adicional (Con libros).
 ## Nuevos logros
 * [ ] Racista (Matar a Kevin)
 * [ ] Xenofobia (Matar al trans [Randal])
@@ -131,6 +163,37 @@ Se desbloquean por rango y el drop es aleatorio.
 * [ ] Ingeniero (Crear una granja)
 * [ ] Terminator ()
 * [ ] .
+## Comandos
+### utils {commands}
+* [x] utils reload                        (Recarga la config)
+* [ ] utils join   armor      {piece}     (junta ciertas armaduras)
+* [ ] utils join   tool       {tool}      (junta ciertas armaduras)
+### location {commands}
+* [ ] location add        {name}
+* [ ] location view
+* [ ] location delete     {name}
+* [ ] location sethome            (Una)
+* [ ] location deletehome
+* [ ] location tp         {name}  (Se desbloquea con rango Expert, 3 por día, 30seg de delay)
+* [ ] location rtp                (uno por día)
+* [ ] .
+### starterpack ó stp {commands}
+* [ ] stp get                         (1 por día, ver recompensas)
+* [ ] stp update {category}           (Cuando alcanza cierto rango)
+  * {rock}
+  * {gold}
+  * {iron}
+  * {diamond}
+  * {netherite}
+* [ ] stp update {drop}     {amount}  (Sube el nivel del drop {IV -> V})
+  * {0} (Protección IV)               (Se activan los drops)
+  * {1} (Protección V)
+  * {2} (Protección VI)
+  * {3} (Protección VII)
+### quest {commands}
+* [ ] quest view        (Ver las misiones)
+* [ ] quest view  {id}  (Ver detalle de una misión)
+* [ ] quest claim {id}  (Cobrar misión)
 ## GIT comandos
 * git commit (usar vs code)
 * git fetch (usar vs code)
