@@ -56,8 +56,33 @@ public class PlayerBL extends Base
     public PlayerDTO GetPlayerData(Player objPlayer)
     {
         PlayerDTO objPlayerDTO = new PlayerDTO();
-        objPlayerDTO.player = objPlayer;
 
+        try
+        {
+            objPlayerDTO.player = objPlayer;
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+        
         return objPlayerDTO;
+    }
+
+    /**
+     * Method that handles the count of players.
+     * @return
+     */
+    public int GetPlayersCount()
+    {
+        try
+        {
+            return this.config.getInt("");
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+            return 0;
+        }
     }
 }

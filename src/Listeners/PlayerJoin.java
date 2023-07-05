@@ -32,10 +32,10 @@ public class PlayerJoin extends Base implements Listener
     {
         try
         {
-            PlayerBL objPlayerBL = new PlayerBL(this.basicUtilities);
-            ConfigBL objConfigBL = new ConfigBL(this.basicUtilities);
-
             Player objPlayer = event.getPlayer();
+
+            PlayerBL objPlayerBL = new PlayerBL(this.basicUtilities, objPlayer);
+            ConfigBL objConfigBL = new ConfigBL(this.basicUtilities);
 
             // Ignore all the admin player.
             if(!objPlayer.isOp())
@@ -46,7 +46,7 @@ public class PlayerJoin extends Base implements Listener
                 {
                     PlayerDTO objPlayerDTO = new PlayerDTO();
                     objPlayerDTO.player = objPlayer;
-                    objPlayerDTO.spawnPoint = objConfigBL.GetAvailableSpawnPoint();
+                    objPlayerDTO.spawnPoint = objConfigBL.GetAvailableSpawnPoint(objPlayerBL.GetPlayersCount());
                 }
                 
                 // In some cases, the welcome message can be disabled.
