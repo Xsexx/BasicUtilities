@@ -1,39 +1,39 @@
 Templates:
-    start-end-text: '%s[%s%s%s]%s Has been %s (version: %s%s%s)'
-    start-end-text-activated: 'activated'
-    start-end-text-disabled: 'disabled'
-    command-from-text: '%s[%s%s%s]%sThis command cannot be executed from console'
-    plugin-reload-text: ''
-    welcome-message-text: '%sWelcome to the server %sEXTREMECRAFT %s%s'
-    welcome-message-text-new-this-week: ''
+    start-end-text: "%s[%s%s%s]%s Has been %s (version: %s%s%s)"
+    start-end-text-activated: "activated"
+    start-end-text-disabled: "disabled"
+    command-from-text: "%s[%s%s%s]%sThis command cannot be executed from console"
+    plugin-reload-text: ""
+    welcome-message-text: "%sWelcome to the server %sEXTREMECRAFT %s%s"
+    welcome-message-text-new-this-week: ""
     death-phrases-list:
-        - 'Oops... ¡Se te escapó el botón de 'esquivar'!'
-        - 'RIP: Rest in Pixels.'
-        - 'La vida es dura, especialmente en Minecraft.'
-        - '¡Minecraft: donde los creepers te saludan con explosiones!'
-        - 'Has encontrado la forma más creativa de morir en Minecraft. ¡Felicidades!'
-        - '¡No te preocupes, tus items tendrán un nuevo dueño ahora!'
-        - 'No te preocupes, incluso los pro-players mueren en Minecraft.'
-        - 'La muerte en Minecraft es solo una forma de decir 'hasta luego'.'
-        - 'Recuerda, tu personaje solo necesitaba un descanso forzado.'
-        - 'El botón de 'resucitar' está en mantenimiento, intenta más tarde.'
-        - 'Tu personaje decidió tomar un descanso espontáneo.'
-        - 'El respawn es solo un botón de 'reset' para tu personaje.'
-        - 'Minecraft, donde las caídas son una forma de arte.'
-        - 'A veces, los creepers también necesitan abrazos... explosivos.'
-        - '¡Esa muerte fue tan épica que merece un lugar en el Salón de la Fama de Minecraft!'
-        - '¡Vaya, te has convertido en el héroe favorito de los zombis!'
-        - 'Cuando la vida te da creepers, haz estallar tu sentido del humor.'
-        - '¡Ups! Parece que tu personaje encontró un ataque sorpresa de gravedad.'
-        - '¡La muerte en Minecraft es solo una manera extravagante de hacer una entrada triunfal!'
-        - 'Minecraft: donde incluso las gallinas se vuelven asesinas despiadadas.'
-        - 'Tu personaje descubrió el poder de la gravedad en su forma más literal.'
-        - 'En Minecraft, incluso los pollos tienen rencor. ¡Cuidado con sus ataques sorpresa!'
-        - 'La muerte en Minecraft es solo una forma de darle un poco de emoción al juego.'
-        - '¡El botón de 'salvar' parece que se perdió en un agujero de lava!'
-        - 'Tu personaje decidió hacer una remodelación rápida en el suelo del juego. ¡Estilo único!'
-        - '¡El océano de Minecraft esconde secretos peligrosos, como abrazos mortales de los delfines!'
-        - 'Recuerda, en Minecraft, los creepers te aman tanto que quieren compartir su 'fuego' contigo.'
-        - '¡La vida en Minecraft es una montaña rusa emocional! ¡Disfruta del paseo!'
-        - 'Minecraft: donde hasta las flores pueden ser mortales. ¡No te confíes!'
-        - 'Cuando la vida te da muertes en Minecraft, haz puentes de bloques y sigue adelante.'
+    - "Oops... ¡Se te escapó el botón de 'esquivar'!"
+    - "RIP: Rest in Pixels."
+    - "La vida es dura, especialmente en Minecraft."
+    - "¡Minecraft: donde los creepers te saludan con explosiones!"
+    - "Has encontrado la forma más creativa de morir en Minecraft. ¡Felicidades!"
+    - "¡No te preocupes, tus items tendrán un nuevo dueño ahora!"
+    - "No te preocupes, incluso los pro-players mueren en Minecraft."
+    - "La muerte en Minecraft es solo una forma de decir 'hasta luego'."
+    - "Recuerda, tu personaje solo necesitaba un descanso forzado."
+    - "El botón de 'resucitar' está en mantenimiento, intenta más tarde."
+    - "Tu personaje decidió tomar un descanso espontáneo."
+    - "El respawn es solo un botón de 'reset' para tu personaje."
+    - "Minecraft, donde las caídas son una forma de arte."
+    - "A veces, los creepers también necesitan abrazos... explosivos."
+    - "¡Esa muerte fue tan épica que merece un lugar en el Salón de la Fama de Minecraft!"
+    - "¡Vaya, te has convertido en el héroe favorito de los zombis!"
+    - "Cuando la vida te da creepers, haz estallar tu sentido del humor."
+    - "¡Ups! Parece que tu personaje encontró un ataque sorpresa de gravedad."
+    - "¡La muerte en Minecraft es solo una manera extravagante de hacer una entrada triunfal!"
+    - "Minecraft: donde incluso las gallinas se vuelven asesinas despiadadas."
+    - "Tu personaje descubrió el poder de la gravedad en su forma más literal."
+    - "En Minecraft, incluso los pollos tienen rencor. ¡Cuidado con sus ataques sorpresa!"
+    - "La muerte en Minecraft es solo una forma de darle un poco de emoción al juego."
+    - "¡El botón de 'salvar' parece que se perdió en un agujero de lava!"
+    - "Tu personaje decidió hacer una remodelación rápida en el suelo del juego. ¡Estilo único!"
+    - "¡El océano de Minecraft esconde secretos peligrosos, como abrazos mortales de los delfines!"
+    - "Recuerda, en Minecraft, los creepers te aman tanto que quieren compartir su 'fuego' contigo."
+    - "¡La vida en Minecraft es una montaña rusa emocional! ¡Disfruta del paseo!"
+    - "Minecraft: donde hasta las flores pueden ser mortales. ¡No te confíes!"
+    - "Cuando la vida te da muertes en Minecraft, haz puentes de bloques y sigue adelante."
