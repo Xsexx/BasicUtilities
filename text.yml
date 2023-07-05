@@ -1,4 +1,4 @@
-Templates:
+Text:
     start-end-text: "%s[%s%s%s]%s Has been %s (version: %s%s%s)"
     start-end-text-activated: "activated"
     start-end-text-disabled: "disabled"

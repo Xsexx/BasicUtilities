@@ -25,8 +25,8 @@ public class TextBL extends Base
 	 */
 	public String GetStartEndText(String name, String version, Boolean flag)
 	{
-		return String.format(this.config.getString("Templates.start-end-text"),
-		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White, flag ? this.config.getString("Templates.start-end-text-activated") : this.config.getString("Templates.start-end-text-disabled"), this.colors.Blue, version, this.colors.White);
+		return String.format(this.config.getString("Text.start-end-text"),
+		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White, flag ? this.config.getString("Text.start-end-text-activated") : this.config.getString("Text.start-end-text-disabled"), this.colors.Blue, version, this.colors.White);
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class TextBL extends Base
 	 */
 	public String GetConsoleCommandText(String name, String version)
 	{
-		return String.format(this.config.getString("Templates.command-console-text"),
+		return String.format(this.config.getString("Text.command-console-text"),
 		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White);
 	}
 
@@ -43,7 +43,7 @@ public class TextBL extends Base
 	 */
 	public String GetPluginReloadText(String name, String version)
 	{
-		return String.format(this.config.getString("Templates.plugin-reload-text"));
+		return String.format(this.config.getString("Text.plugin-reload-text"));
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class TextBL extends Base
 	 */
 	public String GetWelcomeMessageText(String playerName)
 	{
-		return String.format(this.config.getString("Templates.welcome-message-text"),
+		return String.format(this.config.getString("Text.welcome-message-text"),
 		this.colors.White, this.colors.Red, this.colors.Blue, playerName);
 	}
 
@@ -60,7 +60,7 @@ public class TextBL extends Base
 	 */
 	public String GetWelcomeMessageNewThisWeekText()
 	{
-		return String.format(GetMessageFromList(this.config.getStringList("Templates.welcome-message-text-new-this-week")));
+		return String.format(GetMessageFromList(this.config.getStringList("Text.welcome-message-text-new-this-week")));
 	}
 
 	/**

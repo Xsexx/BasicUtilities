@@ -92,7 +92,7 @@ public class ConfigManager extends Base
         }
         catch (Exception exc)
         {
-            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+            ExceptionManager(exc);
         }
     }
 }

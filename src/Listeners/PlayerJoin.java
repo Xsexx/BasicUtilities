@@ -6,7 +6,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import Base.Base;
+import BusinessLogic.ConfigBL;
+import BusinessLogic.PlayerBL;
 import BusinessLogic.TextBL;
+import Entities.PlayerDTO;
 import Main.BasicUtilities;
 
 public class PlayerJoin extends Base implements Listener
@@ -27,17 +30,39 @@ public class PlayerJoin extends Base implements Listener
     @EventHandler
     public void PlayerJoinEvent(PlayerJoinEvent event)
     {
-        Player player = event.getPlayer();
-        this.config = basicUtilities.configManager.GetFile(FileConfigurationName.player);
-        
-        // In some cases, the welcome message can be disabled.
-        if(this.config.getBoolean("Config.welcome-message"))
+        try
         {
-            this.templates = new TextBL(basicUtilities);
-            
-            // Welcome message and week info
-            this.basicUtilities.utils.SendPlayerMessage(player, this.templates.GetWelcomeMessageText(player.getName()));
-            this.basicUtilities.utils.SendPlayerMessage(player, this.templates.GetWelcomeMessageNewThisWeekText());
+            PlayerBL objPlayerBL = new PlayerBL(this.basicUtilities);
+            ConfigBL objConfigBL = new ConfigBL(this.basicUtilities);
+
+            Player objPlayer = event.getPlayer();
+
+            // Ignore all the admin player.
+            if(!objPlayer.isOp())
+            {
+                this.config = basicUtilities.configManager.GetFile(FileConfigurationName.config);
+                // In case the player do not exist, it will be added to the player config file.
+                if(!objPlayerBL.ValidatePlayerExist(objPlayer))
+                {
+                    PlayerDTO objPlayerDTO = new PlayerDTO();
+                    objPlayerDTO.player = objPlayer;
+                    objPlayerDTO.spawnPoint = objConfigBL.GetAvailableSpawnPoint();
+                }
+                
+                // In some cases, the welcome message can be disabled.
+                if(objConfigBL.GetWelcomeMessageIsEnable())
+                {
+                    this.templates = new TextBL(basicUtilities);
+                    
+                    // Welcome message and week info
+                    this.basicUtilities.utils.SendPlayerMessage(objPlayer, this.templates.GetWelcomeMessageText(objPlayer.getName()));
+                    this.basicUtilities.utils.SendPlayerMessage(objPlayer, this.templates.GetWelcomeMessageNewThisWeekText());
+                }
+            }
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
         }
     }
 }

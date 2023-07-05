@@ -60,7 +60,7 @@ public class CommandUtils extends Base implements CommandExecutor
         }
         catch (Exception exc)
         {
-            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+            ExceptionManager(exc);
         }
 
         return true;
