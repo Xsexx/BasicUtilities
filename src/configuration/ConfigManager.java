@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import Base.Base;
+import Base.Enums.FileConfigurationName;
 import Main.BasicUtilities;
 
 public class ConfigManager extends Base
@@ -26,16 +27,16 @@ public class ConfigManager extends Base
      * @param fileName
      * @return
      */
-    private String FormatName(String fileName)
+    private String FormatName(FileConfigurationName fileName)
     {
-        return String.format("%s.%s", fileName, "yml");
+        return String.format("%s.%s", fileName.toString(), "yml");
     }
 
     /**
      * Method that handles the register for config files.
      * @param fileName
      */
-    public void RegisterFile(String fileName)
+    public void RegisterFile(FileConfigurationName fileName)
     {
         if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
@@ -49,7 +50,7 @@ public class ConfigManager extends Base
      * @param fileName
      * @return File by type.
      */
-    public FileConfiguration GetFile(String fileName)
+    public FileConfiguration GetFile(FileConfigurationName fileName)
     {
         ReloadFile(fileName);
         return this.config;
@@ -59,7 +60,7 @@ public class ConfigManager extends Base
      * Method that handles save the data on config files.
      * @param fileName
     */
-    public void SaveFile(String fileName)
+    public void SaveFile(FileConfigurationName fileName)
     {
         try
         {
@@ -75,7 +76,7 @@ public class ConfigManager extends Base
      * Method that handles reload the config files.
      * @param fileName
      */
-    public void ReloadFile(String fileName)
+    public void ReloadFile(FileConfigurationName fileName)
     {
         try
         {

@@ -3,6 +3,7 @@ package BusinessLogic;
 import java.util.List;
 
 import Base.Base;
+import Base.Enums.FileConfigurationName;
 import Entities.ColorDTO;
 import Main.BasicUtilities;
 
@@ -16,7 +17,7 @@ public class TextBL extends Base
     public TextBL(BasicUtilities objBasicUtilities)
     {
 		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile("text");
+        this.config = this.basicUtilities.configManager.GetFile(FileConfigurationName.text);
 		this.colors = new ColorDTO();
 	}
 

@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Base.Base;
+import Base.Enums.FileConfigurationName;
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
@@ -42,9 +43,9 @@ public class CommandUtils extends Base implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.basicUtilities.configManager.ReloadFile("config");
-                        this.basicUtilities.configManager.ReloadFile("player");
-                        this.basicUtilities.configManager.ReloadFile("text");
+                        this.basicUtilities.configManager.ReloadFile(FileConfigurationName.config);
+                        this.basicUtilities.configManager.ReloadFile(FileConfigurationName.player);
+                        this.basicUtilities.configManager.ReloadFile(FileConfigurationName.text);
                         this.basicUtilities.utils.SendConsoleMessage(this.templates.GetPluginReloadText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))

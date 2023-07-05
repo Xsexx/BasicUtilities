@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import Base.Base;
+import Base.Enums.FileConfigurationName;
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
@@ -28,7 +29,7 @@ public class PlayerJoin extends Base implements Listener
     public void PlayerJoinEvent(PlayerJoinEvent event)
     {
         Player player = event.getPlayer();
-        this.config = basicUtilities.configManager.GetFile("config");
+        this.config = basicUtilities.configManager.GetFile(FileConfigurationName.player);
         
         // In some cases, the welcome message can be disabled.
         if(this.config.getBoolean("Config.welcome-message"))

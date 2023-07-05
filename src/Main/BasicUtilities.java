@@ -4,6 +4,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import Base.Enums.FileConfigurationName;
 import BusinessLogic.TextBL;
 import BusinessLogic.UtilsBL;
 import Commands.CommandLocation;
@@ -61,8 +62,8 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		this.configManager.RegisterFile("config");
-		this.configManager.RegisterFile("player");
-		this.configManager.RegisterFile("text");
+		this.configManager.RegisterFile(FileConfigurationName.config);
+		this.configManager.RegisterFile(FileConfigurationName.player);
+		this.configManager.RegisterFile(FileConfigurationName.text);
 	}
 }
