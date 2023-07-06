@@ -4,7 +4,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Base.BaseBL.FileConfig;
 import BusinessLogic.FileManagerBL;
 import BusinessLogic.UtilsBL;
 import Commands.Location;
@@ -14,7 +13,7 @@ import Listeners.PlayerJoin;
 public class BasicUtilities extends JavaPlugin
 {
 	public PluginDescriptionFile pdfFile = getDescription();
-	public UtilsBL utils = new UtilsBL();
+	public UtilsBL utils = new UtilsBL(this);
 	public FileManagerBL configManager = new FileManagerBL(this);
 	
 	/**
@@ -58,8 +57,6 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		this.configManager.RegisterFile(FileConfig.Config);
-		this.configManager.RegisterFile(FileConfig.Player);
-		this.configManager.RegisterFile(FileConfig.Text);
+		this.configManager.RegisterFiles();
 	}
 }

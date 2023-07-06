@@ -24,11 +24,4 @@ public class BaseBL extends Base
         Config, Player, Text
     }
     //endregion
-    
-    //region ENUMS
-    public enum FileConfig
-    {
-        Config, Player, Text
-    }
-    //endregion
 }

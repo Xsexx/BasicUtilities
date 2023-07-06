@@ -5,11 +5,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import Base.Base;
+import Base.BaseMC;
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
-public class Utils extends Base implements CommandExecutor
+public class Utils extends BaseMC implements CommandExecutor
 {
     /**
      * Constructor
@@ -42,9 +42,7 @@ public class Utils extends Base implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.basicUtilities.configManager.ReloadFile(FileConfig.Config);
-                        this.basicUtilities.configManager.ReloadFile(FileConfig.Player);
-                        this.basicUtilities.configManager.ReloadFile(FileConfig.Text);
+                        this.basicUtilities.configManager.ReloadFiles();
                         this.basicUtilities.utils.SendConsoleMessage(this.templates.GetPluginReloadText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))

@@ -32,19 +32,6 @@ public class FileManagerBL extends BaseBL
     }
 
     /**
-     * Method that handles the register for config files.
-     * @param fileName
-     */
-    public void RegisterFile(FileConfig fileName)
-    {
-        if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
-        {
-            GetFile(fileName).options().copyDefaults(true);
-            SaveFile(fileName);
-        }
-    }
-
-    /**
      * Method that handles get the config files.
      * @param fileName
      * @return File by type.
@@ -72,7 +59,49 @@ public class FileManagerBL extends BaseBL
     }
 
     /**
+     * Method that handles the register for config files.
+     * @param fileName
+     */
+    public void RegisterFiles()
+    {
+        RegisterFile(FileConfig.Config);
+		RegisterFile(FileConfig.Player);
+		RegisterFile(FileConfig.Text);
+    }
+
+    /**
+     * Method that handles the register for config file.
+     * @param fileName
+     */
+    public void RegisterFile(FileConfig fileName)
+    {
+        if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
+        {
+            GetFile(fileName).options().copyDefaults(true);
+            SaveFile(fileName);
+        }
+    }
+
+    /**
      * Method that handles reload the config files.
+     * @param fileName
+     */
+    public void ReloadFiles()
+    {
+        try
+        {
+            ReloadFile(FileConfig.Config);
+            ReloadFile(FileConfig.Player);
+            ReloadFile(FileConfig.Text);
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+    }
+
+    /**
+     * Method that handles reload the config file.
      * @param fileName
      */
     public void ReloadFile(FileConfig fileName)

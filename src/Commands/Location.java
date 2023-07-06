@@ -5,11 +5,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import Base.Base;
+import Base.BaseMC;
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
-public class Location extends Base implements CommandExecutor
+public class Location extends BaseMC implements CommandExecutor
 {
     /**
      * Constructor
