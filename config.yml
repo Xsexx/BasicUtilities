@@ -1,2 +1,52 @@
 Config:
     welcome-message: true
+    spawn-points:
+        spawn-point-count: 7
+        spawn-point-1:
+            color: "white"
+            asigned: false
+            location:
+                x: -50000
+                y: -50000
+        spawn-point-2:
+            color: "black"
+            asigned: false
+            location:
+                x: -50000
+                y: 0
+        spawn-point-3:
+            color: "purple"
+            asigned: false
+            location:
+                x: -50000
+                y: +50000
+        spawn-point-4:
+            color: "blue"
+            asigned: false
+            location:
+                x: 0
+                y: +50000
+        spawn-point-5:
+            color: "cyan"
+            asigned: false
+            location:
+                x: +50000
+                y: +50000
+        spawn-point-6:
+            color: "green"
+            asigned: false
+            location:
+                x: +50000
+                y: 0
+        spawn-point-7:
+            color: "yellow"
+            asigned: false
+            location:
+                x: +50000
+                y: -50000
+        spawn-point-8:
+            color: "red"
+            asigned: false
+            location:
+                x: 0
+                y: -50000

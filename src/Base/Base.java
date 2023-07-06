@@ -23,4 +23,13 @@ public class Base
     {
         config, player, text
     }
+
+    /**
+     * Stardard method that handles the exceptions.
+     * @param exc
+     */
+    protected void ExceptionManager(Exception exc)
+    {
+        this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+    }
 }

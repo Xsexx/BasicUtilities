@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import Base.Base;
+import BusinessLogic.ConfigBL;
 import BusinessLogic.ItemBL;
 import BusinessLogic.PlayerBL;
 import BusinessLogic.TextBL;
@@ -32,7 +33,6 @@ public class PlayerJoin extends Base implements Listener
         try
         {
             Player objPlayer = event.getPlayer();
-
             // PlayerBL objPlayerBL = new PlayerBL(this.basicUtilities, objPlayer);
             // ConfigBL objConfigBL = new ConfigBL(this.basicUtilities);
             
