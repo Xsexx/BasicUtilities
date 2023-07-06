@@ -15,89 +15,125 @@
 ## Missions by rank
 ### Novice
 #### Farming
-Final result: Wood pickaxe Efficiency VI
-| Mission Code | Mission Name            | Objective                                 | Rewards                            | 
+Final result: `minecraft:wooden_pickaxe` Efficiency VI, Silk touch
+| Mission Code | Mission Name            | Objective                                 | Rewards                           | 
 |--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {F.01}      | Carrot Crusader         | Collect 6x64 `minecraft:carrot`            | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.02}      | Wheat Whisperer         | Collect 6x64 `minecraft:wheat`             | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.03}      | Potato Plunderer        | Collect 6x64 `minecraft:potato`            | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.04}      | Beetroot Bandit         | Collect 6x64 `minecraft:beetroot`          | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.05}      | Pumpkin Pilferer        | Collect 6x64 `minecraft:pumpkin`           | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.06}      | Melon Marauder          | Collect 6x64 `minecraft:melon`             | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.07}      | Berry Buccaneer         | Collect 6x64 `minecraft:sweet_berries`     | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
-| {F.08}      | Cactus Conqueror        | Collect 6x64 `minecraft:cactus`            | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.01}       | Carrot Crusader         | Collect 6x64 `minecraft:carrot`           | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.02}       | Wheat Whisperer         | Collect 6x64 `minecraft:wheat`            | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.03}       | Potato Plunderer        | Collect 6x64 `minecraft:potato`           | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.04}       | Beetroot Bandit         | Collect 6x64 `minecraft:beetroot`         | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.05}       | Pumpkin Pilferer        | Collect 6x64 `minecraft:pumpkin`          | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.06}       | Melon Marauder          | Collect 6x64 `minecraft:melon`            | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.07}       | Berry Buccaneer         | Collect 6x64 `minecraft:sweet_berries`    | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {F.08}       | Cactus Conqueror        | Collect 6x64 `minecraft:cactus`           | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+#### Mining
+Final result: `minecraft:wooden_pickaxe` Efficiency VI, Fortune III
+| Mission Code | Mission Name            | Objective                                 | Rewards                           | 
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {M.01}       | Cobblestone Collector    | Collect 6x64 `minecraft:cobblestone`      | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.02}       | Granite Gatherer         | Collect 6x64 `minecraft:granite`          | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.03}       | Andesite Acquirer        | Collect 6x64 `minecraft:andesite`         | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.04}       | Diorite Discoverer       | Collect 6x64 `minecraft:diorite`          | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.05}       | Stone Seeker             | Collect 6x64 `minecraft:stone`            | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.06}       | Terracotta Tracker       | Collect 6x64 `minecraft:terracotta`       | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.07}       | White Terracotta Hunter  | Collect 6x64 `minecraft:white_terracotta` | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
+| {M.08}       | Red Terracotta Raider    | Collect 6x64 `minecraft:red_terracotta`   | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft`         |
 #### Resources
-Final result: Wood axe Efficiency VI
-| Mission Code | Mission Name            | Objective                                 | Rewards                            |
+Final result: `minecraft:wooden_axe` Efficiency VI
+| Mission Code | Mission Name            | Objective                                 | Rewards                                               |
+|--------------|-------------------------|-------------------------------------------|-------------------------------------------------------|
+| {R.01}       | Oak Overlord            | Collect 6x64 `minecraft:oak_planks`       | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.02}       | Birch Baron             | Collect 6x64 `minecraft:birch_planks`     | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.03}       | Spruce Sultan           | Collect 6x64 `minecraft:spruce_planks`    | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.04}       | Jungle Jedi             | Collect 6x64 `minecraft:jungle_planks`    | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.05}       | Acacia Ace              | Collect 6x64 `minecraft:acacia_planks`    | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.06}       | Warped Wizard           | Collect 6x64 `minecraft:warped_planks`    | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.07}       | Crimson Commander       | Collect 6x64 `minecraft:crimson_planks`   | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+| {R.08}       | Dark Oak Dominator      | Collect 6x64 `minecraft:dark_oak_planks`  | 1 `minecraft:wooden_axe` Efficiency II, 6 `minecraft` |
+#### Extermination
+Final result: `minecraft:wooden_sword` Sharpness VI 
+| Mission Code | Mission Name            | Objective                                 | Rewards                                                         |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------------------------------------|
+| {.01}        | Zombie Slayer            | Kill 3x64 `minecraft:zombie`              | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.02}        | Skeleton Eliminator      | Kill 3x64 `minecraft:skeleton`            | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.03}        | Creeper Annihilator      | Kill 3x64 `minecraft:creeper`             | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.04}        | Husk Exterminator        | Kill 3x64 `minecraft:husk`                | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.05}        | Spider Slayer            | Kill 3x64 `minecraft:spider`              | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.06}        | Pig Purger               | Kill 3x64 `minecraft:pig`                 | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.07}        | Cow Culler               | Kill 3x64 `minecraft:cow`                 | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+| {.08}        | Sheep Slaughterer        | Kill 3x64 `minecraft:sheep`               | 1 `minecraft:wooden_sword` Sharpness II, 6 `minecraft`         |
+#### Plantilla
+Final result: `minecraft`
+| Mission Code | Mission Name            | Objective                                 | Rewards                           |
 |--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {R.01}       | Oak Overlord            | Collect 6x64 `minecraft:oak_planks`        | 1 Wood axe Efficiency II            |
-| {R.02}       | Birch Baron             | Collect 6x64 `minecraft:birch_planks`      | 1 Wood axe Efficiency II            |
-| {R.03}       | Spruce Sultan           | Collect 6x64 `minecraft:spruce_planks`     | 1 Wood axe Efficiency II            |
-| {R.04}       | Jungle Jedi             | Collect 6x64 `minecraft:jungle_planks`     | 1 Wood axe Efficiency II            |
-| {R.05}       | Acacia Ace              | Collect 6x64 `minecraft:acacia_planks`     | 1 Wood axe Efficiency II            |
-| {R.06}       | Warped Wizard           | Collect 6x64 `minecraft:warped_planks`     | 1 Wood axe Efficiency II            |
-| {R.07}       | Crimson Commander       | Collect 6x64 `minecraft:crimson_planks`    | 1 Wood axe Efficiency II            |
-| {R.08}       | Dark Oak Dominator      | Collect 6x64 `minecraft:dark_oak_planks`   | 1 Wood axe Efficiency II            |
+| {.01}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.02}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.03}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.04}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.05}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.06}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.07}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
+| {.08}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
 ### Beginner
 #### Farming
 Final result: Rock pickaxe Efficiency VI
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.11} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
-| {F.12} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
-| {F.13} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
-| {F.14} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
-| {F.15} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
-| {F.16} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Rock pickaxe Efficiency III           |
+| Mission Code | Mission Name            | Objective                                 | Rewards                           |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {F.11}       | Kelp Collector          | Collect 9x64 `minecraft:kelp`             | Rock pickaxe Efficiency III, 6 `minecraft` |
+| {F.12}       | Bamboo Gatherer         | Collect 9x64 `minecraft:bamboo`           | Rock pickaxe Efficiency III, 6 `minecraft` |
+| {F.13}       | Sugar Cane Harvester    | Collect 9x64 `minecraft:sugar_cane`       | Rock pickaxe Efficiency III, 6 `minecraft` |
+| {F.14}       | Sugar Collector         | Collect 9x64 `minecraft:sugar`            | Rock pickaxe Efficiency III, 6 `minecraft` |
+| {F.15}       | Chorus Fruit Collector  | Collect 9x64 `minecraft:chorus_fruit`     | Rock pickaxe Efficiency III, 6 `minecraft` |
+| {F.16}       | Cocoa Bean Collector    | Collect 9x64 `minecraft:cocoa`            | Rock pickaxe Efficiency III, 6 `minecraft` |
 ### Intermediate
 #### Farming
-Final result: Gold pickaxe Efficiency IV
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.21} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
-| {F.22} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
-| {F.23} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
-| {F.24} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Gold pickaxe Efficiency I             |
+Final result: Gold pickaxe Efficiency VI
+| Mission Code | Mission Name            | Objective                                 | Rewards                           |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {F.21}       | Baked Potato Harvest     | Collect 9x64 `minecraft:baked_potato`     | Gold pickaxe Efficiency III, 6 `minecraft`             |
+| {F.22}       | Beetroot Soup Gatherer   | Collect 9x64 `minecraft:beetroot_soup`    | Gold pickaxe Efficiency III, 6 `minecraft`             |
+| {F.23}       | Dried Kelp Collector     | Collect 9x64 `minecraft:dried_kelp`       | Gold pickaxe Efficiency III, 6 `minecraft`             |
+| {F.24}       | Popped Chorus Fruit Harvester | Collect 9x64 `minecraft:popped_chorus_fruit` | Gold pickaxe Efficiency III, 6 `minecraft`             |
 ### Advanced
 #### Farming
 Final result: Iron pickaxe Efficiency V
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.31} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency II            |
-| {F.32} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency III           |
-| {F.33} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Iron pickaxe Efficiency IV            |
+| Mission Code | Mission Name              | Objective                                  | Rewards                           |
+|--------------|---------------------------|--------------------------------------------|-----------------------------------|
+| {F.31}       | Brown Mushroom Harvester  | Collect 12x64 `minecraft:brown_mushroom`   | Iron pickaxe Efficiency II, 6 `minecraft`            |
+| {F.32}       | Red Mushroom Gatherer     | Collect 12x64 `minecraft:red_mushroom`     | Iron pickaxe Efficiency III, 6 `minecraft`           |
+| {F.33}       | Dried Kelp Block Gatherer | Collect 12x64 `minecraft:dried_kelp_block` | Iron pickaxe Efficiency III, 6 `minecraft`            |
 
 ### Expert
 #### Farming
-Final result: Diamond pickaxe Efficiency V
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.41} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Diamond pickaxe Efficiency IV         |
+Final result: `minecraft:diamond_pickaxe` Efficiency VI
+| Mission Code | Mission Name            | Objective                                 | Rewards                           |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {F.41}       | Nether Wart Gatherer    | Collect 15x64 `minecraft:nether_wart`     | `minecraft:diamond_pickaxe` Efficiency V, 6 `minecraft`     |
+| {F.42}       | Apple Collector         | Collect 15x64 `minecraft:apple`           | `minecraft:diamond_pickaxe` Efficiency V, 6 `minecraft`     |
 ### Master
 #### Farming
-Final result: Netherite pickaxe Efficiency V
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.51} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency V        |
+Final result: `minecraft:netherite_pickaxe` Efficiency V
+| Mission Code | Mission Name                 | Objective                                           | Rewards                                 |
+|--------------|------------------------------|-----------------------------------------------------|-----------------------------------------|
+| {F.51}       | Golden Carrot Collector      | Collect 18x64 `minecraft:golden_carrot`             | `minecraft:netherite_pickaxe` Efficiency III, 6 `minecraft`         |
+| {F.52}       | Glistering Melon Slice Hunter| Collect 18x64 `minecraft:glistering_melon_slice`    | `minecraft:netherite_pickaxe` Efficiency III, 6 `minecraft`         |
 ### Legend
 #### Farming
-Final result: Netherite pickaxe Efficiency V
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.61} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency V        |
+Final result: `minecraft:netherite_pickaxe` Efficiency V
+| Mission Code | Mission Name            | Objective                                 | Rewards                           |
+|--------------|-------------------------|-------------------------------------------|-----------------------------------|
+| {F.61}       | Epic Apple Collector    | Collect 21x64 `minecraft:golden_apple`    | `minecraft:netherite_pickaxe` Efficiency IV, 6 `minecraft`         |
 ### Mythical
 #### Farming
-Final result: Netherite pickaxe Efficiency VI
-| Id     | Name                       | Task                            | Reward                                |
-|--------|----------------------------|---------------------------------|---------------------------------------|
-| {F.71} | Flourishing Farm           | Collect 100 carrots, 100 wheats | Netherite pickaxe Efficiency VI       |
-### Recolección
-
-### Matanza
+Final result: `minecraft:netherite_pickaxe` Efficiency VI
+| Mission Code | Mission Name            | Objective                                     | Rewards                           |
+|--------------|-------------------------|-----------------------------------------------|-----------------------------------|
+| {F.71}       | Legendary Apple Hunt    | Collect 16 `minecraft:enchanted_golden_apple` | `minecraft:netherite_pickaxe` Efficiency V, 6 `minecraft`         |
+### Extermination
 
 ### Exploración
 
-### Minería
+### Mining
 
 ### Colección
 
@@ -127,7 +163,7 @@ Pala y pico con toque de seda, todo será irrompible, maldición de desaparició
 * [ ] .
 #### Completar todos los logros del overworld
 * [ ] .
-### Matanza
+### Killing bosses
 Se desbloquean por rango y el drop es aleatorio.
 #### Warden
 * [ ] Peto
@@ -139,23 +175,15 @@ Se desbloquean por rango y el drop es aleatorio.
 * [ ] Botas
 #### Giant
 * [ ] .
-### Todos los mobs pacíficos
-* [ ] Espada artrópodos
-### Todos los mobs agresivos
-* [ ] Espada golpeó
-### Todos los mobs
-* [ ] Espada filo
 ## Misiones
-### Recolección
-* [ ] Hacha
+### Farming
+* [ ] Pico toque seda
+### Mining
+* [ ] Pico fortuna
+### Extermination
+* [ ] Sword
 ### .
-* [ ] Pico eficiencia VI, toque de seda
-### .
-* [ ] Pico eficiencia VI, fortuna IV
-### .
-* [ ] Pala eficiencia VI, fortuna IV
-### .
-* [ ] Asada eficiencia VI
+* [ ] Asada
 ### .
 * [ ] Elytra
 ### .
