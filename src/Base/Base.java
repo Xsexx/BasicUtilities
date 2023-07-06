@@ -1,11 +1,5 @@
 package Base;
 
-import java.io.File;
-
-import org.bukkit.configuration.file.FileConfiguration;
-
-import BusinessLogic.TextBL;
-import Entities.ColorDTO;
 import Main.BasicUtilities;
 
 /**
@@ -13,17 +7,6 @@ import Main.BasicUtilities;
  */
 public class Base
 {
-    protected BasicUtilities basicUtilities;
-    protected TextBL templates;
-    protected FileConfiguration config;
-	protected ColorDTO colors;
-    protected File file;
-
-    public enum FileConfigurationName
-    {
-        config, player, text
-    }
-
     /**
      * Stardard method that handles the exceptions.
      * @param exc
@@ -32,4 +15,8 @@ public class Base
     {
         this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
     }
+
+    //region VARIABLES.
+    protected BasicUtilities basicUtilities;
+    //endregion
 }

@@ -2,13 +2,15 @@ package BusinessLogic;
 
 import java.util.List;
 
-import Base.Base;
+import Base.BaseBL;
 import Entities.ColorDTO;
 import Main.BasicUtilities;
 
 // Class that handles all the text templates from "text.yml".
-public class TextBL extends Base
+public class TextBL extends BaseBL
 {
+	private ColorDTO colors;
+
 	/**
 	 * Constructor
 	 * @param objBasicUtilities
@@ -16,7 +18,7 @@ public class TextBL extends Base
     public TextBL(BasicUtilities objBasicUtilities)
     {
 		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile(FileConfigurationName.text);
+        this.config = this.basicUtilities.configManager.GetFile(FileConfig.Text);
 		this.colors = new ColorDTO();
 	}
 

@@ -6,10 +6,10 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Base.Base;
+import Base.BaseBL;
 import Main.BasicUtilities;
 
-public class ItemBL extends Base
+public class ItemBL extends BaseBL
 {
     public ItemBL(BasicUtilities objBasicUtilities)
     {

@@ -11,7 +11,7 @@
 | Legend       | Red         | `stp {update} {drop} {1}`                                                                         | Saturation             | Kill all special monsters.           | 24        |
 | Mythical     | Purple      | `stp {update} {drop} {2}`                                                                         | Fire Resistance        | Complete all missions.               | 27        |
 | God          | Gold        | `stp {update} {drop} {3}`                                                                         | Resistance             | Complete special armor to level VI.  |           |
-| Admin        | Black       | `all`                                                                                             | all                    | Create server.                       |           |
+| Admin        | Black       | `all`                                                                                             | all                    | Create the server                    |           |
 ## Missions by rank
 ### Novice
 #### Farming

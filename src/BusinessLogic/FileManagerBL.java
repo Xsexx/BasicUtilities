@@ -1,4 +1,4 @@
-package Configuration;
+package BusinessLogic;
 
 import java.io.File;
 import java.io.InputStreamReader;
@@ -7,16 +7,16 @@ import java.io.Reader;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import Base.Base;
+import Base.BaseBL;
 import Main.BasicUtilities;
 
-public class ConfigManager extends Base
+public class FileManagerBL extends BaseBL
 {
     /**
      * Constructor
      * @param objBasicUtilities
      */
-    public ConfigManager(BasicUtilities objBasicUtilities)
+    public FileManagerBL(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
     }
@@ -26,16 +26,16 @@ public class ConfigManager extends Base
      * @param fileName
      * @return
      */
-    private String FormatName(FileConfigurationName fileName)
+    private String FormatName(FileConfig fileName)
     {
-        return String.format("%s.%s", fileName.toString(), "yml");
+        return String.format("%s.%s", fileName.toString().toLowerCase(), "yml");
     }
 
     /**
      * Method that handles the register for config files.
      * @param fileName
      */
-    public void RegisterFile(FileConfigurationName fileName)
+    public void RegisterFile(FileConfig fileName)
     {
         if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
@@ -49,7 +49,7 @@ public class ConfigManager extends Base
      * @param fileName
      * @return File by type.
      */
-    public FileConfiguration GetFile(FileConfigurationName fileName)
+    public FileConfiguration GetFile(FileConfig fileName)
     {
         ReloadFile(fileName);
         return this.config;
@@ -59,7 +59,7 @@ public class ConfigManager extends Base
      * Method that handles save the data on config files.
      * @param fileName
     */
-    public void SaveFile(FileConfigurationName fileName)
+    public void SaveFile(FileConfig fileName)
     {
         try
         {
@@ -75,7 +75,7 @@ public class ConfigManager extends Base
      * Method that handles reload the config files.
      * @param fileName
      */
-    public void ReloadFile(FileConfigurationName fileName)
+    public void ReloadFile(FileConfig fileName)
     {
         try
         {

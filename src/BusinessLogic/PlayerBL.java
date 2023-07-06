@@ -2,15 +2,12 @@ package BusinessLogic;
 
 import org.bukkit.entity.Player;
 
-import Base.Base;
+import Base.BaseBL;
 import Entities.PlayerDTO;
 import Main.BasicUtilities;
 
-public class PlayerBL extends Base
+public class PlayerBL extends BaseBL
 {
-    StringBuilder BASE = new StringBuilder("Player.%s-%s");
-    String SPAWNPOINT = ".spawn-point";
-
     /**
 	 * Constructor
 	 * @param objBasicUtilities
@@ -18,7 +15,9 @@ public class PlayerBL extends Base
     public PlayerBL(BasicUtilities objBasicUtilities, Player objPlayer)
     {
 		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile(FileConfigurationName.player);
+        this.config = this.basicUtilities.configManager.GetFile(FileConfig.Player);
+        
+        this.BASE.append(String.format("%s.%s-%s", FileConfig.Player.toString(), objPlayer.getName(), objPlayer.getUniqueId().toString()));
 	}
 
     /**
@@ -30,7 +29,7 @@ public class PlayerBL extends Base
     {
         try
         {
-            return this.config.getString(String.format(this.BASE.toString(), objPlayer.getName(), objPlayer.getUniqueId().toString())) != null;
+            return this.config.getString(this.BASE.toString()) != null;
         }
         catch (Exception exc)
         {
@@ -45,7 +44,7 @@ public class PlayerBL extends Base
      */
     public void AddPlayerToConfig(PlayerDTO objPlayerDTO)
     {
-        this.config.set(this.BASE.append(this.SPAWNPOINT).toString(), objPlayerDTO.spawnPoint);
+        //this.config.set(this.BASE.append(this.SPAWNPOINT).toString(), objPlayerDTO.spawnPoint);
     }
 
     /**

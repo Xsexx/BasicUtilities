@@ -4,19 +4,18 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Base.Base.FileConfigurationName;
-import BusinessLogic.TextBL;
+import Base.BaseBL.FileConfig;
+import BusinessLogic.FileManagerBL;
 import BusinessLogic.UtilsBL;
-import Commands.CommandLocation;
-import Commands.CommandUtils;
-import Configuration.ConfigManager;
+import Commands.Location;
+import Commands.Utils;
 import Listeners.PlayerJoin;
 
 public class BasicUtilities extends JavaPlugin
 {
 	public PluginDescriptionFile pdfFile = getDescription();
 	public UtilsBL utils = new UtilsBL();
-	public ConfigManager configManager = new ConfigManager(this);
+	public FileManagerBL configManager = new FileManagerBL(this);
 	
 	/**
 	 * Method that handles when the server starts the plugin.
@@ -27,8 +26,6 @@ public class BasicUtilities extends JavaPlugin
 		ConfigRegister();
 		CommandRegister();
 		ListenerRegister();
-
-		this.utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), true));
 	}
 
 	/**
@@ -36,7 +33,6 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void onDisable()
 	{
-		this.utils.SendConsoleMessage(new TextBL(this).GetStartEndText(pdfFile.getName(), pdfFile.getVersion(), false));
 	}
 
 	/**
@@ -44,8 +40,8 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void CommandRegister()
 	{
-		this.getCommand("utils").setExecutor(new CommandUtils(this));
-		this.getCommand("location").setExecutor(new CommandLocation(this));
+		this.getCommand("utils").setExecutor(new Utils(this));
+		this.getCommand("location").setExecutor(new Location(this));
 	}
 
 	/**
@@ -62,8 +58,8 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		this.configManager.RegisterFile(FileConfigurationName.config);
-		this.configManager.RegisterFile(FileConfigurationName.player);
-		this.configManager.RegisterFile(FileConfigurationName.text);
+		this.configManager.RegisterFile(FileConfig.Config);
+		this.configManager.RegisterFile(FileConfig.Player);
+		this.configManager.RegisterFile(FileConfig.Text);
 	}
 }

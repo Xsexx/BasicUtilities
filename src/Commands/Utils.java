@@ -9,12 +9,12 @@ import Base.Base;
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
-public class CommandUtils extends Base implements CommandExecutor
+public class Utils extends Base implements CommandExecutor
 {
     /**
      * Constructor
      */
-    public CommandUtils(BasicUtilities objBasicUtilities)
+    public Utils(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
         this.templates = new TextBL(this.basicUtilities);
@@ -42,9 +42,9 @@ public class CommandUtils extends Base implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.basicUtilities.configManager.ReloadFile(FileConfigurationName.config);
-                        this.basicUtilities.configManager.ReloadFile(FileConfigurationName.player);
-                        this.basicUtilities.configManager.ReloadFile(FileConfigurationName.text);
+                        this.basicUtilities.configManager.ReloadFile(FileConfig.Config);
+                        this.basicUtilities.configManager.ReloadFile(FileConfig.Player);
+                        this.basicUtilities.configManager.ReloadFile(FileConfig.Text);
                         this.basicUtilities.utils.SendConsoleMessage(this.templates.GetPluginReloadText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))

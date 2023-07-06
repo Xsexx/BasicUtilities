@@ -3,8 +3,20 @@ package BusinessLogic;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class UtilsBL
+import Base.BaseBL;
+import Main.BasicUtilities;
+
+public class UtilsBL extends BaseBL
 {
+	/**
+	 * Constructor
+	 * @param objBasicUtilities
+	 */
+    public UtilsBL(BasicUtilities objBasicUtilities)
+    {
+		this.basicUtilities = objBasicUtilities;
+	}
+
 	/**
 	 * Method that handles send messages to the console.
 	 * @param message

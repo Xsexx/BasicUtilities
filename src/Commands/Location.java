@@ -9,12 +9,12 @@ import Base.Base;
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
-public class CommandLocation extends Base implements CommandExecutor
+public class Location extends Base implements CommandExecutor
 {
     /**
      * Constructor
      */
-    public CommandLocation(BasicUtilities objBasicUtilities)
+    public Location(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
         this.templates = new TextBL(objBasicUtilities);

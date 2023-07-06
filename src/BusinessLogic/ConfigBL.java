@@ -1,9 +1,10 @@
 package BusinessLogic;
 
-import Base.Base;
+import Base.BaseBL;
 import Main.BasicUtilities;
 
-public class ConfigBL extends Base {
+public class ConfigBL extends BaseBL
+{
 
      /**
 	 * Constructor
@@ -12,7 +13,7 @@ public class ConfigBL extends Base {
     public ConfigBL(BasicUtilities objBasicUtilities)
     {
 		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile(FileConfigurationName.config);
+        this.config = this.basicUtilities.configManager.GetFile(FileConfig.Config);
 	}
 
     public Boolean GetWelcomeMessageIsEnable()
