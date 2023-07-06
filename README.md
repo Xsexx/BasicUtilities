@@ -1,17 +1,17 @@
 # Basic utilities
 ## Ranking
-| Rank         | Color       | Commmand                                                                                          | Requirements                         | Resources |
-|--------------|-------------|---------------------------------------------------------------------------------------------------|--------------------------------------|-----------|
-| Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                      | Join the server.                     | 6         |
-| Beginner     | Light green | `stp {update} {rock}`                                                                             | Reach location x:0, y:0.             | 9         |
-| Intermediate | Green       | `stp {update} {gold}`                                                                             | Kill the Dragon.                     | 12        |
-| Advanced     | Blue        | `stp {update} {iron}`                                                                             | Kill the Warden.                     | 15        |
-| Expert       | Cyan        | `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}` | Kill all mobs in the game.           | 18        |
-| Master       | Orange      | `stp {update} {drop} {0}` `location {tp} {name}`                                                  | Complete all achievements.           | 21        |
-| Legend       | Red         | `stp {update} {drop} {1}`                                                                         | Kill all special monsters.           | 24        |
-| Mythical     | Purple      | `stp {update} {drop} {2}`                                                                         | Complete all missions.               | 27        |
-| God          | Gold        | `stp {update} {drop} {3}`                                                                         | Complete special armor to level VI.  |           |
-| Admin        | Black       | `all`                                                                                             | Create server.                       |           |
+| Rank         | Color       | Commmand                                                                                          | Effects                | Requirements                         | Resources |
+|--------------|-------------|---------------------------------------------------------------------------------------------------|------------------------|--------------------------------------|-----------|
+| Novice       | Yellow      | `stp {get}` `utils {trade} {list} - {obj}` `location {add} - {view}` `quest`                      |                        | Join the server.                     | 6         |
+| Beginner     | Light green | `stp {update} {rock}`                                                                             | Speed                  | Reach location x:0, y:0.             | 9         |
+| Intermediate | Green       | `stp {update} {gold}`                                                                             | Haste                  | Kill the Dragon.                     | 12        |
+| Advanced     | Blue        | `stp {update} {iron}`                                                                             | Jump Boost             | Kill the Warden.                     | 15        |
+| Expert       | Cyan        | `stp {update} {diamond}` `utils {join} {armor} {piece}` `utils join tool {tool}` `location {rtp}` | Night Vision           | Kill all mobs in the game.           | 18        |
+| Master       | Orange      | `stp {update} {drop} {0}` `location {tp} {name}`                                                  | Regeneration           | Complete all achievements.           | 21        |
+| Legend       | Red         | `stp {update} {drop} {1}`                                                                         | Saturation             | Kill all special monsters.           | 24        |
+| Mythical     | Purple      | `stp {update} {drop} {2}`                                                                         | Fire Resistance        | Complete all missions.               | 27        |
+| God          | Gold        | `stp {update} {drop} {3}`                                                                         | Resistance             | Complete special armor to level VI.  |           |
+| Admin        | Black       | `all`                                                                                             | all                    | Create server.                       |           |
 ## Missions by rank
 ### Novice
 #### Farming
