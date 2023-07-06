@@ -76,32 +76,32 @@ Final result: `minecraft`
 | {.08}        | @name                   | Kill 6x64 `minecraft`    | 1 `minecraft` Efficiency II, 6 `minecraft`         |
 ### Beginner
 #### Farming
-Final result: Rock pickaxe Efficiency VI
+Final result: `minecraft:stone_pickaxe` Efficiency VI
 | Mission Code | Mission Name            | Objective                                 | Rewards                           |
 |--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {F.11}       | Kelp Collector          | Collect 9x64 `minecraft:kelp`             | Rock pickaxe Efficiency III, 6 `minecraft` |
-| {F.12}       | Bamboo Gatherer         | Collect 9x64 `minecraft:bamboo`           | Rock pickaxe Efficiency III, 6 `minecraft` |
-| {F.13}       | Sugar Cane Harvester    | Collect 9x64 `minecraft:sugar_cane`       | Rock pickaxe Efficiency III, 6 `minecraft` |
-| {F.14}       | Sugar Collector         | Collect 9x64 `minecraft:sugar`            | Rock pickaxe Efficiency III, 6 `minecraft` |
-| {F.15}       | Chorus Fruit Collector  | Collect 9x64 `minecraft:chorus_fruit`     | Rock pickaxe Efficiency III, 6 `minecraft` |
-| {F.16}       | Cocoa Bean Collector    | Collect 9x64 `minecraft:cocoa`            | Rock pickaxe Efficiency III, 6 `minecraft` |
+| {F.11}       | Kelp Collector          | Collect 9x64 `minecraft:kelp`             | `minecraft:stone_pickaxe` Efficiency III, 6 `minecraft` |
+| {F.12}       | Bamboo Gatherer         | Collect 9x64 `minecraft:bamboo`           | `minecraft:stone_pickaxe` Efficiency III, 6 `minecraft` |
+| {F.13}       | Sugar Cane Harvester    | Collect 9x64 `minecraft:sugar_cane`       | `minecraft:stone_pickaxe` Efficiency III, 6 `minecraft` |
+| {F.14}       | Sugar Collector         | Collect 9x64 `minecraft:sugar`            | `minecraft:stone_pickaxe` Efficiency III, 6 `minecraft` |
+| {F.15}       | Chorus Fruit Collector  | Collect 9x64 `minecraft:chorus_fruit`     | `minecraft:stone_pickaxe` Efficiency III, 6 `minecraft` |
+| {F.16}       | Cocoa Bean Collector    | Collect 9x64 `minecraft:cocoa`            | `minecraft:stone_pickaxe` Efficiency III, 6 `minecraft` |
 ### Intermediate
 #### Farming
-Final result: Gold pickaxe Efficiency VI
+Final result: `minecraft:golden_pickaxe` Efficiency VI
 | Mission Code | Mission Name            | Objective                                 | Rewards                           |
 |--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {F.21}       | Baked Potato Harvest     | Collect 9x64 `minecraft:baked_potato`     | Gold pickaxe Efficiency III, 6 `minecraft`             |
-| {F.22}       | Beetroot Soup Gatherer   | Collect 9x64 `minecraft:beetroot_soup`    | Gold pickaxe Efficiency III, 6 `minecraft`             |
-| {F.23}       | Dried Kelp Collector     | Collect 9x64 `minecraft:dried_kelp`       | Gold pickaxe Efficiency III, 6 `minecraft`             |
-| {F.24}       | Popped Chorus Fruit Harvester | Collect 9x64 `minecraft:popped_chorus_fruit` | Gold pickaxe Efficiency III, 6 `minecraft`             |
+| {F.21}       | Baked Potato Harvest     | Collect 9x64 `minecraft:baked_potato`     | `minecraft:golden_pickaxe` Efficiency III, 6 `minecraft`             |
+| {F.22}       | Beetroot Soup Gatherer   | Collect 9x64 `minecraft:beetroot_soup`    | `minecraft:golden_pickaxe` Efficiency III, 6 `minecraft`             |
+| {F.23}       | Dried Kelp Collector     | Collect 9x64 `minecraft:dried_kelp`       | `minecraft:golden_pickaxe` Efficiency III, 6 `minecraft`             |
+| {F.24}       | Popped Chorus Fruit Harvester | Collect 9x64 `minecraft:popped_chorus_fruit` | `minecraft:golden_pickaxe` Efficiency III, 6 `minecraft`             |
 ### Advanced
 #### Farming
-Final result: Iron pickaxe Efficiency V
+Final result: `minecraft:iron_pickaxe` Efficiency V
 | Mission Code | Mission Name              | Objective                                  | Rewards                           |
 |--------------|---------------------------|--------------------------------------------|-----------------------------------|
-| {F.31}       | Brown Mushroom Harvester  | Collect 12x64 `minecraft:brown_mushroom`   | Iron pickaxe Efficiency II, 6 `minecraft`            |
-| {F.32}       | Red Mushroom Gatherer     | Collect 12x64 `minecraft:red_mushroom`     | Iron pickaxe Efficiency III, 6 `minecraft`           |
-| {F.33}       | Dried Kelp Block Gatherer | Collect 12x64 `minecraft:dried_kelp_block` | Iron pickaxe Efficiency III, 6 `minecraft`            |
+| {F.31}       | Brown Mushroom Harvester  | Collect 12x64 `minecraft:brown_mushroom`   | `minecraft:iron_pickaxe` Efficiency II, 6 `minecraft`            |
+| {F.32}       | Red Mushroom Gatherer     | Collect 12x64 `minecraft:red_mushroom`     | `minecraft:iron_pickaxe` Efficiency III, 6 `minecraft`           |
+| {F.33}       | Dried Kelp Block Gatherer | Collect 12x64 `minecraft:dried_kelp_block` | `minecraft:iron_pickaxe` Efficiency III, 6 `minecraft`            |
 
 ### Expert
 #### Farming
@@ -129,6 +129,7 @@ Final result: `minecraft:netherite_pickaxe` Efficiency VI
 | Mission Code | Mission Name            | Objective                                     | Rewards                           |
 |--------------|-------------------------|-----------------------------------------------|-----------------------------------|
 | {F.71}       | Legendary Apple Hunt    | Collect 16 `minecraft:enchanted_golden_apple` | `minecraft:netherite_pickaxe` Efficiency V, 6 `minecraft`         |
+
 ### Extermination
 
 ### Exploración
