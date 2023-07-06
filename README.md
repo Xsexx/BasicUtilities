@@ -16,28 +16,28 @@
 ### Novice
 #### Farming
 Final result: Wood pickaxe Efficiency VI
-| Mission Code | Mission Name            | Objective                                 | Reward                            |
+| Mission Code | Mission Name            | Objective                                 | Rewards                            | 
 |--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {F.01}      | Carrot Crusader         | Collect 3x64 `minecraft:carrot`            | Wood pickaxe Efficiency II        |
-| {F.02}      | Wheat Whisperer         | Collect 3x64 `minecraft:wheat`             | Wood pickaxe Efficiency II        |
-| {F.03}      | Potato Plunderer        | Collect 3x64 `minecraft:potato`            | Wood pickaxe Efficiency II        |
-| {F.04}      | Beetroot Bandit         | Collect 3x64 `minecraft:beetroot`          | Wood pickaxe Efficiency II        |
-| {F.05}      | Pumpkin Pilferer        | Collect 3x64 `minecraft:pumpkin`           | Wood pickaxe Efficiency II        |
-| {F.06}      | Melon Marauder          | Collect 3x64 `minecraft:melon`             | Wood pickaxe Efficiency II        |
-| {F.07}      | Berry Buccaneer          | Collect 3x64 `minecraft:sweet_berries`     | Wood pickaxe Efficiency II        |
-| {F.08}      | Cactus Conqueror         | Collect 3x64 `minecraft:cactus`            | Wood pickaxe Efficiency II        |
+| {F.01}      | Carrot Crusader         | Collect 6x64 `minecraft:carrot`            | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.02}      | Wheat Whisperer         | Collect 6x64 `minecraft:wheat`             | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.03}      | Potato Plunderer        | Collect 6x64 `minecraft:potato`            | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.04}      | Beetroot Bandit         | Collect 6x64 `minecraft:beetroot`          | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.05}      | Pumpkin Pilferer        | Collect 6x64 `minecraft:pumpkin`           | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.06}      | Melon Marauder          | Collect 6x64 `minecraft:melon`             | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.07}      | Berry Buccaneer         | Collect 6x64 `minecraft:sweet_berries`     | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
+| {F.08}      | Cactus Conqueror        | Collect 6x64 `minecraft:cactus`            | 1 Wood pickaxe Efficiency II, 6 `minecraft:splash_potion{Potion:healing}`         |
 #### Resources
 Final result: Wood axe Efficiency VI
-| Mission Code | Mission Name            | Objective                                 | Reward                            |
+| Mission Code | Mission Name            | Objective                                 | Rewards                            |
 |--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {R.01}      | Oak Overlord            | Collect 3x64 `minecraft:oak_planks`        | Wood axe Efficiency II            |
-| {R.02}      | Birch Baron              | Collect 3x64 `minecraft:birch_planks`      | Wood axe Efficiency II            |
-| {R.03}      | Spruce Sultan            | Collect 3x64 `minecraft:spruce_planks`     | Wood axe Efficiency II            |
-| {R.04}      | Jungle Jedi              | Collect 3x64 `minecraft:jungle_planks`     | Wood axe Efficiency II            |
-| {R.05}      | Acacia Ace               | Collect 3x64 `minecraft:acacia_planks`     | Wood axe Efficiency II            |
-| {R.06}      | Warped Wizard            | Collect 3x64 `minecraft:warped_planks`     | Wood axe Efficiency II            |
-| {R.07}      | Crimson Commander        | Collect 3x64 `minecraft:crimson_planks`    | Wood axe Efficiency II            |
-| {R.08}      | Dark Oak Dominator       | Collect 3x64 `minecraft:dark_oak_planks`   | Wood axe Efficiency II            |
+| {R.01}       | Oak Overlord            | Collect 6x64 `minecraft:oak_planks`        | 1 Wood axe Efficiency II            |
+| {R.02}       | Birch Baron             | Collect 6x64 `minecraft:birch_planks`      | 1 Wood axe Efficiency II            |
+| {R.03}       | Spruce Sultan           | Collect 6x64 `minecraft:spruce_planks`     | 1 Wood axe Efficiency II            |
+| {R.04}       | Jungle Jedi             | Collect 6x64 `minecraft:jungle_planks`     | 1 Wood axe Efficiency II            |
+| {R.05}       | Acacia Ace              | Collect 6x64 `minecraft:acacia_planks`     | 1 Wood axe Efficiency II            |
+| {R.06}       | Warped Wizard           | Collect 6x64 `minecraft:warped_planks`     | 1 Wood axe Efficiency II            |
+| {R.07}       | Crimson Commander       | Collect 6x64 `minecraft:crimson_planks`    | 1 Wood axe Efficiency II            |
+| {R.08}       | Dark Oak Dominator      | Collect 6x64 `minecraft:dark_oak_planks`   | 1 Wood axe Efficiency II            |
 ### Beginner
 #### Farming
 Final result: Rock pickaxe Efficiency VI
