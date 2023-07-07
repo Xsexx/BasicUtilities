@@ -7,10 +7,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import Base.BaseMC;
 import BusinessLogic.ConfigBL;
 import BusinessLogic.PlayerBL;
-import BusinessLogic.TextBL;
-import Entities.PlayerDTO;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles the player join event.
+ */
 public class PlayerJoin extends BaseMC implements Listener
 {
     /**
@@ -19,8 +20,7 @@ public class PlayerJoin extends BaseMC implements Listener
 	 */
     public PlayerJoin(BasicUtilities objBasicUtilities)
     {
-        this.basicUtilities = objBasicUtilities;
-        this.templates = new TextBL(basicUtilities);
+        super(objBasicUtilities);
     }
 
     /**
@@ -32,30 +32,29 @@ public class PlayerJoin extends BaseMC implements Listener
     {
         try
         {
+            // Get 
             Player objPlayer = event.getPlayer();
 
             // BL objects.
             PlayerBL objPlayerBL = new PlayerBL(this.basicUtilities, objPlayer);
             ConfigBL objConfigBL = new ConfigBL(this.basicUtilities);
 
-            // Ignore all the admin player.
+            // Ignore all the admin players.
             if(!objPlayer.isOp())
             {
                 // In case the player do not exist, it will be added to the player config file.
-                if(!objPlayerBL.ValidatePlayerExist(objPlayer))
-                {
-                    PlayerDTO objPlayerDTO = new PlayerDTO();
-                    objPlayerDTO.player = objPlayer;
-                    objPlayerDTO.spawnPoint = objConfigBL.GetAvailableSpawnPoint(objPlayerBL.GetPlayersCount());
-                }
+                objPlayerBL.ValidateOrCreatePlayer(objPlayer);
               
                 // In some cases, the welcome message can be disabled.
-                if(objConfigBL.GetWelcomeMessageIsEnable())
+                if(objConfigBL.ShowWelcomeMessage())
                 {
-                    
-                    
                     // Welcome message and week info
                     this.basicUtilities.utils.SendPlayerMessage(objPlayer, this.templates.GetWelcomeMessageText(objPlayer.getName()));
+                    
+                }
+
+                if(objConfigBL.ShowWeekNews())
+                {
                     this.basicUtilities.utils.SendPlayerMessage(objPlayer, this.templates.GetWelcomeMessageNewThisWeekText());
                 }
             }

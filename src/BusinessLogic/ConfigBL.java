@@ -3,49 +3,73 @@ package BusinessLogic;
 import Base.BaseBL;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles the general config.
+ */
 public class ConfigBL extends BaseBL
 {
-
-     /**
+    /**
 	 * Constructor
 	 * @param objBasicUtilities
 	 */
     public ConfigBL(BasicUtilities objBasicUtilities)
     {
-		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile(FileConfig.Config);
-	}
+        super(objBasicUtilities, FileName.config);
+    }
 
-    public Boolean GetWelcomeMessageIsEnable()
+    /**
+     * Method that handles welcome message availability.
+     * @return
+     */
+    public Boolean ShowWelcomeMessage()
     {
         try
         {
-            return this.config.getBoolean("Config.welcome-message");
+            return GetBoolean(Properties.welcome_message_available);
         }
         catch (Exception exc)
         {
             ExceptionManager(exc);
-            return false;
         }
+
+        return true;
+    }
+
+    /**
+     * Method that handles welcome message availability.
+     * @return
+     */
+    public Boolean ShowWeekNews()
+    {
+        try
+        {
+            // Pending
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+
+        return true;
     }
 
     /**
      * Method that handles the asignation of the spawns point by availability.
      * @param playerCount
-     * @return The spawn point available.
+     * @return The spawn point id available.
      */
-    public String GetAvailableSpawnPoint(int playerCount)
+    public int GetAvailableSpawnPoint(int playerCount)
     {
-        int spawnPointCount = this.config.getInt("Config.spawn-points.spawn-point-count", playerCount);
+        int spawnPointCount = GetInt(Properties.spawn_point, Properties.count);
 
         try
         {
             // Find a available spawn point.
             for(int i = 1; i < spawnPointCount; i++)
             {
-                if(!this.config.getBoolean(String.format("Config.spawn-points.spawn-point-%s.asigned", i)))
+                if(!GetBoolean(NewProperty(Properties.spawn_point, i), Properties.asigned))
                 {
-                    return String.format("Config.spawn-points.spawn-point-%s", i);
+                    return i;
                 }
             }
         }
@@ -55,7 +79,7 @@ public class ConfigBL extends BaseBL
         }
 
         // In case each spawn point is busy, asign the next-one by countplater
-        return String.format("Config.spawn-points.spawn-point-%s", playerCount % spawnPointCount);
+        return playerCount % spawnPointCount;
     }
     
 }

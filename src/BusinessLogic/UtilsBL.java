@@ -6,6 +6,9 @@ import org.bukkit.entity.Player;
 import Base.BaseBL;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles common functions.
+ */
 public class UtilsBL extends BaseBL
 {
 	/**
@@ -14,7 +17,7 @@ public class UtilsBL extends BaseBL
 	 */
     public UtilsBL(BasicUtilities objBasicUtilities)
     {
-		this.basicUtilities = objBasicUtilities;
+		super(objBasicUtilities);
 	}
 
 	/**

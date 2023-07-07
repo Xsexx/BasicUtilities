@@ -10,6 +10,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import Base.BaseBL;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles the config files.
+ */
 public class FileManagerBL extends BaseBL
 {
     /**
@@ -18,7 +21,7 @@ public class FileManagerBL extends BaseBL
      */
     public FileManagerBL(BasicUtilities objBasicUtilities)
     {
-        this.basicUtilities = objBasicUtilities;
+        super(objBasicUtilities);
     }
 
     /**
@@ -26,7 +29,7 @@ public class FileManagerBL extends BaseBL
      * @param fileName
      * @return
      */
-    private String FormatName(FileConfig fileName)
+    private String FormatName(FileName fileName)
     {
         return String.format("%s.%s", fileName.toString().toLowerCase(), "yml");
     }
@@ -36,7 +39,7 @@ public class FileManagerBL extends BaseBL
      * @param fileName
      * @return File by type.
      */
-    public FileConfiguration GetFile(FileConfig fileName)
+    public FileConfiguration GetFile(FileName fileName)
     {
         ReloadFile(fileName);
         return this.config;
@@ -46,7 +49,7 @@ public class FileManagerBL extends BaseBL
      * Method that handles save the data on config files.
      * @param fileName
     */
-    public void SaveFile(FileConfig fileName)
+    public void SaveFile(FileName fileName)
     {
         try
         {
@@ -64,16 +67,16 @@ public class FileManagerBL extends BaseBL
      */
     public void RegisterFiles()
     {
-        RegisterFile(FileConfig.Config);
-		RegisterFile(FileConfig.Player);
-		RegisterFile(FileConfig.Text);
+        RegisterFile(FileName.config);
+		RegisterFile(FileName.player);
+		RegisterFile(FileName.text);
     }
 
     /**
      * Method that handles the register for config file.
      * @param fileName
      */
-    public void RegisterFile(FileConfig fileName)
+    public void RegisterFile(FileName fileName)
     {
         if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
@@ -90,9 +93,9 @@ public class FileManagerBL extends BaseBL
     {
         try
         {
-            ReloadFile(FileConfig.Config);
-            ReloadFile(FileConfig.Player);
-            ReloadFile(FileConfig.Text);
+            ReloadFile(FileName.config);
+            ReloadFile(FileName.player);
+            ReloadFile(FileName.text);
         }
         catch (Exception exc)
         {
@@ -104,7 +107,7 @@ public class FileManagerBL extends BaseBL
      * Method that handles reload the config file.
      * @param fileName
      */
-    public void ReloadFile(FileConfig fileName)
+    public void ReloadFile(FileName fileName)
     {
         try
         {

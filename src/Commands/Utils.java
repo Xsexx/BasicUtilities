@@ -6,9 +6,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Base.BaseMC;
-import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles the utils command.
+ */
 public class Utils extends BaseMC implements CommandExecutor
 {
     /**
@@ -16,8 +18,7 @@ public class Utils extends BaseMC implements CommandExecutor
      */
     public Utils(BasicUtilities objBasicUtilities)
     {
-        this.basicUtilities = objBasicUtilities;
-        this.templates = new TextBL(this.basicUtilities);
+        super(objBasicUtilities);
     }
 
     /**
@@ -43,7 +44,7 @@ public class Utils extends BaseMC implements CommandExecutor
                     if(args[0].equalsIgnoreCase("reload"))
                     {
                         this.basicUtilities.configManager.ReloadFiles();
-                        this.basicUtilities.utils.SendConsoleMessage(this.templates.GetPluginReloadText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
+                        this.basicUtilities.utils.SendConsoleMessage(this.templates.GetPluginReloadText());
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
                     {
@@ -52,7 +53,7 @@ public class Utils extends BaseMC implements CommandExecutor
                 }
                 else
                 {
-                    this.basicUtilities.utils.SendConsoleMessage(this.templates.GetConsoleCommandText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
+                    this.basicUtilities.utils.SendConsoleMessage(this.templates.GetCommandFromConsoleText(this.basicUtilities.pdfFile.getName()));
                 }
             }
         }

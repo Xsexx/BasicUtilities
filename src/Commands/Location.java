@@ -6,9 +6,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Base.BaseMC;
-import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles the location command.
+ */
 public class Location extends BaseMC implements CommandExecutor
 {
     /**
@@ -16,8 +18,7 @@ public class Location extends BaseMC implements CommandExecutor
      */
     public Location(BasicUtilities objBasicUtilities)
     {
-        this.basicUtilities = objBasicUtilities;
-        this.templates = new TextBL(objBasicUtilities);
+        super(objBasicUtilities);
     }
 
     /**
@@ -51,7 +52,7 @@ public class Location extends BaseMC implements CommandExecutor
             // In case that console send the command.
             else
             {
-                this.basicUtilities.utils.SendConsoleMessage(this.templates.GetConsoleCommandText(this.basicUtilities.pdfFile.getName(), this.basicUtilities.pdfFile.getVersion()));
+                this.basicUtilities.utils.SendConsoleMessage(this.templates.GetCommandFromConsoleText(this.basicUtilities.pdfFile.getName()));
             }
         }
         catch (Exception exc)

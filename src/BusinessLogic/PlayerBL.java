@@ -6,6 +6,9 @@ import Base.BaseBL;
 import Entities.PlayerDTO;
 import Main.BasicUtilities;
 
+/**
+ * Class that handles the player config.
+ */
 public class PlayerBL extends BaseBL
 {
     /**
@@ -14,37 +17,51 @@ public class PlayerBL extends BaseBL
 	 */
     public PlayerBL(BasicUtilities objBasicUtilities, Player objPlayer)
     {
-		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile(FileConfig.Player);
-        
-        this.BASE.append(String.format("%s.%s-%s", FileConfig.Player.toString(), objPlayer.getName(), objPlayer.getUniqueId().toString()));
-	}
+        super(objBasicUtilities, FileName.player);
+    }
 
     /**
      * Method that handles the validation of the player exist.
      * @param objPlayer
      * @return In case the player already exist, return true.
      */
-    public Boolean ValidatePlayerExist(Player objPlayer)
+    public void ValidateOrCreatePlayer(Player player)
     {
         try
         {
-            return this.config.getString(this.BASE.toString()) != null;
+            PlayerDTO playerDTO = new PlayerDTO();
+            playerDTO.Id = NewProperty(player.getName(), player.getUniqueId().toString());
+            
+            if(!PlayerExist(playerDTO.Id))
+            {
+
+                Set(GetPlayersCount(), Properties.count);
+                // Falta guardar el archivo.
+            }
         }
         catch (Exception exc)
         {
             ExceptionManager(exc);
-            return false;
         }
     }
 
     /**
-     * Method that handles the creation of the data by player.
-     * @param objPlayerDTO
+     * Method that handles the validation of the player exist.
+     * @param objPlayer
+     * @return In case the player already exist, return true.
      */
-    public void AddPlayerToConfig(PlayerDTO objPlayerDTO)
+    public Boolean PlayerExist(Properties property)
     {
-        //this.config.set(this.BASE.append(this.SPAWNPOINT).toString(), objPlayerDTO.spawnPoint);
+        try
+        {
+            return GetBoolean(property) != null;
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+
+        return false;
     }
 
     /**
@@ -76,7 +93,7 @@ public class PlayerBL extends BaseBL
     {
         try
         {
-            return this.config.getInt("");
+            return GetInt(Properties.count);
         }
         catch (Exception exc)
         {

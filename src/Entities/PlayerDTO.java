@@ -2,11 +2,13 @@ package Entities;
 
 import org.bukkit.entity.Player;
 
+import Base.BaseBL.Properties;
+
 /**
- * Class that handles the information of the player.
+ * Class that handles the player information.
  */
 public class PlayerDTO
 {
     public Player player;
-    public String spawnPoint;
+    public Properties Id;
 }

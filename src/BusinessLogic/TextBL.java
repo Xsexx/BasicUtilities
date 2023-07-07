@@ -3,49 +3,36 @@ package BusinessLogic;
 import java.util.List;
 
 import Base.BaseBL;
-import Entities.ColorDTO;
 import Main.BasicUtilities;
 
-// Class that handles all the text templates from "text.yml".
+/**
+ * Class that handles the text config.
+ */
 public class TextBL extends BaseBL
 {
-	private ColorDTO colors;
-
 	/**
 	 * Constructor
 	 * @param objBasicUtilities
 	 */
     public TextBL(BasicUtilities objBasicUtilities)
     {
-		this.basicUtilities = objBasicUtilities;
-        this.config = this.basicUtilities.configManager.GetFile(FileConfig.Text);
-		this.colors = new ColorDTO();
+		super(objBasicUtilities, FileName.text);
 	}
 
 	/**
 	 * Method that handles build the format for the start message.
 	 */
-	public String GetStartEndText(String name, String version, Boolean flag)
+	public String GetCommandFromConsoleText(String pluginName)
 	{
-		return String.format(this.config.getString("Text.start-end-text"),
-		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White, flag ? this.config.getString("Text.start-end-text-activated") : this.config.getString("Text.start-end-text-disabled"), this.colors.Blue, version, this.colors.White);
-	}
-
-	/**
-	 * Method that handles build the format for the start message.
-	 */
-	public String GetConsoleCommandText(String name, String version)
-	{
-		return String.format(this.config.getString("Text.command-console-text"),
-		this.colors.Red, this.colors.White, name, this.colors.Red, this.colors.White);
+		return White(String.format(GetString(Properties.command_from_console_text), Yellow(pluginName)));
 	}
 
 	/**
 	 * Method that hanldes build the format for the start message.
 	 */
-	public String GetPluginReloadText(String name, String version)
+	public String GetPluginReloadText()
 	{
-		return String.format(this.config.getString("Text.plugin-reload-text"));
+		return White(GetString(Properties.plugin_reload_text));
 	}
 
 	/**
@@ -53,8 +40,7 @@ public class TextBL extends BaseBL
 	 */
 	public String GetWelcomeMessageText(String playerName)
 	{
-		return String.format(this.config.getString("Text.welcome-message-text"),
-		this.colors.White, this.colors.Red, this.colors.Blue, playerName);
+		return White(String.format(GetString(Properties.welcome_message_text), Red(GetString(Properties.server_name)), CustomColor(playerName, "#555555")));
 	}
 
 	/**
@@ -62,7 +48,7 @@ public class TextBL extends BaseBL
 	 */
 	public String GetWelcomeMessageNewThisWeekText()
 	{
-		return String.format(GetMessageFromList(this.config.getStringList("Text.welcome-message-text-new-this-week")));
+		return String.format(GetMessageFromList(GetStringList(Properties.week_news)));
 	}
 
 	/**
@@ -76,7 +62,7 @@ public class TextBL extends BaseBL
 
 		for (String string : list)
 		{
-			result.append(String.format(string, this.colors.White));
+			result.append(White(string));
 			result.append(System.lineSeparator());
 		}
 

@@ -7,6 +7,19 @@ import Main.BasicUtilities;
  */
 public class Base
 {
+    //region VARIABLES.
+    protected BasicUtilities basicUtilities;
+    //endregion
+
+    /**
+	 * Constructor
+	 * @param objBasicUtilities
+	 */
+    public Base(BasicUtilities objBasicUtilities)
+    {
+        this.basicUtilities = objBasicUtilities;
+    }
+
     /**
      * Stardard method that handles the exceptions.
      * @param exc
@@ -15,8 +28,4 @@ public class Base
     {
         this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
     }
-
-    //region VARIABLES.
-    protected BasicUtilities basicUtilities;
-    //endregion
 }
