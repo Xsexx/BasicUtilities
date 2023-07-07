@@ -16,6 +16,7 @@ public class BaseBL extends Base
     //region VARIABLES
     protected FileConfiguration config;
     protected File file;
+    private StringBuilder base;
     //endregion
 
     //region ENUMS
@@ -33,60 +34,6 @@ public class BaseBL extends Base
 
     }
 
-    public enum Properties
-    {
-        // config
-        welcome_message_available,
-
-        // aditional data
-        color,
-        asigned,
-        count,
-        name,
-        rank_id,
-
-
-        // spawn point
-        spawn_point,
-
-        // location
-        x,
-        y,
-        z,
-        world,
-        yaw,
-        pitch,
-
-        // Text
-        server_name,
-        welcome_message_text,
-        plugin_reload_text,
-        week_news,
-        death_phrases_list_text,
-        command_from_console_text,
-        // Player
-
-        // Farm missions
-        f_01,
-        f_02,
-        f_03,
-        f_04,
-        f_05,
-        f_06,
-        f_07,
-
-        // Ranking
-        novice,
-        beginner,
-        intermediate,
-        advanced,
-        expert,
-        master,
-        legend,
-        mythical,
-        god
-    }
-
     //endregion
 
     //region PROPERTIES
@@ -100,6 +47,11 @@ public class BaseBL extends Base
     {
         StringBuilder result = new StringBuilder();
         
+        if(!this.base.isEmpty())
+        {
+            result.append(this.base);
+        }
+
         // It include all properties includes in the params.
         for (Properties fileProperty : properties)
         {
@@ -169,6 +121,18 @@ public class BaseBL extends Base
     {
         super(objBasicUtilities);
         this.config = this.basicUtilities.configManager.GetFile(file);
+    }
+
+    /**
+     * Constructor
+     * @param objBasicUtilities
+     * @param file
+     */
+    public BaseBL(BasicUtilities objBasicUtilities, FileName file, String base)
+    {
+        super(objBasicUtilities);
+        this.config = this.basicUtilities.configManager.GetFile(file);
+        this.base.append(base);
     }
 
     //region GETTERS

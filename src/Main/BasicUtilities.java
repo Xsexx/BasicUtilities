@@ -5,7 +5,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import BusinessLogic.FileManagerBL;
-import BusinessLogic.UtilsBL;
 import Commands.Location;
 import Commands.Utils;
 import Listeners.PlayerJoin;
@@ -13,7 +12,6 @@ import Listeners.PlayerJoin;
 public class BasicUtilities extends JavaPlugin
 {
 	public PluginDescriptionFile pdfFile = getDescription();
-	public UtilsBL utils = new UtilsBL(this);
 	public FileManagerBL configManager = new FileManagerBL(this);
 	
 	/**

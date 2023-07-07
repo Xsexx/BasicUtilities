@@ -49,13 +49,13 @@ public class PlayerJoin extends BaseMC implements Listener
                 if(objConfigBL.ShowWelcomeMessage())
                 {
                     // Welcome message and week info
-                    this.basicUtilities.utils.SendPlayerMessage(objPlayer, this.templates.GetWelcomeMessageText(objPlayer.getName()));
+                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Properties.welcome_message_text, objPlayer.getName()));
                     
                 }
 
                 if(objConfigBL.ShowWeekNews())
                 {
-                    this.basicUtilities.utils.SendPlayerMessage(objPlayer, this.templates.GetWelcomeMessageNewThisWeekText());
+                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Properties.week_news));
                 }
             }
         }

@@ -17,7 +17,7 @@ public class PlayerBL extends BaseBL
 	 */
     public PlayerBL(BasicUtilities objBasicUtilities, Player objPlayer)
     {
-        super(objBasicUtilities, FileName.player);
+        super(objBasicUtilities, FileName.player, String.format("%s_%s", objPlayer.getName(), objPlayer.getUniqueId().toString()));
     }
 
     /**

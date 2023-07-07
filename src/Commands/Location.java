@@ -52,7 +52,7 @@ public class Location extends BaseMC implements CommandExecutor
             // In case that console send the command.
             else
             {
-                this.basicUtilities.utils.SendConsoleMessage(this.templates.GetCommandFromConsoleText(this.basicUtilities.pdfFile.getName()));
+                this.utils.SendConsoleMessage(this.text.GetText(Properties.command_from_console_text, this.basicUtilities.pdfFile.getName()));
             }
         }
         catch (Exception exc)

@@ -6,7 +6,7 @@ import Main.BasicUtilities;
 public class BaseMC extends Base
 {
     //region VARIABLES.
-    protected TextBL templates;
+    protected TextBL text;
     //endregion
 
     /**
@@ -16,6 +16,6 @@ public class BaseMC extends Base
     public BaseMC(BasicUtilities objBasicUtilities)
     {
         super(objBasicUtilities);
-        this.templates = new TextBL(basicUtilities);
+        this.text = new TextBL(basicUtilities);
     }
 }

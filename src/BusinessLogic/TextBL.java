@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.util.Arrays;
 import java.util.List;
 
 import Base.BaseBL;
@@ -21,34 +22,32 @@ public class TextBL extends BaseBL
 
 	/**
 	 * Method that handles build the format for the start message.
+	 * @param property
+	 * @return
 	 */
-	public String GetCommandFromConsoleText(String pluginName)
+	public String GetText(Properties property, String... args)
 	{
-		return White(String.format(GetString(Properties.command_from_console_text), Yellow(pluginName)));
-	}
+		StringBuilder data = new StringBuilder();
+		List<Properties> propertiesList = Arrays.asList(new Properties[] {Properties.week_news});
 
-	/**
-	 * Method that hanldes build the format for the start message.
-	 */
-	public String GetPluginReloadText()
-	{
-		return White(GetString(Properties.plugin_reload_text));
-	}
+		// In case the property need to get a list.
+		if(propertiesList.contains(property))
+		{
+			data.append(White(GetTextFromList(GetStringList(property))));
+		}
+		else
+		{
+			data.append(White(GetString(property)));
+		}
 
-	/**
-	 * Method that handles build the format for the welcome message.
-	 */
-	public String GetWelcomeMessageText(String playerName)
-	{
-		return White(String.format(GetString(Properties.welcome_message_text), Red(GetString(Properties.server_name)), Green(playerName)));
-	}
+		String result = data.toString();
 
-	/**
-	 * Method that handles build the format for the welcome message new this week.
-	 */
-	public String GetWelcomeMessageNewThisWeekText()
-	{
-		return String.format(GetMessageFromList(GetStringList(Properties.week_news)));
+		for (String string : args)
+		{
+			result = String.format(result, string);
+		}
+
+		return result;
 	}
 
 	/**
@@ -56,7 +55,7 @@ public class TextBL extends BaseBL
 	 * @param list
 	 * @return
 	 */
-	private String GetMessageFromList(List<String> list)
+	private String GetTextFromList(List<String> list)
 	{
 		StringBuilder result = new StringBuilder();
 
@@ -67,5 +66,13 @@ public class TextBL extends BaseBL
 		}
 
 		return result.toString();
+	}
+
+	/**
+	 * Method that hanldes build the format for the start message.
+	 */
+	public String GetPluginReloadText()
+	{
+		return White(GetString(Properties.plugin_reload_text));
 	}
 }

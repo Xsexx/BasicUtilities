@@ -57,7 +57,7 @@ public class FileManagerBL extends BaseBL
         }
         catch (Exception exc)
         {
-            this.basicUtilities.utils.SendConsoleMessage(exc.getMessage());
+            ExceptionManager(exc);
         }
     }
 

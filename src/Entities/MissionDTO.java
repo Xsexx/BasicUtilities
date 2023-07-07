@@ -2,7 +2,7 @@ package Entities;
 
 import java.util.List;
 
-import Base.BaseBL.Properties;
+import Base.Base.Properties;
 
 /**
  * Class that handles the mission information.
