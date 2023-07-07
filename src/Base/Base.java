@@ -20,7 +20,7 @@ public class Base
     public Base(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
-        this.utils = new UtilsBL(this.basicUtilities);
+        this.utils = new UtilsBL();
     }
 
     //region ENUMS

@@ -1,7 +1,6 @@
 main: Main.BasicUtilities
 version: 1.0.1
 name: BasicUtilities
-
 commands:
     utils:
         description: Principal command that handle the config.

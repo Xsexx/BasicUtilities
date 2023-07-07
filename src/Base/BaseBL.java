@@ -16,7 +16,7 @@ public class BaseBL extends Base
     //region VARIABLES
     protected FileConfiguration config;
     protected File file;
-    private StringBuilder base;
+    private StringBuilder base = new StringBuilder();
     //endregion
 
     //region ENUMS

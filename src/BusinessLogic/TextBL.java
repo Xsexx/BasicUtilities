@@ -67,12 +67,4 @@ public class TextBL extends BaseBL
 
 		return result.toString();
 	}
-
-	/**
-	 * Method that hanldes build the format for the start message.
-	 */
-	public String GetPluginReloadText()
-	{
-		return White(GetString(Properties.plugin_reload_text));
-	}
 }
