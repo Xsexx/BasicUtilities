@@ -415,17 +415,5 @@ public class BaseBL extends Base
         return TextColor(text, ChatColor.DARK_PURPLE);
     }
 
-    /**
-     * Method that handles custom color in hexadecimal format.
-     * @param text The text to be colored.
-     * @param hexColor The color code in hexadecimal format (e.g., "#FF0000" for red).
-     * @return The colored text.
-     */
-    public String CustomColor(String text, String hexColor)
-    {
-        ChatColor customColor = ChatColor.valueOf(hexColor);
-        return TextColor(text, customColor);
-    }
-
     //endregion
 }

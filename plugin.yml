@@ -1,6 +1,7 @@
 main: Main.BasicUtilities
 version: 1.0.1
 name: BasicUtilities
+api-version: 1.20.1
 
 commands:
     utils:

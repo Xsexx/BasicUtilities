@@ -29,15 +29,15 @@ public class PlayerBL extends BaseBL
     {
         try
         {
-            PlayerDTO playerDTO = new PlayerDTO();
-            playerDTO.Id = NewProperty(player.getName(), player.getUniqueId().toString());
+            // PlayerDTO playerDTO = new PlayerDTO();
+            // playerDTO.Id = NewProperty(player.getName(), player.getUniqueId().toString());
             
-            if(!PlayerExist(playerDTO.Id))
-            {
+            // if(!PlayerExist(playerDTO.Id))
+            // {
 
-                Set(GetPlayersCount(), Properties.count);
-                // Falta guardar el archivo.
-            }
+            //     Set(GetPlayersCount(), Properties.count);
+            //     // Falta guardar el archivo.
+            // }
         }
         catch (Exception exc)
         {

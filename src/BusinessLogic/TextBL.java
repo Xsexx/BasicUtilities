@@ -40,7 +40,7 @@ public class TextBL extends BaseBL
 	 */
 	public String GetWelcomeMessageText(String playerName)
 	{
-		return White(String.format(GetString(Properties.welcome_message_text), Red(GetString(Properties.server_name)), CustomColor(playerName, "#555555")));
+		return White(String.format(GetString(Properties.welcome_message_text), Red(GetString(Properties.server_name)), Green(playerName)));
 	}
 
 	/**
