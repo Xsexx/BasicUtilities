@@ -90,6 +90,15 @@ public class MissionBL extends BaseBL
                     potionmeta.setDisplayName("@nombre");
                     item.setItemMeta(potionmeta);
                     break;
+                case WOODEN_PICKAXE:
+                case STONE_PICKAXE:
+                case GOLDEN_PICKAXE:
+                case IRON_PICKAXE:
+                case DIAMOND_PICKAXE:
+                case NETHERITE_PICKAXE:
+                    // generamos picos.
+                    item = new ItemStack(Material.valueOf(String.format("%s_%s", reward.Name, "PICKAXE")), reward.Amount);
+                    break;
                 default:
                     item = null;
                     break;

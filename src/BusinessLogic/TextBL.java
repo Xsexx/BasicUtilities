@@ -25,7 +25,7 @@ public class TextBL extends BaseBL
 	 * @param property
 	 * @return
 	 */
-	public String GetText(Properties property, String... args)
+	public String GetText(Properties property, Object... args)
 	{
 		StringBuilder data = new StringBuilder();
 		List<Properties> propertiesList = Arrays.asList(new Properties[] {Properties.week_news});
@@ -33,21 +33,29 @@ public class TextBL extends BaseBL
 		// In case the property need to get a list.
 		if(propertiesList.contains(property))
 		{
-			data.append(White(GetTextFromList(GetStringList(property))));
+			data.append(GetTextFromList(GetStringList(property)));
 		}
 		else
 		{
 			data.append(White(GetString(property)));
 		}
+		
+		return args.length != 0 ? GetTextFormatByArgs(data, args) : data.toString();
+	}
 
-		String result = data.toString();
-
-		for (String string : args)
+	/**
+	 * Method that handles the args list when get text.
+	 * @param list
+	 * @return
+	 */
+	private String GetTextFormatByArgs(StringBuilder data, Object... args)
+	{
+		for (Object string : args)
 		{
-			result = String.format(result, string);
+			this.utils.SendConsoleMessage(string.toString());
 		}
 
-		return result;
+		return String.format(data.toString(), args);
 	}
 
 	/**

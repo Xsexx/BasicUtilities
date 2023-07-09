@@ -37,7 +37,6 @@ public class Base
         name,
         rank_id,
 
-
         // spawn point
         spawn_point,
 
@@ -56,9 +55,11 @@ public class Base
         week_news,
         death_phrases_list_text,
         command_from_console_text,
+
         // Player
 
         // Farm missions
+        f_,
         f_01,
         f_02,
         f_03,

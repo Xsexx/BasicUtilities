@@ -43,8 +43,8 @@ public class Utils extends BaseMC implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.basicUtilities.configManager.ReloadFiles();
-                        this.utils.SendConsoleMessage(this.text.GetText(Properties.plugin_reload_text));
+                        this.basicUtilities.fileManager.ReloadFiles();
+                        this.utils.SendConsoleMessage(this.text.GetText(Properties.plugin_reload_text, this.basicUtilities.pdfFile.getName()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
                     {

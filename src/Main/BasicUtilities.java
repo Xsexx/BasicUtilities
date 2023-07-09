@@ -12,7 +12,7 @@ import Listeners.PlayerJoin;
 public class BasicUtilities extends JavaPlugin
 {
 	public PluginDescriptionFile pdfFile = getDescription();
-	public FileManagerBL configManager = new FileManagerBL(this);
+	public FileManagerBL fileManager = new FileManagerBL(this);
 	
 	/**
 	 * Method that handles when the server starts the plugin.
@@ -55,6 +55,6 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		this.configManager.RegisterFiles();
+		this.fileManager.RegisterFiles();
 	}
 }

@@ -67,7 +67,7 @@ public class ConfigBL extends BaseBL
             // Find a available spawn point.
             for(int i = 1; i < spawnPointCount; i++)
             {
-                if(!GetBoolean(NewProperty(Properties.spawn_point, i), Properties.asigned))
+                if(!GetBoolean(GetProperty(Properties.spawn_point, i), Properties.asigned))
                 {
                     return i;
                 }
@@ -81,5 +81,4 @@ public class ConfigBL extends BaseBL
         // In case each spawn point is busy, asign the next-one by countplater
         return playerCount % spawnPointCount;
     }
-    
 }

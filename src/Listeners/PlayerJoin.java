@@ -44,13 +44,11 @@ public class PlayerJoin extends BaseMC implements Listener
             {
                 // In case the player do not exist, it will be added to the player config file.
                 objPlayerBL.ValidateOrCreatePlayer(objPlayer);
-              
+
                 // In some cases, the welcome message can be disabled.
                 if(objConfigBL.ShowWelcomeMessage())
                 {
-                    // Welcome message and week info
-                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Properties.welcome_message_text, objPlayer.getName()));
-                    
+                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Properties.welcome_message_text, this.text.GetText(Properties.server_name), objPlayer.getName()));
                 }
 
                 if(objConfigBL.ShowWeekNews())

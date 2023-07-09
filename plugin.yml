@@ -6,7 +6,5 @@ commands:
         description: Principal command that handle the config.
     location:
         description: Command that handles the locations.
-    starterpack:
-        description: Comand that handles the starter equipment.
     stp:
         description: Comand that handles the starter equipment.
