@@ -26,18 +26,6 @@ Final result: `minecraft:wooden_pickaxe` Efficiency VI, Silk touch
 | {F.06}       | Melon Marauder          | Collect 6x64 `minecraft:melon`            | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
 | {F.07}       | Berry Buccaneer         | Collect 6x64 `minecraft:sweet_berries`    | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
 | {F.08}       | Cactus Conqueror        | Collect 6x64 `minecraft:cactus`           | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-#### Mining
-Final result: `minecraft:wooden_pickaxe` Efficiency VI, Fortune III
-| Mission Code | Mission Name            | Objective                                 | Rewards                           | 
-|--------------|-------------------------|-------------------------------------------|-----------------------------------|
-| {M.01}       | Cobblestone Collector    | Collect 6x64 `minecraft:cobblestone`      | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.02}       | Granite Gatherer         | Collect 6x64 `minecraft:granite`          | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.03}       | Andesite Acquirer        | Collect 6x64 `minecraft:andesite`         | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.04}       | Diorite Discoverer       | Collect 6x64 `minecraft:diorite`          | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.05}       | Stone Seeker             | Collect 6x64 `minecraft:stone`            | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.06}       | Terracotta Tracker       | Collect 6x64 `minecraft:terracotta`       | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.07}       | White Terracotta Hunter  | Collect 6x64 `minecraft:white_terracotta` | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
-| {M.08}       | Red Terracotta Raider    | Collect 6x64 `minecraft:red_terracotta`   | 1 `minecraft:wooden_pickaxe` Efficiency II, 6 `minecraft` |
 #### Resources
 Final result: `minecraft:wooden_axe` Efficiency VI
 | Mission Code | Mission Name            | Objective                                 | Rewards                           | 
