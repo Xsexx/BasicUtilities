@@ -12,12 +12,7 @@
 | Mythical     | Purple      | `stp {update} {drop} {2}`                                                                         | Fire Resistance        | Complete all missions.               | 27        |
 | God          | Gold        | `stp {update} {drop} {3}`                                                                         | Resistance             | Complete special armor to level VI.  |           |
 | Admin        | Black       | `all`                                                                                             | all                    | Create the server                    |           |
-## Mission
-### Farming
-### Extermination
-### Exploración
-### Mining
-### Colección
+## [Mission](https://github.com/Xsexx/BasicUtilities/blob/main/Missions.md)
 ## Recompensas
 ### Iniciales
 Pala y pico con toque de seda, todo será irrompible, maldición de desaparición
