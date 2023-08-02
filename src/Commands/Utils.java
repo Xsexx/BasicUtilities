@@ -43,8 +43,8 @@ public class Utils extends BaseMC implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.basicUtilities.fileManager.ReloadFiles();
-                        this.utils.SendConsoleMessage(this.text.GetText(Properties.plugin_reload_text, this.basicUtilities.pdfFile.getName()));
+                        this.fileManager.ReloadFiles();
+                        this.utils.SendConsoleMessage(this.text.GetText(Text.plugin_reload_text, this.basicUtilities.pdfFile.getName()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
                     {
@@ -53,7 +53,7 @@ public class Utils extends BaseMC implements CommandExecutor
                 }
                 else
                 {
-                    this.utils.SendConsoleMessage(this.text.GetText(Properties.command_from_console_text, this.basicUtilities.pdfFile.getName()));
+                    this.utils.SendConsoleMessage(this.text.GetText(Text.command_from_console_text, this.basicUtilities.pdfFile.getName()));
                 }
             }
         }

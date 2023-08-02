@@ -31,34 +31,7 @@ public class FileManagerBL extends BaseBL
      */
     private String FormatName(FileName fileName)
     {
-        return String.format("%s.%s", fileName.toString().toLowerCase(), "yml");
-    }
-
-    /**
-     * Method that handles get the config files.
-     * @param fileName
-     * @return File by type.
-     */
-    public FileConfiguration GetFile(FileName fileName)
-    {
-        ReloadFile(fileName);
-        return this.config;
-    }
-
-    /**
-     * Method that handles save the data on config files.
-     * @param fileName
-    */
-    public void SaveFile(FileName fileName)
-    {
-        try
-        {
-            this.config.save(this.file);
-        }
-        catch (Exception exc)
-        {
-            ExceptionManager(exc);
-        }
+        return String.format("%s.%s", fileName.toString(), "yml");
     }
 
     /**
@@ -81,7 +54,7 @@ public class FileManagerBL extends BaseBL
         if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
             GetFile(fileName).options().copyDefaults(true);
-            SaveFile(fileName);
+            SaveFile();
         }
     }
 
@@ -121,6 +94,33 @@ public class FileManagerBL extends BaseBL
                 YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigString);
                 this.config.setDefaults(defConfig);
             }
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+    }
+
+    /**
+     * Method that handles get the config files.
+     * @param fileName
+     * @return File by type.
+     */
+    public FileConfiguration GetFile(FileName fileName)
+    {
+        ReloadFile(fileName);
+        return this.config;
+    }
+
+    /**
+     * Method that handles save the data on config files.
+     * @param fileName
+    */
+    public void SaveFile()
+    {
+        try
+        {
+            this.config.save(this.file);
         }
         catch (Exception exc)
         {

@@ -25,10 +25,10 @@ public class TextBL extends BaseBL
 	 * @param property
 	 * @return
 	 */
-	public String GetText(Properties property, Object... args)
+	public String GetText(Object property, Object... args)
 	{
 		StringBuilder data = new StringBuilder();
-		List<Properties> propertiesList = Arrays.asList(new Properties[] {Properties.week_news});
+		List<Object> propertiesList = Arrays.asList(new Object[] {Text.week_news});
 
 		// In case the property need to get a list.
 		if(propertiesList.contains(property))

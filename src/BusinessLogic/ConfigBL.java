@@ -25,7 +25,7 @@ public class ConfigBL extends BaseBL
     {
         try
         {
-            return GetBoolean(Properties.welcome_message_available);
+            return GetBoolean(Config.welcome_message_available);
         }
         catch (Exception exc)
         {
@@ -60,14 +60,14 @@ public class ConfigBL extends BaseBL
      */
     public int GetAvailableSpawnPoint(int playerCount)
     {
-        int spawnPointCount = GetInt(Properties.spawn_point, Properties.count);
+        int spawnPointCount = GetInt(General.spawn_point, General.count);
 
         try
         {
             // Find a available spawn point.
             for(int i = 1; i < spawnPointCount; i++)
             {
-                if(!GetBoolean(GetProperty(Properties.spawn_point, i), Properties.asigned))
+                if(!GetBoolean(GetProperty(General.spawn_point, i), General.asigned))
                 {
                     return i;
                 }

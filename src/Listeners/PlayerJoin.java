@@ -48,12 +48,12 @@ public class PlayerJoin extends BaseMC implements Listener
                 // In some cases, the welcome message can be disabled.
                 if(objConfigBL.ShowWelcomeMessage())
                 {
-                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Properties.welcome_message_text, this.text.GetText(Properties.server_name), objPlayer.getName()));
+                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Text.welcome_message_text, this.text.GetText(Text.server_name), objPlayer.getName()));
                 }
 
                 if(objConfigBL.ShowWeekNews())
                 {
-                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Properties.week_news));
+                    this.utils.SendPlayerMessage(objPlayer, this.text.GetText(Text.week_news));
                 }
             }
         }

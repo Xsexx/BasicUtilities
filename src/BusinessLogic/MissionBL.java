@@ -28,14 +28,14 @@ public class MissionBL extends BaseBL
      * @param missionId
      * @return
      */
-    public MissionDTO GetMission(Properties missionId)
+    public MissionDTO GetMission(Mission missionId)
     {
         MissionDTO mission = new MissionDTO();
 
         try
         {
             mission.MissionId = missionId;
-            mission.Name = GetString(missionId, Properties.name);
+            mission.Name = GetString(missionId, General.name);
 
         }
         catch (Exception exc)

@@ -2,7 +2,7 @@ package Entities;
 
 import org.bukkit.entity.Player;
 
-import Base.Base.Properties;
+import Base.Base.General;
 
 /**
  * Class that handles the player information.
@@ -10,5 +10,5 @@ import Base.Base.Properties;
 public class PlayerDTO
 {
     public Player player;
-    public Properties Id;
+    public General Id;
 }

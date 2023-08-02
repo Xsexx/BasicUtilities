@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
-
 import Main.BasicUtilities;
 
 /**
@@ -14,26 +13,14 @@ import Main.BasicUtilities;
 public class BaseBL extends Base
 {
     //region VARIABLES
+
     protected FileConfiguration config;
     protected File file;
     private StringBuilder base = new StringBuilder();
-    //endregion
-
-    //region ENUMS
-
-    public enum FileName
-    {
-        config,
-        player,
-        text,
-        item,
-        mission,
-        mobs,
-        log,
-        stats,
-    }
 
     //endregion
+
+    //region Methods
 
     /**
 	 * Constructor
@@ -52,7 +39,7 @@ public class BaseBL extends Base
     public BaseBL(BasicUtilities objBasicUtilities, FileName file)
     {
         super(objBasicUtilities);
-        this.config = this.basicUtilities.fileManager.GetFile(file);
+        RegisterFileManager(objBasicUtilities, file);
     }
 
     /**
@@ -63,19 +50,29 @@ public class BaseBL extends Base
     public BaseBL(BasicUtilities objBasicUtilities, FileName file, String base)
     {
         super(objBasicUtilities);
-        this.config = this.basicUtilities.fileManager.GetFile(file);
         this.base.append(base);
+        RegisterFileManager(objBasicUtilities, file);
     }
 
+    /**
+     * Create the file manager and register the new files.
+     * @param objBasicUtilities
+     * @param file
+     */
+    private void RegisterFileManager(BasicUtilities objBasicUtilities, FileName file)
+    {
+        this.fileManager.RegisterFile(file);
+        this.config = this.fileManager.GetFile(file);
+    }
 
     //region PROPERTIES
-
+    
     /**
      * Method that handles the file properties build.
      * @param args
      * @return String
      */
-    private String GetStringFromProperties(Properties... properties)
+    private String GetStringFromProperties(Object... properties)
     {
         StringBuilder result = new StringBuilder();
 
@@ -85,15 +82,15 @@ public class BaseBL extends Base
         }
 
         // It include all properties includes in the params.
-        for (Properties fileProperty : properties)
+        for (Object property : properties)
         {
             if(result.isEmpty())
             {
-                result.append(String.format("%s", fileProperty.toString()));
+                result.append(String.format("%s", property.toString()));
             }
             else
             {
-                result.append(String.format(".%s", fileProperty.toString()));
+                result.append(String.format(".%s", property.toString()));
             }
         }
 
@@ -106,20 +103,9 @@ public class BaseBL extends Base
      * @param data
      * @return
      */
-    public Properties GetProperty(Properties property, String data)
+    public General GetProperty(General property, Object data)
     {
-        return Properties.valueOf(String.format("%s_%s", property.toString(), data));
-    }
-
-    /**
-     * Overload.
-     * @param property
-     * @param data
-     * @return
-     */
-    public Properties GetProperty(Properties property, int data)
-    {
-        return Properties.valueOf(String.format("%s_%d", property.toString(), data));
+        return General.valueOf(String.format("%s_%s", property.toString(), data));
     }
 
     //endregion
@@ -131,7 +117,7 @@ public class BaseBL extends Base
      * @param property
      * @return String data.
      */
-    protected String GetString(Properties... properties)
+    protected String GetString(Object... properties)
     {
         return this.config.getString(GetStringFromProperties(properties));
     }
@@ -141,7 +127,7 @@ public class BaseBL extends Base
      * @param property
      * @return String data.
      */
-    protected List<String> GetStringList(Properties... properties)
+    protected List<String> GetStringList(Object... properties)
     {
         return this.config.getStringList(GetStringFromProperties(properties));
     }
@@ -151,7 +137,7 @@ public class BaseBL extends Base
      * @param property
      * @return Boolean data.
      */
-    protected Boolean GetBoolean(Properties... properties)
+    protected Boolean GetBoolean(Object... properties)
     {
         return this.config.getBoolean(GetStringFromProperties(properties));
     }
@@ -161,7 +147,7 @@ public class BaseBL extends Base
      * @param property
      * @return Int data.
      */
-    protected int GetInt(Properties... properties)
+    protected int GetInt(Object... properties)
     {
         return this.config.getInt(GetStringFromProperties(properties));
     }
@@ -171,7 +157,7 @@ public class BaseBL extends Base
      * @param property
      * @return Double data.
      */
-    protected double GetDouble(Properties... properties)
+    protected double GetDouble(Object... properties)
     {
         return this.config.getDouble(GetStringFromProperties(properties));
     }
@@ -185,7 +171,7 @@ public class BaseBL extends Base
      * @param data
      * @param properties
      */
-    protected void Set(String data, Properties... properties)
+    protected void Set(String data, Object... properties)
     {
         this.config.set(GetStringFromProperties(properties), data);
     }
@@ -195,7 +181,7 @@ public class BaseBL extends Base
      * @param data
      * @param properties
      */
-    protected void Set(List<String> data, Properties... properties)
+    protected void Set(List<String> data, Object... properties)
     {
         this.config.set(GetStringFromProperties(properties), data);
     }
@@ -205,7 +191,7 @@ public class BaseBL extends Base
      * @param data
      * @param properties
      */
-    protected void Set(int data, Properties... properties)
+    protected void Set(int data, Object... properties)
     {
         this.config.set(GetStringFromProperties(properties), data);
     }
@@ -215,7 +201,7 @@ public class BaseBL extends Base
      * @param data
      * @param properties
      */
-    protected void Set(Boolean data, Properties... properties)
+    protected void Set(Boolean data, Object... properties)
     {
         this.config.set(GetStringFromProperties(properties), data);
     }
@@ -225,7 +211,7 @@ public class BaseBL extends Base
      * @param data
      * @param properties
      */
-    protected void Set(double data, Properties... properties)
+    protected void Set(double data, Object... properties)
     {
         this.config.set(GetStringFromProperties(properties), data);
     }
@@ -369,4 +355,7 @@ public class BaseBL extends Base
     }
 
     //endregion
+
+    //endregion
+
 }

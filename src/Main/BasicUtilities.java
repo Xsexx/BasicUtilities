@@ -4,7 +4,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import BusinessLogic.FileManagerBL;
 import Commands.Location;
 import Commands.Utils;
 import Listeners.PlayerJoin;
@@ -12,7 +11,6 @@ import Listeners.PlayerJoin;
 public class BasicUtilities extends JavaPlugin
 {
 	public PluginDescriptionFile pdfFile = getDescription();
-	public FileManagerBL fileManager = new FileManagerBL(this);
 	
 	/**
 	 * Method that handles when the server starts the plugin.
@@ -22,7 +20,7 @@ public class BasicUtilities extends JavaPlugin
 		// Method for starts the plugin functionalities.
 		ConfigRegister();
 		CommandRegister();
-		ListenerRegister();
+		ListenerRegister(); 
 	}
 
 	/**
@@ -55,6 +53,5 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
-		this.fileManager.RegisterFiles();
 	}
 }

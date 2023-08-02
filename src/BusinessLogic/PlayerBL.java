@@ -50,7 +50,7 @@ public class PlayerBL extends BaseBL
      * @param objPlayer
      * @return In case the player already exist, return true.
      */
-    public Boolean PlayerExist(Properties property)
+    public Boolean PlayerExist(General property)
     {
         try
         {
@@ -93,7 +93,7 @@ public class PlayerBL extends BaseBL
     {
         try
         {
-            return GetInt(Properties.count);
+            return GetInt(General.count);
         }
         catch (Exception exc)
         {
