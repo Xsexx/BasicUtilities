@@ -255,12 +255,12 @@ Final result: `minecraft` Efficiency VI
 Final result: `minecraft:` Efficiency VI, Silk touch
 | Mission Code | Mission Name            | Objective                                 | Rewards                     |
 |--------------|-------------------------|-------------------------------------------|-----------------------------|
-| {F.01}       | @name                   | Collect 01x17 `minecraft:tinte` | 1 `minecraft:` Efficiency II,  6 `minecraft:` |
-|        |                    | Collect 01x64 `minecraft:tinte` | 1 `minecraft:` Efficiency II,  6 `minecraft:` |
+| {F.01}       | @name                   | Collect 01x64 `minecraft:tinte` | 1 `minecraft:` Efficiency II,  6 `minecraft:` |
 |        |                    | Collect 01x64 `minecraft:tinte` |  |
 |        |                    | Collect 01x64 `minecraft:tinte` |  |
 |        |                    | Collect 01x64 `minecraft:tinte` |  |
-| {F.02}       | @name                   | Collect 01x17 `minecraft:Flores` | 1 `minecraft:` Efficiency II,  6 `minecraft:` |
+|        |                    | Collect 01x64 `minecraft:tinte` |  |
+| {F.02}       | @name                   | Collect 01x64 [`minecraft:Flores`, `minecraft:Flores`, `minecraft:Flores`, `minecraft:Flores` ,`minecraft:Flores` ,`minecraft:Flores` ,`minecraft:Flores` ,`minecraft:Flores` ,`minecraft:Flores` ,`minecraft:Flores`] | 1 `minecraft:` Efficiency II,  6 `minecraft:` |
 | {F.03}       | @name                   | Collect 01x16 `minecraft:montura` | 1 `minecraft:` Efficiency II,  6 `minecraft:` |
 ### Beginner
 #### Trophies
