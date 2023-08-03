@@ -1,5 +1,7 @@
 package Base;
 
+import org.bukkit.entity.Player;
+
 import Main.BasicUtilities;
 
 /**
@@ -227,4 +229,22 @@ public class Base
     
     //endregion
     
+    /**
+	 * Method that handles send messages to the console.
+	 * @param message
+	 */
+	public void SendConsoleMessage(String message)
+	{
+		this.utils.SendConsoleMessage(message);
+	}
+
+	/**
+	 * Method that handles send messages to the player.
+	 * @param player
+	 * @param message
+	 */
+	public void SendPlayerMessage(Player player, String message)
+	{
+		this.utils.SendPlayerMessage(player, message);
+	}
 }

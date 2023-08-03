@@ -21,7 +21,6 @@ public class BasicUtilities extends JavaPlugin
 	public FileConfiguration item;
 	public FileConfiguration mobs;
 	public FileConfiguration spawn;
-;
 
 	//endregion
 

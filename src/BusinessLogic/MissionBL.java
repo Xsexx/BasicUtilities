@@ -97,7 +97,7 @@ public class MissionBL extends BaseBL
                 case DIAMOND_PICKAXE:
                 case NETHERITE_PICKAXE:
                     // generamos picos.
-                    item = new ItemStack(Material.NETHERITE_PICKAXE), reward.Amount);
+                    item = new ItemStack(Material.NETHERITE_PICKAXE, reward.Amount);
                     item = new ItemStack(Material.valueOf(String.format("%s_%s", reward.Name, "PICKAXE")), reward.Amount);
                     break;
                 default:

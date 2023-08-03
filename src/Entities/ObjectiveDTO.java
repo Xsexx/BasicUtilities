@@ -6,6 +6,4 @@ public class ObjectiveDTO
 {
     public int Count;
     public Material Material;
-
-    public 
 }
