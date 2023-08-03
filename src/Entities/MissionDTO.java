@@ -9,8 +9,9 @@ import Base.Base.Mission;
  */
 public class MissionDTO
 {
-    public Mission MissionId;
+    public RankDTO Rank;
+    public Mission Id;
     public String Name;
-    public int RankId;
+    public ObjectiveDTO Objective;
     public List<RewardDTO> RewardList;
 }

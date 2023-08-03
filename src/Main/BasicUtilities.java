@@ -1,16 +1,32 @@
 package Main;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import Base.FileManager;
 import Commands.Location;
 import Commands.Utils;
 import Listeners.PlayerJoin;
 
 public class BasicUtilities extends JavaPlugin
 {
+	//region Files
+
+	public FileConfiguration config;
+	public FileConfiguration text;
+	public FileConfiguration player;
+	public FileConfiguration mission;
+	public FileConfiguration item;
+	public FileConfiguration mobs;
+	public FileConfiguration spawn;
+;
+
+	//endregion
+
 	public PluginDescriptionFile pdfFile = getDescription();
+	public FileManager fileManager = new FileManager(this);
 	
 	/**
 	 * Method that handles when the server starts the plugin.
@@ -53,5 +69,6 @@ public class BasicUtilities extends JavaPlugin
 	 */
 	public void ConfigRegister()
 	{
+		fileManager.RegisterFiles();
 	}
 }

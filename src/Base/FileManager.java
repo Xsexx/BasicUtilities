@@ -1,4 +1,4 @@
-package BusinessLogic;
+package Base;
 
 import java.io.File;
 import java.io.InputStreamReader;
@@ -7,19 +7,18 @@ import java.io.Reader;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import Base.BaseBL;
 import Main.BasicUtilities;
 
 /**
  * Class that handles the config files.
  */
-public class FileManagerBL extends BaseBL
+public class FileManager extends BaseBL
 {
     /**
      * Constructor
      * @param objBasicUtilities
      */
-    public FileManagerBL(BasicUtilities objBasicUtilities)
+    public FileManager(BasicUtilities objBasicUtilities)
     {
         super(objBasicUtilities);
     }
@@ -44,20 +43,7 @@ public class FileManagerBL extends BaseBL
 		RegisterFile(FileName.player);
 		RegisterFile(FileName.text);
     }
-
-    /**
-     * Method that handles the register for config file.
-     * @param fileName
-     */
-    public void RegisterFile(FileName fileName)
-    {
-        if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
-        {
-            GetFile(fileName).options().copyDefaults(true);
-            SaveFile();
-        }
-    }
-
+    
     /**
      * Method that handles reload the config files.
      * @param fileName
@@ -77,27 +63,15 @@ public class FileManagerBL extends BaseBL
     }
 
     /**
-     * Method that handles reload the config file.
+     * Method that handles the register for config file.
      * @param fileName
      */
-    public void ReloadFile(FileName fileName)
+    public void RegisterFile(FileName fileName)
     {
-        try
+        if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
         {
-            // In case that file was null, create a new file.
-            this.file = new File(this.basicUtilities.getDataFolder(), FormatName(fileName));
-            this.config = YamlConfiguration.loadConfiguration(this.file);
-            Reader defConfigString = new InputStreamReader(this.basicUtilities.getResource(FormatName(fileName)), "UTF8");
-
-            if(defConfigString != null)
-            {
-                YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigString);
-                this.config.setDefaults(defConfig);
-            }
-        }
-        catch (Exception exc)
-        {
-            ExceptionManager(exc);
+            GetFile(fileName).options().copyDefaults(true);
+            SaveFile(fileName);
         }
     }
 
@@ -108,6 +82,10 @@ public class FileManagerBL extends BaseBL
      */
     public FileConfiguration GetFile(FileName fileName)
     {
+        switch(fileName)
+        {
+            
+        }
         ReloadFile(fileName);
         return this.config;
     }
@@ -116,11 +94,35 @@ public class FileManagerBL extends BaseBL
      * Method that handles save the data on config files.
      * @param fileName
     */
-    public void SaveFile()
+    public void SaveFile(FileName fileName)
     {
         try
         {
-            this.config.save(this.file);
+            this.config.save(new File(this.basicUtilities.getDataFolder(), FormatName(fileName)));
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+    }
+
+    /**
+     * Method that handles reload the config file.
+     * @param fileName
+     */
+    public void ReloadFile(FileName fileName)
+    {
+        try
+        {
+            // In case that file was null, create a new file.
+            this.config = YamlConfiguration.loadConfiguration(new File(this.basicUtilities.getDataFolder(), FormatName(fileName)));
+            Reader defConfigString = new InputStreamReader(this.basicUtilities.getResource(FormatName(fileName)), "UTF8");
+
+            if(defConfigString != null)
+            {
+                YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigString);
+                this.config.setDefaults(defConfig);
+            }
         }
         catch (Exception exc)
         {

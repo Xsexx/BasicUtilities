@@ -1,4 +1,4 @@
-package BusinessLogic;
+package Base;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 /**
  * Class that handles common functions.
  */
-public class UtilsBL
+public class Utils
 {
 	/**
 	 * Method that handles send messages to the console.

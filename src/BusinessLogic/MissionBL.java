@@ -25,18 +25,18 @@ public class MissionBL extends BaseBL
 
     /**
      * Method that handles a mission per player.
-     * @param missionId
+     * @param Id
      * @return
      */
-    public MissionDTO GetMission(Mission missionId)
+    public MissionDTO GetMission(Mission Id)
     {
         MissionDTO mission = new MissionDTO();
 
         try
         {
-            mission.MissionId = missionId;
-            mission.Name = GetString(missionId, General.name);
-
+            mission.Id = Id;
+            mission.Name = GetString(Id, General.name);
+            // Complete the rest.
         }
         catch (Exception exc)
         {
@@ -97,6 +97,7 @@ public class MissionBL extends BaseBL
                 case DIAMOND_PICKAXE:
                 case NETHERITE_PICKAXE:
                     // generamos picos.
+                    item = new ItemStack(Material.NETHERITE_PICKAXE), reward.Amount);
                     item = new ItemStack(Material.valueOf(String.format("%s_%s", reward.Name, "PICKAXE")), reward.Amount);
                     break;
                 default:

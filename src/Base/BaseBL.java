@@ -13,10 +13,8 @@ import Main.BasicUtilities;
 public class BaseBL extends Base
 {
     //region VARIABLES
-
-    protected FileConfiguration config;
-    protected File file;
-    private StringBuilder base = new StringBuilder();
+    
+    private StringBuilder base = new StringBuilder();  
 
     //endregion
 
@@ -61,6 +59,7 @@ public class BaseBL extends Base
      */
     private void RegisterFileManager(BasicUtilities objBasicUtilities, FileName file)
     {
+        this.fileManager = new FileManager(objBasicUtilities);
         this.fileManager.RegisterFile(file);
         this.config = this.fileManager.GetFile(file);
     }

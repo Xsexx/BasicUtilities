@@ -1,7 +1,5 @@
 package Base;
 
-import BusinessLogic.FileManagerBL;
-import BusinessLogic.UtilsBL;
 import Main.BasicUtilities;
 
 /**
@@ -12,8 +10,7 @@ public class Base
     //region VARIABLES.
 
     protected BasicUtilities basicUtilities;
-    protected UtilsBL utils;
-    public FileManagerBL fileManager;
+    protected Utils utils;
 
     //endregion
 
@@ -211,7 +208,7 @@ public class Base
     public Base(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
-        this.utils = new UtilsBL();
+        this.utils = new Utils();
     }
 
     /**
@@ -223,6 +220,11 @@ public class Base
         this.utils.SendConsoleMessage(exc.getMessage());
     }
 
+    protected FileManager FileMananger()
+    {
+        return this.basicUtilities.fileManager;
+    }
+    
     //endregion
     
 }
