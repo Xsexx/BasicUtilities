@@ -1,7 +1,25 @@
 missions:
     f_01:
         id: f_01
-    mission:
-        id: f_02
-    mission:
-        id: f_01
+        name: Bugs bunny is looking for you
+        potion:
+            name: Orange with carrot juice XD
+            lore: 
+            count: 6
+            effect_1:
+                name: HEAL
+                duration: 1000
+                level: 1
+            effect_2:
+                name: REGENERATION
+                duration: 1000
+                level: 1
+        tool:
+            name: PICKAXE
+            material: IRON
+            enchatment_1:
+                name: FORTUNE
+                level: 3
+            enchatment_2:
+                name: UMBREAK
+                level: 3

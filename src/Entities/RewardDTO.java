@@ -1,5 +1,9 @@
 package Entities;
 
+import java.util.List;
+
+import org.bukkit.potion.PotionEffectType;
+
 /**
  * Class that handles the reward information.
  */
@@ -14,5 +18,7 @@ public class RewardDTO
     public String Name;
     public String Lore;
 
-    // For potions    
+    // For potions
+
+    public List<PotionEffectType> Effect;
 }
