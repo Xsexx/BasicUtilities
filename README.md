@@ -58,7 +58,7 @@ Se desbloquean por rango y el drop es aleatorio.
 * [ ] Pico fortuna
 ### Extermination
 * [ ] Sword
-### .
+### Resources
 * [ ] Asada
 ### .
 * [ ] Elytra
