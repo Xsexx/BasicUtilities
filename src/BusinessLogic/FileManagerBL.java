@@ -1,4 +1,4 @@
-package Base;
+package BusinessLogic;
 
 import java.io.File;
 import java.io.InputStreamReader;
@@ -7,18 +7,19 @@ import java.io.Reader;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import Base.BaseBL;
 import Main.BasicUtilities;
 
 /**
  * Class that handles the config files.
  */
-public class FileManager extends BaseBL
+public class FileManagerBL extends BaseBL
 {
     /**
      * Constructor
      * @param objBasicUtilities
      */
-    public FileManager(BasicUtilities objBasicUtilities)
+    public FileManagerBL(BasicUtilities objBasicUtilities)
     {
         super(objBasicUtilities);
     }
@@ -28,7 +29,7 @@ public class FileManager extends BaseBL
      * @param fileName
      * @return
      */
-    private String FormatName(FileName fileName)
+    private String GetFilePath(FileName fileName)
     {
         return String.format("%s.%s", fileName.toString(), "yml");
     }
@@ -68,7 +69,7 @@ public class FileManager extends BaseBL
      */
     public void RegisterFile(FileName fileName)
     {
-        if(!new File(this.basicUtilities.getDataFolder(), FormatName(fileName)).exists())
+        if(!new File(BasicUtilities().getDataFolder(), GetFilePath(fileName)).exists())
         {
             GetFile(fileName).options().copyDefaults(true);
             SaveFile(fileName);
@@ -82,12 +83,12 @@ public class FileManager extends BaseBL
      */
     public FileConfiguration GetFile(FileName fileName)
     {
-        switch(fileName)
+        if(GetFileByName(fileName) == null)
         {
-            
+            ReloadFile(fileName);
         }
-        ReloadFile(fileName);
-        return this.config;
+
+        return FileConfiguration();
     }
 
     /**
@@ -98,7 +99,7 @@ public class FileManager extends BaseBL
     {
         try
         {
-            this.config.save(new File(this.basicUtilities.getDataFolder(), FormatName(fileName)));
+            FileConfiguration().save(new File(BasicUtilities().getDataFolder(), GetFilePath(fileName)));
         }
         catch (Exception exc)
         {
@@ -115,18 +116,38 @@ public class FileManager extends BaseBL
         try
         {
             // In case that file was null, create a new file.
-            this.config = YamlConfiguration.loadConfiguration(new File(this.basicUtilities.getDataFolder(), FormatName(fileName)));
-            Reader defConfigString = new InputStreamReader(this.basicUtilities.getResource(FormatName(fileName)), "UTF8");
+            FileConfiguration(YamlConfiguration.loadConfiguration(new File(BasicUtilities().getDataFolder(), GetFilePath(fileName))));
+            Reader defConfigString = new InputStreamReader(BasicUtilities().getResource(GetFilePath(fileName)), "UTF8");
 
             if(defConfigString != null)
             {
                 YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigString);
-                this.config.setDefaults(defConfig);
+                FileConfiguration().setDefaults(defConfig);
             }
         }
         catch (Exception exc)
         {
             ExceptionManager(exc);
         }
+    }
+
+    /**
+     * Method that handles return the file configuration from fileName
+     * @param fileName
+     * @return
+     */
+    private FileConfiguration GetFileByName(FileName fileName)
+    {
+        return switch (fileName)
+        {
+            case config     -> BasicUtilities().config;
+            case player     -> BasicUtilities().player;
+            case text       -> BasicUtilities().text;
+            case item       -> BasicUtilities().item;
+            case spawn      -> BasicUtilities().spawn;
+            case mission    -> BasicUtilities().mission;
+            case log        -> BasicUtilities().log;
+            default         -> BasicUtilities().config;
+        };
     }
 }

@@ -1,5 +1,7 @@
 package Base;
 
+import org.bukkit.entity.Player;
+
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
@@ -11,7 +13,7 @@ public class BaseMC extends Base
 
     //endregion
 
-    //region Methods
+    //region METHODS
     
     /**
 	 * Constructor
@@ -20,8 +22,28 @@ public class BaseMC extends Base
     public BaseMC(BasicUtilities objBasicUtilities)
     {
         super(objBasicUtilities);
-        this.text = new TextBL(basicUtilities);
+        this.text = new TextBL(BasicUtilities());
     }
+
+        /**
+	 * Method that handles send messages to the console.
+	 * @param message
+	 */
+	protected void SendConsoleMessage(String message)
+	{
+		Utils().SendConsoleMessage(message);
+	}
+
+	/**
+	 * Method that handles send messages to the player.
+	 * @param player
+	 * @param message
+	 */
+	protected void SendPlayerMessage(Player player, String message)
+	{
+		Utils().SendPlayerMessage(player, message);
+	}
+
 
     //endregion
     

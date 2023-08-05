@@ -1,6 +1,5 @@
 package Base;
 
-import java.io.File;
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -15,10 +14,11 @@ public class BaseBL extends Base
     //region VARIABLES
     
     private StringBuilder base = new StringBuilder();  
+    private FileConfiguration fileConfiguration;
 
     //endregion
 
-    //region Methods
+    //region METHODS
 
     /**
 	 * Constructor
@@ -37,7 +37,7 @@ public class BaseBL extends Base
     public BaseBL(BasicUtilities objBasicUtilities, FileName file)
     {
         super(objBasicUtilities);
-        RegisterFileManager(objBasicUtilities, file);
+        this.fileConfiguration = FileMananger().GetFile(file);
     }
 
     /**
@@ -48,20 +48,8 @@ public class BaseBL extends Base
     public BaseBL(BasicUtilities objBasicUtilities, FileName file, String base)
     {
         super(objBasicUtilities);
+        this.fileConfiguration = FileMananger().GetFile(file);
         this.base.append(base);
-        RegisterFileManager(objBasicUtilities, file);
-    }
-
-    /**
-     * Create the file manager and register the new files.
-     * @param objBasicUtilities
-     * @param file
-     */
-    private void RegisterFileManager(BasicUtilities objBasicUtilities, FileName file)
-    {
-        this.fileManager = new FileManager(objBasicUtilities);
-        this.fileManager.RegisterFile(file);
-        this.config = this.fileManager.GetFile(file);
     }
 
     //region PROPERTIES
@@ -113,52 +101,61 @@ public class BaseBL extends Base
 
     /**
      * Method that handles getting data from config files.
-     * @param property
+     * @param base
      * @return String data.
      */
     protected String GetString(Object... properties)
     {
-        return this.config.getString(GetStringFromProperties(properties));
+        return this.fileConfiguration.getString(GetStringFromProperties(properties));
     }
 
     /**
      * Method that handles getting data from config files.
-     * @param property
+     * @param base
      * @return String data.
      */
     protected List<String> GetStringList(Object... properties)
     {
-        return this.config.getStringList(GetStringFromProperties(properties));
+        return this.fileConfiguration.getStringList(GetStringFromProperties(properties));
     }
 
     /**
      * Method that handles getting data from config files.
-     * @param property
+     * @param base
      * @return Boolean data.
      */
     protected Boolean GetBoolean(Object... properties)
     {
-        return this.config.getBoolean(GetStringFromProperties(properties));
+        return this.fileConfiguration.getBoolean(GetStringFromProperties(properties));
     }
 
     /**
      * Method that handles getting data from config files.
-     * @param property
+     * @param base
      * @return Int data.
      */
     protected int GetInt(Object... properties)
     {
-        return this.config.getInt(GetStringFromProperties(properties));
+        return this.fileConfiguration.getInt(GetStringFromProperties(properties));
     }
 
     /**
      * Method that handles getting data from config files.
-     * @param property
+     * @param base
      * @return Double data.
      */
     protected double GetDouble(Object... properties)
     {
-        return this.config.getDouble(GetStringFromProperties(properties));
+        return this.fileConfiguration.getDouble(GetStringFromProperties(properties));
+    }
+
+    /**
+     * Method that handles get the file config.
+     * @return
+     */
+    protected FileConfiguration FileConfiguration()
+    {
+        return this.fileConfiguration;
     }
 
     //endregion
@@ -172,7 +169,7 @@ public class BaseBL extends Base
      */
     protected void Set(String data, Object... properties)
     {
-        this.config.set(GetStringFromProperties(properties), data);
+        this.fileConfiguration.set(GetStringFromProperties(properties), data);
     }
 
     /**
@@ -182,7 +179,7 @@ public class BaseBL extends Base
      */
     protected void Set(List<String> data, Object... properties)
     {
-        this.config.set(GetStringFromProperties(properties), data);
+        this.fileConfiguration.set(GetStringFromProperties(properties), data);
     }
 
     /**
@@ -192,7 +189,7 @@ public class BaseBL extends Base
      */
     protected void Set(int data, Object... properties)
     {
-        this.config.set(GetStringFromProperties(properties), data);
+        this.fileConfiguration.set(GetStringFromProperties(properties), data);
     }
 
     /**
@@ -202,7 +199,7 @@ public class BaseBL extends Base
      */
     protected void Set(Boolean data, Object... properties)
     {
-        this.config.set(GetStringFromProperties(properties), data);
+        this.fileConfiguration.set(GetStringFromProperties(properties), data);
     }
 
     /**
@@ -212,7 +209,16 @@ public class BaseBL extends Base
      */
     protected void Set(double data, Object... properties)
     {
-        this.config.set(GetStringFromProperties(properties), data);
+        this.fileConfiguration.set(GetStringFromProperties(properties), data);
+    }
+
+    /**
+     * Method that handles set the file config.
+     * @return
+     */
+    protected void FileConfiguration(FileConfiguration fileConfiguration)
+    {
+        this.fileConfiguration = fileConfiguration;
     }
 
     //endregion

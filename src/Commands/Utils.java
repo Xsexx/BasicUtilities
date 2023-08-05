@@ -32,7 +32,7 @@ public class Utils extends BaseMC implements CommandExecutor
             // In case that player send the command.
             if(sender instanceof Player)
             {
-                this.utils.SendPlayerMessage((Player) sender, label);
+                SendPlayerMessage((Player) sender, label);
             }
             // In case that console send the command.
             else
@@ -43,8 +43,8 @@ public class Utils extends BaseMC implements CommandExecutor
                     // Reload the plugin's config.
                     if(args[0].equalsIgnoreCase("reload"))
                     {
-                        this.fileManager.ReloadFiles();
-                        this.utils.SendConsoleMessage(this.text.GetText(Text.plugin_reload_text, this.basicUtilities.pdfFile.getName()));
+                        FileMananger().ReloadFiles();
+                        SendConsoleMessage(this.text.GetText(Text.plugin_reload_text, BasicUtilities().pdfFile.getName()));
                     }
                     else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
                     {
@@ -53,7 +53,7 @@ public class Utils extends BaseMC implements CommandExecutor
                 }
                 else
                 {
-                    this.utils.SendConsoleMessage(this.text.GetText(Text.command_from_console_text, this.basicUtilities.pdfFile.getName()));
+                    SendConsoleMessage(this.text.GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
                 }
             }
         }

@@ -1,7 +1,7 @@
 package Base;
 
-import org.bukkit.entity.Player;
-
+import BusinessLogic.FileManagerBL;
+import BusinessLogic.UtilsBL;
 import Main.BasicUtilities;
 
 /**
@@ -11,8 +11,8 @@ public class Base
 {
     //region VARIABLES.
 
-    protected BasicUtilities basicUtilities;
-    protected Utils utils;
+    private BasicUtilities basicUtilities;
+    private UtilsBL utils;
 
     //endregion
 
@@ -36,9 +36,7 @@ public class Base
         item,
         spawn,
         mission,
-        mobs,
         log,
-        stats
     }
 
     public enum General
@@ -201,16 +199,16 @@ public class Base
     
     //endregion
 
-    //region Methods
+    //region METHODS
     
     /**
 	 * Constructor
 	 * @param objBasicUtilities
 	 */
-    public Base(BasicUtilities objBasicUtilities)
+    protected Base(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
-        this.utils = new Utils();
+        this.utils = new UtilsBL(this.basicUtilities);
     }
 
     /**
@@ -222,29 +220,36 @@ public class Base
         this.utils.SendConsoleMessage(exc.getMessage());
     }
 
-    protected FileManager FileMananger()
+    //region GETTERS
+
+    /**
+     * Method that handles get the file manager.
+     * @return
+     */
+    protected FileManagerBL FileMananger()
     {
         return this.basicUtilities.fileManager;
     }
     
-    //endregion
-    
     /**
-	 * Method that handles send messages to the console.
-	 * @param message
-	 */
-	public void SendConsoleMessage(String message)
-	{
-		this.utils.SendConsoleMessage(message);
-	}
+     * Method that handles get basicUtilities.
+     * @return
+     */
+    protected BasicUtilities BasicUtilities()
+    {
+        return this.basicUtilities;
+    }
 
-	/**
-	 * Method that handles send messages to the player.
-	 * @param player
-	 * @param message
-	 */
-	public void SendPlayerMessage(Player player, String message)
-	{
-		this.utils.SendPlayerMessage(player, message);
-	}
+    /**
+     * Method that handles get the utils.
+     * @return
+     */
+    protected UtilsBL Utils()
+    {
+        return this.utils;
+    }
+
+    //endregion
+
+    //endregion
 }

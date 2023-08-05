@@ -50,11 +50,6 @@ public class TextBL extends BaseBL
 	 */
 	private String GetTextFormatByArgs(StringBuilder data, Object... args)
 	{
-		for (Object string : args)
-		{
-			this.utils.SendConsoleMessage(string.toString());
-		}
-
 		return String.format(data.toString(), args);
 	}
 

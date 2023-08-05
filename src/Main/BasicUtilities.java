@@ -5,7 +5,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Base.FileManager;
+import BusinessLogic.FileManagerBL;
 import Commands.Location;
 import Commands.Utils;
 import Listeners.PlayerJoin;
@@ -19,13 +19,13 @@ public class BasicUtilities extends JavaPlugin
 	public FileConfiguration player;
 	public FileConfiguration mission;
 	public FileConfiguration item;
-	public FileConfiguration mobs;
 	public FileConfiguration spawn;
+	public FileConfiguration log;
 
 	//endregion
 
 	public PluginDescriptionFile pdfFile = getDescription();
-	public FileManager fileManager = new FileManager(this);
+	public FileManagerBL fileManager = new FileManagerBL(this);
 	
 	/**
 	 * Method that handles when the server starts the plugin.
