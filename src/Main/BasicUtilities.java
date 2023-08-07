@@ -16,7 +16,7 @@ public class BasicUtilities extends JavaPlugin
 
 	public FileConfiguration config;
 	public FileConfiguration text;
-	public FileConfiguration player;
+	public FileConfiguration players;
 	public FileConfiguration mission;
 	public FileConfiguration item;
 	public FileConfiguration spawn;

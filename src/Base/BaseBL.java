@@ -90,7 +90,7 @@ public class BaseBL extends Base
      * @param data
      * @return
      */
-    public General GetProperty(General property, Object data)
+    public General GetProperty(Object property, Object data)
     {
         return General.valueOf(String.format("%s_%s", property.toString(), data));
     }

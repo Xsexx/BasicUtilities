@@ -15,6 +15,8 @@ import Main.BasicUtilities;
  */
 public class FileManagerBL extends BaseBL
 {
+    private File file;
+
     /**
      * Constructor
      * @param objBasicUtilities
@@ -41,8 +43,11 @@ public class FileManagerBL extends BaseBL
     public void RegisterFiles()
     {
         RegisterFile(FileName.config);
-		RegisterFile(FileName.player);
-		RegisterFile(FileName.text);
+        RegisterFile(FileName.players);
+        RegisterFile(FileName.text);
+        RegisterFile(FileName.spawn);
+        RegisterFile(FileName.mission);
+        RegisterFile(FileName.log);
     }
     
     /**
@@ -54,8 +59,11 @@ public class FileManagerBL extends BaseBL
         try
         {
             ReloadFile(FileName.config);
-            ReloadFile(FileName.player);
+            ReloadFile(FileName.players);
             ReloadFile(FileName.text);
+            ReloadFile(FileName.spawn);
+            ReloadFile(FileName.mission);
+            ReloadFile(FileName.log);
         }
         catch (Exception exc)
         {
@@ -69,7 +77,8 @@ public class FileManagerBL extends BaseBL
      */
     public void RegisterFile(FileName fileName)
     {
-        if(!new File(BasicUtilities().getDataFolder(), GetFilePath(fileName)).exists())
+        file = new File(BasicUtilities().getDataFolder(), GetFilePath(fileName));
+        if(!file.exists())
         {
             GetFile(fileName).options().copyDefaults(true);
             SaveFile(fileName);
@@ -99,7 +108,7 @@ public class FileManagerBL extends BaseBL
     {
         try
         {
-            FileConfiguration().save(new File(BasicUtilities().getDataFolder(), GetFilePath(fileName)));
+            FileConfiguration().save(file);
         }
         catch (Exception exc)
         {
@@ -116,7 +125,7 @@ public class FileManagerBL extends BaseBL
         try
         {
             // In case that file was null, create a new file.
-            FileConfiguration(YamlConfiguration.loadConfiguration(new File(BasicUtilities().getDataFolder(), GetFilePath(fileName))));
+            FileConfiguration(YamlConfiguration.loadConfiguration(file));
             Reader defConfigString = new InputStreamReader(BasicUtilities().getResource(GetFilePath(fileName)), "UTF8");
 
             if(defConfigString != null)
@@ -141,9 +150,8 @@ public class FileManagerBL extends BaseBL
         return switch (fileName)
         {
             case config     -> BasicUtilities().config;
-            case player     -> BasicUtilities().player;
+            case players    -> BasicUtilities().players;
             case text       -> BasicUtilities().text;
-            case item       -> BasicUtilities().item;
             case spawn      -> BasicUtilities().spawn;
             case mission    -> BasicUtilities().mission;
             case log        -> BasicUtilities().log;

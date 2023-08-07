@@ -12,11 +12,32 @@ public class Base
     //region VARIABLES.
 
     private BasicUtilities basicUtilities;
-    private UtilsBL utils;
+	private UtilsBL utils;
 
     //endregion
 
     //region ENUMS
+
+    public enum Config
+    {
+        welcome_message_available,
+        
+        // Ranking
+        novice,
+        beginner,
+        intermediate,
+        advanced,
+        expert,
+        master,
+        legend,
+        mythical,
+        god
+    }
+
+    public enum Players
+    {
+
+    }
 
     public enum Text
     {
@@ -28,52 +49,15 @@ public class Base
         command_from_console_text
     }
 
-    public enum FileName
+    public enum Spawn
     {
-        config,
-        player,
-        text,
-        item,
-        spawn,
-        mission,
-        log,
-    }
-
-    public enum General
-    {
-        id,
-        color,
-        asigned,
-        count,
-        name,
-        // spawn point
         spawn_point,
-
-        // location
         x,
         y,
         z,
         world,
         yaw,
         pitch
-    }
-
-    public enum Config
-    {
-        welcome_message_available,
-    }
-
-    public enum Ranking
-    {
-        novice,
-        beginner,
-        intermediate,
-        advanced,
-        expert,
-        master,
-        legend,
-        mythical,
-        god
     }
 
     public enum Mission
@@ -197,6 +181,30 @@ public class Base
         
     }
     
+    public enum Log
+    {
+        log,
+    }
+
+    public enum FileName
+    {
+        config,
+        players,
+        text,
+        spawn,
+        mission,
+        log,
+    }
+
+    public enum General
+    {
+        id,
+        color,
+        asigned,
+        count,
+        name
+    }
+
     //endregion
 
     //region METHODS
@@ -208,7 +216,7 @@ public class Base
     protected Base(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
-        this.utils = new UtilsBL(this.basicUtilities);
+        // this.utils = new UtilsBL(this.basicUtilities); // Revisar
     }
 
     /**
@@ -218,6 +226,7 @@ public class Base
     protected void ExceptionManager(Exception exc)
     {
         this.utils.SendConsoleMessage(exc.getMessage());
+        this.utils.SaveErrorMessage(exc.getMessage());
     }
 
     //region GETTERS

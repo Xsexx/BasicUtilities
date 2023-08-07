@@ -60,14 +60,14 @@ public class ConfigBL extends BaseBL
      */
     public int GetAvailableSpawnPoint(int playerCount)
     {
-        int spawnPointCount = GetInt(General.spawn_point, General.count);
+        int spawnPointCount = GetInt(Spawn.spawn_point, General.count);
 
         try
         {
             // Find a available spawn point.
             for(int i = 1; i < spawnPointCount; i++)
             {
-                if(!GetBoolean(GetProperty(General.spawn_point, i), General.asigned))
+                if(!GetBoolean(GetProperty(Spawn.spawn_point, i), General.asigned))
                 {
                     return i;
                 }

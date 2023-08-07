@@ -4,13 +4,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import Base.BaseBL;
+import Main.BasicUtilities;
 
 /**
  * Class that handles common functions.
  */
 public class UtilsBL extends BaseBL
 {
-	public UtilsBL(Main.BasicUtilities objBasicUtilities)
+	public UtilsBL(BasicUtilities objBasicUtilities)
 	{
 		super(objBasicUtilities);
 	}
@@ -32,5 +33,11 @@ public class UtilsBL extends BaseBL
 	public void SendPlayerMessage(Player player, String message)
 	{
 		player.sendMessage(message);
+	}
+
+	public void SaveErrorMessage(String error)
+	{
+		LogBL logBL = new LogBL(BasicUtilities());
+		logBL.SaveErrorMessage(error);
 	}
 }

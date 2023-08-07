@@ -1,7 +1,5 @@
 package Base;
 
-import org.bukkit.entity.Player;
-
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
@@ -39,7 +37,7 @@ public class BaseMC extends Base
 	 * @param player
 	 * @param message
 	 */
-	protected void SendPlayerMessage(Player player, String message)
+	protected void SendPlayerMessage(org.bukkit.entity.Player player, String message)
 	{
 		Utils().SendPlayerMessage(player, message);
 	}
