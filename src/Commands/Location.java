@@ -33,20 +33,31 @@ public class Location extends BaseMC implements CommandExecutor
             if(sender instanceof Player)
             {
                 // For the aditional parameters.
-                if(args.length != 0)
+                if(args.length != 0 && Location.valueOf(args[0]) != null)
                 {
-                    if(args[0].equalsIgnoreCase("add"))
+                    switch (Location.valueOf(args[0]))
                     {
-                        /*
-                        Location location = player.getLocation();
-                        double x = location.getX();
-                        double y = location.getY();
-                        double z = location.getZ();
-                        String world = location.getWorld().getName();
-                        float yaw = location.getYaw();
-                        float pitch = location.getPitch();
-                        */
+                        case add:
+                            /*
+                            Location location = player.getLocation();
+                            double x = location.getX();
+                            double y = location.getY();
+                            double z = location.getZ();
+                            String world = location.getWorld().getName();
+                            float yaw = location.getYaw();
+                            float pitch = location.getPitch();
+                            */
+                            break;
+                        case view:
+                        case delete:
+                        case sethome:
+                        case deletehome:
+                        case tp:
+                        case tpr:
+                        default:
+                            break;
                     }
+                        
                 }
             }
             // In case that console send the command.

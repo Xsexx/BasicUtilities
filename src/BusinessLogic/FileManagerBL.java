@@ -15,7 +15,13 @@ import Main.BasicUtilities;
  */
 public class FileManagerBL extends BaseBL
 {
+    //region VARIABLES
+
     private File file;
+
+    //endregion
+
+    //region METHODS
 
     /**
      * Constructor
@@ -33,7 +39,7 @@ public class FileManagerBL extends BaseBL
      */
     private String GetFilePath(FileName fileName)
     {
-        return String.format("%s.%s", fileName.toString(), "yml");
+        return String.format("%s.%s", fileName, "yml");
     }
 
     /**
@@ -58,12 +64,12 @@ public class FileManagerBL extends BaseBL
     {
         try
         {
-            ReloadFile(FileName.config);
-            ReloadFile(FileName.players);
-            ReloadFile(FileName.text);
-            ReloadFile(FileName.spawn);
-            ReloadFile(FileName.mission);
-            ReloadFile(FileName.log);
+            ReloadFile(FileName.config, true);
+            ReloadFile(FileName.players, true);
+            ReloadFile(FileName.text, true);
+            ReloadFile(FileName.spawn, true);
+            ReloadFile(FileName.mission, true);
+            ReloadFile(FileName.log, true);
         }
         catch (Exception exc)
         {
@@ -78,6 +84,7 @@ public class FileManagerBL extends BaseBL
     public void RegisterFile(FileName fileName)
     {
         file = new File(BasicUtilities().getDataFolder(), GetFilePath(fileName));
+
         if(!file.exists())
         {
             GetFile(fileName).options().copyDefaults(true);
@@ -92,12 +99,12 @@ public class FileManagerBL extends BaseBL
      */
     public FileConfiguration GetFile(FileName fileName)
     {
-        if(GetFileByName(fileName) == null)
+        if(FileConfiguration(fileName) == null)
         {
-            ReloadFile(fileName);
+            ReloadFile(fileName, false);
         }
 
-        return FileConfiguration();
+        return FileConfiguration(fileName);
     }
 
     /**
@@ -108,7 +115,7 @@ public class FileManagerBL extends BaseBL
     {
         try
         {
-            FileConfiguration().save(file);
+            FileConfiguration(fileName).save(file);
         }
         catch (Exception exc)
         {
@@ -120,18 +127,24 @@ public class FileManagerBL extends BaseBL
      * Method that handles reload the config file.
      * @param fileName
      */
-    public void ReloadFile(FileName fileName)
+    public void ReloadFile(FileName fileName, boolean fromReload)
     {
         try
         {
+            if(fromReload)
+            {
+                file = new File(BasicUtilities().getDataFolder(), GetFilePath(fileName));
+                FileConfiguration(fileName, null);
+            }
+
             // In case that file was null, create a new file.
-            FileConfiguration(YamlConfiguration.loadConfiguration(file));
+            FileConfiguration(fileName, YamlConfiguration.loadConfiguration(file));
             Reader defConfigString = new InputStreamReader(BasicUtilities().getResource(GetFilePath(fileName)), "UTF8");
 
             if(defConfigString != null)
             {
                 YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigString);
-                FileConfiguration().setDefaults(defConfig);
+                FileConfiguration(fileName).setDefaults(defConfig);
             }
         }
         catch (Exception exc)
@@ -140,22 +153,5 @@ public class FileManagerBL extends BaseBL
         }
     }
 
-    /**
-     * Method that handles return the file configuration from fileName
-     * @param fileName
-     * @return
-     */
-    private FileConfiguration GetFileByName(FileName fileName)
-    {
-        return switch (fileName)
-        {
-            case config     -> BasicUtilities().config;
-            case players    -> BasicUtilities().players;
-            case text       -> BasicUtilities().text;
-            case spawn      -> BasicUtilities().spawn;
-            case mission    -> BasicUtilities().mission;
-            case log        -> BasicUtilities().log;
-            default         -> BasicUtilities().config;
-        };
-    }
+    //endregion
 }

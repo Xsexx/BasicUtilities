@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
  */
 public class UtilsBL
 {
+	//region METHODS
+	
 	/**
 	 * Method that handles send messages to the console.
 	 * @param message
@@ -26,4 +28,6 @@ public class UtilsBL
 	{
 		player.sendMessage(message);
 	}
+
+	//endregion
 }

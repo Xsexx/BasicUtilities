@@ -73,11 +73,11 @@ public class BaseBL extends Base
         {
             if(result.isEmpty())
             {
-                result.append(String.format("%s", property.toString()));
+                result.append(String.format("%s", property));
             }
             else
             {
-                result.append(String.format(".%s", property.toString()));
+                result.append(String.format(".%s", property));
             }
         }
 
@@ -92,7 +92,7 @@ public class BaseBL extends Base
      */
     public General GetProperty(Object property, Object data)
     {
-        return General.valueOf(String.format("%s_%s", property.toString(), data));
+        return General.valueOf(String.format("%s_%s", property, data));
     }
 
     //endregion
@@ -153,9 +153,18 @@ public class BaseBL extends Base
      * Method that handles get the file config.
      * @return
      */
-    protected FileConfiguration FileConfiguration()
+    protected FileConfiguration FileConfiguration(FileName fileName)
     {
-        return this.fileConfiguration;
+        return switch (fileName)
+        {
+            case config     -> BasicUtilities().config;
+            case players    -> BasicUtilities().players;
+            case text       -> BasicUtilities().text;
+            case spawn      -> BasicUtilities().spawn;
+            case mission    -> BasicUtilities().mission;
+            case log        -> BasicUtilities().log;
+            default         -> BasicUtilities().config;
+        };
     }
 
     //endregion
@@ -213,12 +222,23 @@ public class BaseBL extends Base
     }
 
     /**
-     * Method that handles set the file config.
+     * Method that handles return the file configuration from fileName
+     * @param fileName
+     * @param fileConfiguration
      * @return
      */
-    protected void FileConfiguration(FileConfiguration fileConfiguration)
+    protected FileConfiguration FileConfiguration(FileName fileName, FileConfiguration fileConfiguration)
     {
-        this.fileConfiguration = fileConfiguration;
+        return switch (fileName)
+        {
+            case config     -> BasicUtilities().config = fileConfiguration;
+            case players    -> BasicUtilities().players = fileConfiguration;
+            case text       -> BasicUtilities().text = fileConfiguration;
+            case spawn      -> BasicUtilities().spawn = fileConfiguration;
+            case mission    -> BasicUtilities().mission = fileConfiguration;
+            case log        -> BasicUtilities().log = fileConfiguration;
+            default         -> BasicUtilities().config = fileConfiguration;
+        };
     }
 
     //endregion
@@ -362,5 +382,4 @@ public class BaseBL extends Base
     //endregion
 
     //endregion
-
 }

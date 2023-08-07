@@ -38,17 +38,18 @@ public class Utils extends BaseMC implements CommandExecutor
             else
             {
                 // For the aditional parameters.
-                if(args.length != 0)
+                if(args.length != 0 && Utils.valueOf(args[0]) != null)
                 {
-                    // Reload the plugin's config.
-                    if(args[0].equalsIgnoreCase("reload"))
+                    switch (Utils.valueOf(args[0]))
                     {
-                        FileMananger().ReloadFiles();
-                        SendConsoleMessage(this.text.GetText(Text.plugin_reload_text, BasicUtilities().pdfFile.getName()));
-                    }
-                    else if(args[0].equalsIgnoreCase("another") && args[0].equalsIgnoreCase("function"))
-                    {
-                        // Not today.
+                        case reload:
+                            FileMananger().ReloadFiles();
+                            SendConsoleMessage(this.text.GetText(Text.plugin_reload_text, BasicUtilities().pdfFile.getName()));
+                            break;
+                        case exception:
+                            throw new Exception("Pruebas de excepcion guardadas en el log", null);
+                        default:
+                            break;
                     }
                 }
                 else

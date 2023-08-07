@@ -10,7 +10,7 @@ import Main.BasicUtilities;
  */
 public class Base
 {
-    //region VARIABLES.
+    //region VARIABLES
 
     private BasicUtilities basicUtilities;
 	private UtilsBL utils;
