@@ -1,6 +1,7 @@
 package Base;
 
 import BusinessLogic.FileManagerBL;
+import BusinessLogic.LogBL;
 import BusinessLogic.UtilsBL;
 import Main.BasicUtilities;
 
@@ -216,7 +217,7 @@ public class Base
     protected Base(BasicUtilities objBasicUtilities)
     {
         this.basicUtilities = objBasicUtilities;
-        // this.utils = new UtilsBL(this.basicUtilities); // Revisar
+        this.utils = new UtilsBL();
     }
 
     /**
@@ -226,7 +227,8 @@ public class Base
     protected void ExceptionManager(Exception exc)
     {
         this.utils.SendConsoleMessage(exc.getMessage());
-        this.utils.SaveErrorMessage(exc.getMessage());
+        LogBL log = new LogBL(this.basicUtilities);
+        log.SaveErrorMessage(exc.getMessage());
     }
 
     //region GETTERS
