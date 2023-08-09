@@ -81,4 +81,21 @@ public class ConfigBL extends BaseBL
         // In case each spawn point is busy, asign the next-one by countplater
         return playerCount % spawnPointCount;
     }
+
+    /**
+     * Method that handles the count of players.
+     * @return
+     */
+    public void PlayerCountIncrease()
+    {
+        try
+        {
+            Integer count = GetInt(General.count);
+            Set(count++, General.count);
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+    }
 }

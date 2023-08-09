@@ -28,18 +28,35 @@ public class PlayerBL extends BaseBL
     public PlayerBL(BasicUtilities objBasicUtilities, Player objPlayerMC)
     {
         super(objBasicUtilities, FileName.players, String.format("%s_%s", objPlayerMC.getName(), objPlayerMC.getUniqueId().toString()));
-        CreateOrSetPlayer(objPlayerMC);
+    }
+
+    /**
+     * Method that handles if the player exist.
+     * @return
+     */
+    public Boolean PlayerExist()
+    {
+        try
+        {
+            return GetBoolean(GetBase()) != null;
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+
+        return false;
     }
 
     /**
      * Method that handles the validation or creation of the player on config files.
      * @param playerDTO
      */
-    private void CreateOrSetPlayer(Player playerMC)
+    public void CreateOrSetPlayer(Player playerMC)
     {
         try
         {
-            if(GetBoolean(GetBase()) == null)
+            if(!PlayerExist())
             {
                 playerDTO.Id = GetBase();
                 playerDTO.Name = playerMC.getName();
@@ -48,7 +65,6 @@ public class PlayerBL extends BaseBL
                 UpdatePlayerRank(Ranking.novice);
                 
                 SetPlayerData();
-                SetPlayersCount();
                 SaveFile();
             }
             else
@@ -73,23 +89,6 @@ public class PlayerBL extends BaseBL
     }
 
     /**
-     * Method that handles the count of players.
-     * @return
-     */
-    private void SetPlayersCount()
-    {
-        try
-        {
-            Integer count = GetInt(General.count);
-            Set(count++, General.count);
-        }
-        catch (Exception exc)
-        {
-            ExceptionManager(exc);
-        }
-    }
-
-    /**
      * Method that handles to set the player data.
      * @return
      */
@@ -106,7 +105,10 @@ public class PlayerBL extends BaseBL
      */
     public void AddPlayerEffects()
     {
-        playerDTO.PlayerMC.addPotionEffect(new PotionEffect(playerDTO.Rank.Effect, playerDTO.Rank.Duration, playerDTO.Rank.Level));
+        if(playerDTO.Rank.Rank != null)
+        {
+            playerDTO.PlayerMC.addPotionEffect(new PotionEffect(playerDTO.Rank.Effect, playerDTO.Rank.Duration, playerDTO.Rank.Level));
+        }
     }
 
     /**
@@ -117,7 +119,7 @@ public class PlayerBL extends BaseBL
     {
         RankBL rankBL = new RankBL(BasicUtilities());
         playerDTO.Rank = rankBL.GetRank(rank);
-        Set(playerDTO.Rank.Id, General.id);
+        Set(playerDTO.Rank.Id, General.rank, General.id);
     }
     
     //endregion

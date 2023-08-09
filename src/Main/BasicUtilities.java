@@ -27,6 +27,8 @@ public class BasicUtilities extends JavaPlugin
 	public PluginDescriptionFile pdfFile = getDescription();
 	public FileManagerBL fileManager = new FileManagerBL(this);
 	
+	//region METHODS
+
 	/**
 	 * Method that handles when the server starts the plugin.
 	 */
@@ -70,4 +72,6 @@ public class BasicUtilities extends JavaPlugin
 	{
 		fileManager.RegisterFiles();
 	}
+
+	//endregion
 }

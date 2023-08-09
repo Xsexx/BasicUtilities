@@ -33,23 +33,33 @@ public class PlayerJoin extends BaseMC implements Listener
         try
         {
             // Get 
-            Player objPlayer = event.getPlayer();
+            Player playerMC = event.getPlayer();
 
             // Ignore all the admin players.
             // if(!objPlayer.isOp())
             {
                 // BL objects.
-                ConfigBL objConfigBL = new ConfigBL(BasicUtilities());
-                new PlayerBL(BasicUtilities(), objPlayer);
-                // In some cases, the welcome message can be disabled.
-                if(objConfigBL.ShowWelcomeMessage())
+                ConfigBL configBL = new ConfigBL(BasicUtilities());
+                PlayerBL playerBL = new PlayerBL(BasicUtilities(), playerMC);
+                
+                if(!playerBL.PlayerExist())
                 {
-                    SendPlayerMessage(objPlayer,Text().GetText(Text.welcome_message_text, Text().GetText(Text.server_name), objPlayer.getName()));
+                    configBL.PlayerCountIncrease();
                 }
 
-                if(objConfigBL.ShowWeekNews())
+                // 
+                playerBL.CreateOrSetPlayer(playerMC);
+                playerBL.AddPlayerEffects();
+
+                // In some cases, the welcome message can be disabled.
+                if(configBL.ShowWelcomeMessage())
                 {
-                    SendPlayerMessage(objPlayer, Text().GetText(Text.week_news));
+                    SendPlayerMessage(playerMC,Text().GetText(Text.welcome_message_text, Text().GetText(Text.server_name), playerMC.getName()));
+                }
+
+                if(configBL.ShowWeekNews())
+                {
+                    SendPlayerMessage(playerMC, Text().GetText(Text.week_news));
                 }
             }
         }
