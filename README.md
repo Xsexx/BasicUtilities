@@ -12,6 +12,7 @@
 | Mythical     | Purple      | `stp {update} {drop} {2}`                                                                         | Fire Resistance        | Complete all missions.               | 27        |
 | God          | Gold        | `stp {update} {drop} {3}`                                                                         | Resistance             | Complete special armor to level VI.  |           |
 | Admin        | Black       | `all`                                                                                             | all                    | Create the server                    |           |
+| | | https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html | | | |
 ## [Mission](https://github.com/Xsexx/BasicUtilities/blob/main/Documentation/Missions.md)
 ## Recompensas
 ### Iniciales
