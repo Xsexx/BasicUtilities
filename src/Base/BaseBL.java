@@ -13,8 +13,9 @@ public class BaseBL extends Base
 {
     //region VARIABLES
     
-    private StringBuilder base = new StringBuilder();  
+    private StringBuilder base = new StringBuilder();
     private FileConfiguration fileConfiguration;
+    private FileName fileName;
 
     //endregion
 
@@ -32,23 +33,23 @@ public class BaseBL extends Base
     /**
      * Constructor
      * @param objBasicUtilities
-     * @param file
+     * @param fileName
      */
-    public BaseBL(BasicUtilities objBasicUtilities, FileName file)
+    public BaseBL(BasicUtilities objBasicUtilities, FileName fileName)
     {
         super(objBasicUtilities);
-        this.fileConfiguration = FileMananger().GetFile(file);
+        ConfigFile(fileName);
     }
 
     /**
      * Constructor
      * @param objBasicUtilities
-     * @param file
+     * @param fileName
      */
-    public BaseBL(BasicUtilities objBasicUtilities, FileName file, String base)
+    public BaseBL(BasicUtilities objBasicUtilities, FileName fileName, String base)
     {
         super(objBasicUtilities);
-        this.fileConfiguration = FileMananger().GetFile(file);
+        ConfigFile(fileName);
         this.base.append(base);
     }
 
@@ -167,6 +168,26 @@ public class BaseBL extends Base
         };
     }
 
+    /**
+     * Method that handles get the base string.
+     * @return
+     */
+    protected String GetBase()
+    {
+        return base.toString();
+    }
+
+    /**
+     * Method that handles set the file configuration in base to filename set from BL files.
+     * @param fileName
+     * @return
+     */
+    protected void ConfigFile(FileName fileName)
+    {
+        this.fileName = fileName;
+        this.fileConfiguration = FileMananger().GetFile(fileName);
+    }
+    
     //endregion
 
     //region SETTERS
@@ -239,6 +260,14 @@ public class BaseBL extends Base
             case log        -> BasicUtilities().log = fileConfiguration;
             default         -> BasicUtilities().config = fileConfiguration;
         };
+    }
+
+    /**
+     * Method that handles save data into files config from any BL file.
+     */
+    protected void SaveFile()
+    {
+        FileMananger().SaveFile(fileName);
     }
 
     //endregion

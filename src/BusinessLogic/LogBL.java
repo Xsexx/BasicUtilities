@@ -29,6 +29,6 @@ public class LogBL extends BaseBL
 		List<String> errorList = GetStringList(Log.log);
         errorList.add(error);
 		Set(errorList, Log.log);
-		FileMananger().SaveFile(FileName.log);
+		SaveFile();
 	}
 }

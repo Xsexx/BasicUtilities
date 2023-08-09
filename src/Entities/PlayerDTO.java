@@ -1,14 +1,17 @@
 package Entities;
 
-import org.bukkit.entity.Player;
+import java.time.LocalDateTime;
 
-import Base.Base.General;
+import org.bukkit.entity.Player;
 
 /**
  * Class that handles the player information.
  */
 public class PlayerDTO
 {
-    public Player player;
-    public General Id;
+    public String Id;
+    public String Name;
+    public Player PlayerMC;
+    public LocalDateTime LastConection;
+    public RankDTO Rank;
 }

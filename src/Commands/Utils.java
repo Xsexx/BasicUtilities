@@ -1,5 +1,7 @@
 package Commands;
 
+import java.util.Arrays;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,33 +31,45 @@ public class Utils extends BaseMC implements CommandExecutor
     {
         try
         {
-            // In case that player send the command.
-            if(sender instanceof Player)
+            // For the aditional parameters.
+            if(args.length != 0 && Utils.valueOf(args[0]) != null)
             {
-                SendPlayerMessage((Player) sender, label);
-            }
-            // In case that console send the command.
-            else
-            {
-                // For the aditional parameters.
-                if(args.length != 0 && Utils.valueOf(args[0]) != null)
+                // In case that player send the command.
+                if(sender instanceof Player)
                 {
+                    Player player = (Player) sender;
                     switch (Utils.valueOf(args[0]))
-                    {
-                        case reload:
-                            FileMananger().ReloadFiles();
-                            SendConsoleMessage(this.text.GetText(Text.plugin_reload_text, BasicUtilities().pdfFile.getName()));
-                            break;
-                        case exception:
-                            throw new Exception("Pruebas de excepcion guardadas en el log", null);
-                        default:
-                            break;
-                    }
+                        {
+                            case join_armor:
+                                SendPlayerMessage(player, label);
+                                break;
+                            case join_tools:
+                                SendPlayerMessage(player, label);
+                                break;
+                            default:
+                                SendPlayerMessage(player, Text().GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
+                                break;
+                        }
+                    
                 }
+                // In case that console send the command.
                 else
                 {
-                    SendConsoleMessage(this.text.GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
+                        switch (Utils.valueOf(args[0]))
+                        {
+                            case reload:
+                                FileMananger().ReloadFiles();
+                                SendConsoleMessage(Text().GetText(Text.plugin_reload_text, BasicUtilities().pdfFile.getName()));
+                                break;
+                            default:
+                                SendConsoleMessage(Text().GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
+                                break;
+                        }
                 }
+            }
+            else
+            {
+                SendMessage(sender, Arrays.asList(Utils.values()).toString());
             }
         }
         catch (Exception exc)

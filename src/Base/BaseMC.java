@@ -1,5 +1,8 @@
 package Base;
 
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
 import BusinessLogic.TextBL;
 import Main.BasicUtilities;
 
@@ -21,7 +24,6 @@ public class BaseMC extends Base
 		reload,
 		join_armor,
 		join_tools,
-		exception
 	}
 
 	protected enum Location
@@ -75,9 +77,34 @@ public class BaseMC extends Base
 	 * @param player
 	 * @param message
 	 */
-	protected void SendPlayerMessage(org.bukkit.entity.Player player, String message)
+	protected void SendPlayerMessage(Player player, String message)
 	{
 		Utils().SendPlayerMessage(player, message);
+	}
+
+	/**
+	 * Method that handles send a message to console and player in case the sender is a player.
+	 * @param sender
+	 * @param message
+	 */
+	protected void SendMessage(CommandSender sender, String message)
+	{
+		// In case that player send the command.
+		if(sender instanceof Player)
+		{
+			SendPlayerMessage((Player) sender, message);
+		}
+
+		SendConsoleMessage(message);
+	}
+
+	/**
+	 * Method that handles get the text.
+	 * @return
+	 */
+	protected TextBL Text()
+	{
+		return this.text;
 	}
 
     //endregion

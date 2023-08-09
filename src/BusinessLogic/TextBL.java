@@ -40,6 +40,7 @@ public class TextBL extends BaseBL
 			data.append(White(GetString(property)));
 		}
 		
+		// In case the property have replacement spaces, example: "Example %s", this case can be replaced one time.
 		return args.length != 0 ? GetTextFormatByArgs(data, args) : data.toString();
 	}
 
@@ -70,4 +71,6 @@ public class TextBL extends BaseBL
 
 		return result.toString();
 	}
+
+	
 }

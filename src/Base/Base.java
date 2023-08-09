@@ -22,21 +22,11 @@ public class Base
     public enum Config
     {
         welcome_message_available,
-        
-        // Ranking
-        novice,
-        beginner,
-        intermediate,
-        advanced,
-        expert,
-        master,
-        legend,
-        mythical,
-        god
     }
 
     public enum Players
     {
+        last_conection,
 
     }
 
@@ -195,6 +185,7 @@ public class Base
         spawn,
         mission,
         log,
+        ranking
     }
 
     public enum General
@@ -203,7 +194,25 @@ public class Base
         color,
         asigned,
         count,
-        name
+        name,
+        rank
+    }
+
+    public enum Ranking
+    {
+        novice,
+        beginner,
+        intermediate,
+        advanced,
+        expert,
+        master,
+        legend,
+        mythical,
+        god,
+
+        effect,
+        duration,
+        level
     }
 
     //endregion

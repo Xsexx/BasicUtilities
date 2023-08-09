@@ -18,6 +18,10 @@ import Main.BasicUtilities;
  */
 public class MissionBL extends BaseBL
 {
+    /**
+     * Constructor
+     * @param objBasicUtilities
+     */
     public MissionBL(BasicUtilities objBasicUtilities)
     {
         super(objBasicUtilities, FileName.mission);

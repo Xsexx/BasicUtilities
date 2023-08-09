@@ -1,7 +1,9 @@
 package BusinessLogic;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.bukkit.entity.Player;
-
+import org.bukkit.potion.PotionEffect;
 import Base.BaseBL;
 import Entities.PlayerDTO;
 import Main.BasicUtilities;
@@ -11,33 +13,48 @@ import Main.BasicUtilities;
  */
 public class PlayerBL extends BaseBL
 {
+    //region VARIABLES
+
+    PlayerDTO playerDTO = new PlayerDTO();
+
+    //endregion
+
+    //region METHODS
+
     /**
 	 * Constructor
 	 * @param objBasicUtilities
 	 */
-    public PlayerBL(BasicUtilities objBasicUtilities, Player objPlayer)
+    public PlayerBL(BasicUtilities objBasicUtilities, Player objPlayerMC)
     {
-        super(objBasicUtilities, FileName.players, String.format("%s_%s", objPlayer.getName(), objPlayer.getUniqueId().toString()));
+        super(objBasicUtilities, FileName.players, String.format("%s_%s", objPlayerMC.getName(), objPlayerMC.getUniqueId().toString()));
+        CreateOrSetPlayer(objPlayerMC);
     }
 
     /**
-     * Method that handles the validation of the player exist.
-     * @param objPlayer
-     * @return In case the player already exist, return true.
+     * Method that handles the validation or creation of the player on config files.
+     * @param playerDTO
      */
-    public void ValidateOrCreatePlayer(Player player)
+    private void CreateOrSetPlayer(Player playerMC)
     {
         try
         {
-            // PlayerDTO playerDTO = new PlayerDTO();
-            // playerDTO.Id = NewProperty(player.getName(), player.getUniqueId().toString());
-            
-            // if(!PlayerExist(playerDTO.Id))
-            // {
-
-            //     Set(GetPlayersCount(), Properties.count);
-            //     // Falta guardar el archivo.
-            // }
+            if(GetBoolean(GetBase()) == null)
+            {
+                playerDTO.Id = GetBase();
+                playerDTO.Name = playerMC.getName();
+                playerDTO.LastConection = LocalDateTime.now();
+                playerDTO.PlayerMC = playerMC;
+                UpdatePlayerRank(Ranking.novice);
+                
+                SetPlayerData();
+                SetPlayersCount();
+                SaveFile();
+            }
+            else
+            {
+                GetPlayer();
+            }
         }
         catch (Exception exc)
         {
@@ -46,59 +63,62 @@ public class PlayerBL extends BaseBL
     }
 
     /**
-     * Method that handles the validation of the player exist.
-     * @param objPlayer
-     * @return In case the player already exist, return true.
-     */
-    public Boolean PlayerExist(General property)
-    {
-        try
-        {
-            return GetBoolean(property) != null;
-        }
-        catch (Exception exc)
-        {
-            ExceptionManager(exc);
-        }
-
-        return false;
-    }
-
-    /**
-     * Method that handles get all the data config by player.
+     * Method that handles get player's data.
      * @param objPlayer
      * @return
      */
-    public PlayerDTO GetPlayerData(Player objPlayer)
+    private PlayerDTO GetPlayer()
     {
-        PlayerDTO objPlayerDTO = new PlayerDTO();
-
-        try
-        {
-            objPlayerDTO.player = objPlayer;
-        }
-        catch (Exception exc)
-        {
-            ExceptionManager(exc);
-        }
-        
-        return objPlayerDTO;
+        return this.playerDTO;
     }
 
     /**
      * Method that handles the count of players.
      * @return
      */
-    public int GetPlayersCount()
+    private void SetPlayersCount()
     {
         try
         {
-            return GetInt(General.count);
+            Integer count = GetInt(General.count);
+            Set(count++, General.count);
         }
         catch (Exception exc)
         {
             ExceptionManager(exc);
-            return 0;
         }
     }
+
+    /**
+     * Method that handles to set the player data.
+     * @return
+     */
+    private void SetPlayerData()
+    {
+        Set(playerDTO.Id, General.id);
+        Set(playerDTO.Name, General.name);
+        Set(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(playerDTO.LastConection), Players.last_conection);
+        UpdatePlayerRank(playerDTO.Rank.Rank);
+    }
+
+    /**
+     * Method that handles the players effects by ranking.
+     */
+    public void AddPlayerEffects()
+    {
+        playerDTO.PlayerMC.addPotionEffect(new PotionEffect(playerDTO.Rank.Effect, playerDTO.Rank.Duration, playerDTO.Rank.Level));
+    }
+
+    /**
+     * Method that handles the player rank updates.
+     * @return
+     */
+    public void UpdatePlayerRank(Ranking rank)
+    {
+        RankBL rankBL = new RankBL(BasicUtilities());
+        playerDTO.Rank = rankBL.GetRank(rank);
+        Set(playerDTO.Rank.Id, General.id);
+    }
+    
+    //endregion
 }

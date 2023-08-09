@@ -1,0 +1,45 @@
+novice:
+    Id: 1
+    effect:
+    duration: 86400
+    level: 1
+beginner:
+    Id: 2
+    effect:
+    duration: 86400
+    level: 1
+intermediate:
+    Id: 3
+    effect:
+    duration: 86400
+    level: 1
+advanced:
+    Id: 4
+    effect:
+    duration: 86400
+    level: 1
+expert:
+    Id: 5
+    effect:
+    duration: 86400
+    level: 1
+master:
+    Id: 6
+    effect:
+    duration: 86400
+    level: 1
+legend:
+    Id: 7
+    effect:
+    duration: 86400
+    level: 1
+mythical:
+    Id: 8
+    effect:
+    duration: 86400
+    level: 1
+god:
+    Id: 9
+    effect:
+    duration: 86400
+    level: 1

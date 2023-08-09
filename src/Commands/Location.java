@@ -1,5 +1,7 @@
 package Commands;
 
+import java.util.Arrays;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,12 +31,14 @@ public class Location extends BaseMC implements CommandExecutor
     {
         try
         {
-            // In case that player send the command.
-            if(sender instanceof Player)
+
+            // For the aditional parameters.
+            if(args.length != 0 && Utils.valueOf(args[0]) != null)
             {
-                // For the aditional parameters.
-                if(args.length != 0 && Location.valueOf(args[0]) != null)
+                // In case that player send the command.
+                if(sender instanceof Player)
                 {
+                    Player player = (Player) sender;
                     switch (Location.valueOf(args[0]))
                     {
                         case add:
@@ -47,6 +51,7 @@ public class Location extends BaseMC implements CommandExecutor
                             float yaw = location.getYaw();
                             float pitch = location.getPitch();
                             */
+                            SendPlayerMessage(player, label);
                             break;
                         case view:
                         case delete:
@@ -55,15 +60,36 @@ public class Location extends BaseMC implements CommandExecutor
                         case tp:
                         case tpr:
                         default:
+                            SendPlayerMessage(player, label);
                             break;
                     }
+                    
+                }
+                // In case that console send the command.
+                else
+                {
+                    SendConsoleMessage(Text().GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
+                }
+            }
+            else
+            {
+                SendMessage(sender, Arrays.asList(Location.values()).toString());
+            }
+
+            // In case that player send the command.
+            if(sender instanceof Player)
+            {
+                // For the aditional parameters.
+                if(args.length != 0 && Location.valueOf(args[0]) != null)
+                {
+                    
                         
                 }
             }
             // In case that console send the command.
             else
             {
-                SendConsoleMessage(this.text.GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
+                SendConsoleMessage(Text().GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
             }
         }
         catch (Exception exc)
