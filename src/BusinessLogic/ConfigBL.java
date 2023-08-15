@@ -92,10 +92,25 @@ public class ConfigBL extends BaseBL
         {
             Integer count = GetInt(General.count);
             Set(count++, General.count);
+            SaveFile();
         }
         catch (Exception exc)
         {
             ExceptionManager(exc);
         }
+    }
+
+    public String GetPlayerAcount()
+    {
+        try
+        {
+         return String.valueOf(GetInt(General.count));
+        }
+        catch (Exception exc)
+        {
+            ExceptionManager(exc);
+        }
+
+        return "-1";
     }
 }

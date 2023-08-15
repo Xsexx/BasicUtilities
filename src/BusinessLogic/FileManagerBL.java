@@ -54,6 +54,7 @@ public class FileManagerBL extends BaseBL
         RegisterFile(FileName.spawn);
         RegisterFile(FileName.mission);
         RegisterFile(FileName.log);
+        RegisterFile(FileName.ranking);
     }
     
     /**
@@ -70,6 +71,7 @@ public class FileManagerBL extends BaseBL
             ReloadFile(FileName.spawn, true);
             ReloadFile(FileName.mission, true);
             ReloadFile(FileName.log, true);
+            ReloadFile(FileName.ranking, true);
         }
         catch (Exception exc)
         {
@@ -115,6 +117,7 @@ public class FileManagerBL extends BaseBL
     {
         try
         {
+            file = new File(BasicUtilities().getDataFolder(), GetFilePath(fileName));
             FileConfiguration(fileName).save(file);
         }
         catch (Exception exc)

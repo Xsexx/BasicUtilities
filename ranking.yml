@@ -1,45 +1,45 @@
 novice:
     id: 1
-    effect:
+    effect: 1
     duration: 86400
     level: 1
 beginner:
     id: 2
-    effect:
+    effect: 2
     duration: 86400
     level: 1
 intermediate:
     id: 3
-    effect:
+    effect: 3
     duration: 86400
     level: 1
 advanced:
     id: 4
-    effect:
+    effect: 4
     duration: 86400
     level: 1
 expert:
     id: 5
-    effect:
+    effect: 5
     duration: 86400
     level: 1
 master:
     id: 6
-    effect:
+    effect: 6
     duration: 86400
     level: 1
 legend:
     id: 7
-    effect:
+    effect: 7
     duration: 86400
     level: 1
 mythical:
     id: 8
-    effect:
+    effect: 8
     duration: 86400
     level: 1
 god:
     id: 9
-    effect:
+    effect: 9
     duration: 86400
     level: 1

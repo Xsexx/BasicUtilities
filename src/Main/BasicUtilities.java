@@ -21,6 +21,7 @@ public class BasicUtilities extends JavaPlugin
 	public FileConfiguration item;
 	public FileConfiguration spawn;
 	public FileConfiguration log;
+	public FileConfiguration ranking;
 
 	//endregion
 

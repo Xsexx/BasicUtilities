@@ -22,6 +22,7 @@ public class BaseMC extends Base
 	protected enum Utils
 	{
 		reload,
+		exception,
 		join_armor,
 		join_tools,
 	}

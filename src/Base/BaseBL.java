@@ -164,6 +164,7 @@ public class BaseBL extends Base
             case spawn      -> BasicUtilities().spawn;
             case mission    -> BasicUtilities().mission;
             case log        -> BasicUtilities().log;
+            case ranking    -> BasicUtilities().ranking;
             default         -> BasicUtilities().config;
         };
     }
@@ -258,6 +259,7 @@ public class BaseBL extends Base
             case spawn      -> BasicUtilities().spawn = fileConfiguration;
             case mission    -> BasicUtilities().mission = fileConfiguration;
             case log        -> BasicUtilities().log = fileConfiguration;
+            case ranking    -> BasicUtilities().ranking = fileConfiguration;
             default         -> BasicUtilities().config = fileConfiguration;
         };
     }

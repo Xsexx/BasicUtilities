@@ -62,7 +62,6 @@ public class PlayerBL extends BaseBL
                 playerDTO.Name = playerMC.getName();
                 playerDTO.LastConection = LocalDateTime.now();
                 playerDTO.PlayerMC = playerMC;
-                UpdatePlayerRank(Ranking.novice);
                 
                 SetPlayerData();
                 SaveFile();
@@ -97,18 +96,7 @@ public class PlayerBL extends BaseBL
         Set(playerDTO.Id, General.id);
         Set(playerDTO.Name, General.name);
         Set(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss").format(playerDTO.LastConection), Players.last_conection);
-        UpdatePlayerRank(playerDTO.Rank.Rank);
-    }
-
-    /**
-     * Method that handles the players effects by ranking.
-     */
-    public void AddPlayerEffects()
-    {
-        if(playerDTO.Rank.Rank != null)
-        {
-            playerDTO.PlayerMC.addPotionEffect(new PotionEffect(playerDTO.Rank.Effect, playerDTO.Rank.Duration, playerDTO.Rank.Level));
-        }
+        // UpdatePlayerRank(Ranking.novice);
     }
 
     /**
@@ -121,6 +109,17 @@ public class PlayerBL extends BaseBL
         playerDTO.Rank = rankBL.GetRank(rank);
         Set(playerDTO.Rank.Id, General.rank, General.id);
     }
-    
+
+    /**
+     * Method that handles the players effects by ranking.
+     */
+    public void AddPlayerEffects()
+    {
+        if(playerDTO.Rank != null)
+        {
+            playerDTO.PlayerMC.addPotionEffect(new PotionEffect(playerDTO.Rank.Effect, playerDTO.Rank.Duration, playerDTO.Rank.Level));
+        }
+    }
+
     //endregion
 }

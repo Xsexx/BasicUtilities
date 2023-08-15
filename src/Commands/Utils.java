@@ -61,6 +61,8 @@ public class Utils extends BaseMC implements CommandExecutor
                                 FileMananger().ReloadFiles();
                                 SendConsoleMessage(Text().GetText(Text.plugin_reload_text, BasicUtilities().pdfFile.getName()));
                                 break;
+                            case exception:
+                                throw new Exception("This message was added from exception");
                             default:
                                 SendConsoleMessage(Text().GetText(Text.command_from_console_text, BasicUtilities().pdfFile.getName()));
                                 break;

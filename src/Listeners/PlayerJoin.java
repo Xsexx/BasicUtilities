@@ -45,11 +45,10 @@ public class PlayerJoin extends BaseMC implements Listener
                 if(!playerBL.PlayerExist())
                 {
                     configBL.PlayerCountIncrease();
+                    SendConsoleMessage(configBL.GetPlayerAcount());
                 }
 
-                // 
                 playerBL.CreateOrSetPlayer(playerMC);
-                playerBL.AddPlayerEffects();
 
                 // In some cases, the welcome message can be disabled.
                 if(configBL.ShowWelcomeMessage())
